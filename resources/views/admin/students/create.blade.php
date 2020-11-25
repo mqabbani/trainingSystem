@@ -10,7 +10,8 @@ Register New Student
             <h6 class="m-0 font-weight-bold text-primary">Register New Student</h6>
         </div>
         <div class="card-body">
-            <form>
+            <form method="post" action="{{url('store/student')}}" enctype="multipart/form-data">
+                @csrf
                 <div class="form-layout">
                     <div class="row mg-b-25">
                         <div class="col-lg-4">
@@ -59,13 +60,13 @@ Register New Student
                         <div class="col-lg-4">
                             <div class="form-group mg-b-10-force">
                                 <label class="form-control-file">Student Photo: <span class="tx-danger">*</span></label>
-                                <input class="form-control-file" type="file" name="std_phone_number_second" required >
+                                <input class="form-control-file" type="file" name="std_photo"  >
                             </div>
                         </div><!-- col-4 -->
                         <div class="col-lg-4">
                             <div class="form-group mg-b-10-force">
                                 <label class="form-control-file">Student Discount: <span class="tx-danger">*</span></label>
-                                <input class="form-control" type="number" name="std_discount" min="0" required placeholder="Discount">
+                                <input class="form-control" type="text" name="std_discount"   placeholder="Discount">
                             </div>
                         </div><!-- col-4 -->
                     </div><!-- row -->

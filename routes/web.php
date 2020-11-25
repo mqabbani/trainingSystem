@@ -34,6 +34,14 @@ Route::group(['middleware'=>'auth'],function (){
     Route::post('/user/{id}/update','UserController@update')->name('/user/{id}/update');
 
     // Student Controller
+    Route::get('/create/student','studentController@create')->name('/create/student');
+    Route::post('store/student','StudentController@store')->name('store/student');
+    Route::get('/all/student','StudentController@index')->name('/all/student');
+    Route::get('/search/student','StudentController@search')->name('/search/student');
 
-    Route::get('create/student','studentController@create')->name('create/student');
+    //Course
+    Route::get('/create/course','CourseController@create')->name('/create/course');
+    Route::get('/ajax/request/{course_name1}','CourseController@ajaxReq');
+    Route::post('/save/new/course','CourseController@store')->name('/save/new/course');
+    Route::get('/all/course','CourseController@index')->name('/all/course');
 });

@@ -79,6 +79,17 @@
                     <a class="collapse-item" href="{{url('/all/student')}}">Show Student</a>
                 </div>
             </div>
+            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseFour" aria-expanded="true" aria-controls="collapseTwo">
+                <i class="fas fa-fw fa-user"></i>
+                <span>Course`s</span>
+            </a>
+            <div id="collapseFour" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+                <div class="bg-white py-2 collapse-inner rounded">
+                    <h6 class="collapse-header">Course`s Components:</h6>
+                    <a class="collapse-item" href="{{url('/create/course')}}">Create Course</a>
+                    <a class="collapse-item" href="{{url('/all/course')}}">Show Courses</a>
+                </div>
+            </div>
         </li>
 
         <!-- Nav Item - Utilities Collapse Menu -->
@@ -204,13 +215,32 @@
 <!-- Bootstrap core JavaScript-->
 <script src="{{asset('backend/vendor/jquery/jquery.min.js')}}"></script>
 <script src="{{asset('backend/vendor/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
-
 <!-- Core plugin JavaScript-->
 <script src="{{asset('backend/vendor/jquery-easing/jquery.easing.min.js')}}"></script>
-
 <!-- Custom scripts for all pages-->
 <script src="{{asset('backend/js/sb-admin-2.min.js')}}"></script>
-
+<script type="text/javascript">
+    $(document).ready(function(){
+        $("#course_name").change(function (){
+            $.ajaxSetup({
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="_token"]').attr('content')
+                }
+            });
+            var course_name1 = $("#course_name").val();
+            $.ajax({
+                type:"GET",
+                url: "{{url('/ajax/request')}}"+"/" + course_name1,
+                cache:false,
+                success : function (data){
+                    $("#course_session").html("");
+                    $("#course_session").append(data);
+                    $("#course_session").val(data);
+                }
+            });
+        });
+    });
+</script>
 </body>
 
 </html>
