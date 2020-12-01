@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Course;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
 
@@ -50,14 +51,14 @@ class CourseController extends Controller
         $days = array();
         $days = collect($request->ch1)->implode('-');
          Course::create([
-            'course_name'=>$request->course_name,
-            'course_session'=>$request->course_se,
-            'course_start_time'=>$request->course_start_time,
-            'course_end_time'=>$request->course_end_time,
-            'course_price'=>$request->course_price,
-            'course_days'=>$days,
-            'course_status'=>$request->course_status,
-            'course_type'=>$request->course_type
+            'name'=>$request->name,
+            'session'=>$request->session1,
+            'start_time'=>$request->start_time,
+            'end_time'=>$request->end_time,
+            'price'=>$request->price,
+            'days'=>$days,
+            'status'=>$request->status,
+            'type'=>$request->type
         ]);
 
         $courseName = array("0"=>'Hardware',"1"=>'Software',"2"=>'Glass');
@@ -84,7 +85,9 @@ class CourseController extends Controller
      */
     public function edit($id)
     {
-        //
+        $course = Course::find($id);
+        //dd($course);
+        return View('admin.courses.edit',compact('course'));
     }
 
     /**
@@ -96,7 +99,19 @@ class CourseController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+       $course = Course::find($id);
+       $course->name        = $request->name;
+       $course->session     = $request->session1;
+       $course->price       = $request->price;
+       $course->start_time  = $request->start_time;
+       $course->end_time    = $request->end_time;
+        $days = array();
+        $days = collect($request->ch1)->implode('-');
+        $course->days       = $days;
+        $course->status     = $request->status;
+        $course->start_date = $request->start_date;
+        $course->end_date   = $request->start_date;
+        $course->update($request->all());
     }
 
     /**
@@ -111,7 +126,7 @@ class CourseController extends Controller
     }
 
     public function ajaxReq($course_name1){
-        $session = Course::where('course_name',$course_name1 )->count();
+        $session = Course::where('name',$course_name1 )->count();
         $session = $session+1;
         return $session;
     }

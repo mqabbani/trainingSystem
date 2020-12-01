@@ -13,7 +13,7 @@
                         <div class="col-lg-4">
                             <div class="form-group">
                                 <label >Choose Name: <span class="tx-danger">*</span></label>
-                                <select class="form-control" name="course_name" id="course_name">
+                                <select class="form-control" name="name" id="course_name">
                                     <option></option>
                                     <option value="Hardware">Hardware</option>
                                     <option value="Software">Software</option>
@@ -24,40 +24,40 @@
                         <div class="col-lg-4">
                             <div class="form-group">
                                 <label class="form-control-label">Course Session: <span class="tx-danger">*</span></label>
-                                <input class="form-control" type="text" name="course_se" id="course_session" readonly/>
+                                <input class="form-control" type="text" name="session1" id="course_session" readonly/>
                             </div>
                         </div><!-- col-4 -->
                         <div class="col-lg-4">
                             <div class="form-group">
                                 <label class="form-control-label">Course Price: <span class="tx-danger">*</span></label>
-                                <input class="form-control" type="text" name="course_price"  placeholder="Enter Price" required>
+                                <input class="form-control" type="text" name="price"  placeholder="Enter Price" required>
                             </div>
                         </div><!-- col-4 -->
                         <div class="col-lg-4">
                             <div class="form-group mg-b-10-force">
                                 <label class="form-control-label">Start Course time: <span class="tx-danger">*</span></label>
-                                <input class="form-control" type="time" name="course_start_time"
+                                <input class="form-control" type="time" name="start_time"
                                        placeholder="Enter National ID" required>
                             </div>
                         </div><!-- col-8 -->
                         <div class="col-lg-4">
                             <div class="form-group mg-b-10-force">
                                 <label class="form-control-label">End Course time: <span class="tx-danger">*</span></label>
-                                <input class="form-control" type="time" name="course_end_time"
+                                <input class="form-control" type="time" name="end_time"
                                        placeholder="Enter National ID" required>
                             </div>
                         </div><!-- col-8 -->
                         <div class="col-lg-4">
                             <div class="form-group mg-b-10-force">
                                 <label class="form-control-label">Course Status: <span class="tx-danger">*</span></label>
-                                <input class="form-control" type="text" name="course_status"
+                                <input class="form-control" type="text" name="status"
                                        placeholder="Pending" required readonly value="Pending">
                             </div>
                         </div><!-- col-4 -->
                         <div class="col-lg-4">
                             <div class="form-group mg-b-10-force">
                                 <label class="form-control-label">Course Type: <span class="tx-danger">*</span></label>
-                               <select name="course_type" class="form-control">
+                               <select name="type" class="form-control">
                                    <option value="Public">Public</option>
                                    <option value="Private">Private</option>
                                </select>

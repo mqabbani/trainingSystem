@@ -18,4 +18,8 @@ class Student extends Model
         $number = rand(0,999);
         return $year . $month . $day . $number;
     }
+
+    public function course(){
+        return $this->belongsToMany(Course::class);
+    }
 }

@@ -32,17 +32,17 @@
                     <tbody>
                     @foreach($allCourses as $course)
                         <tr>
-                            <td style="font-size: 12px;">{{$course->course_name}}</td>
-                            <td style="font-size: 12px;">{{$course->course_session}}</td>
-                            <td style="font-size: 12px;">{{$course->course_start_time}}</td>
-                            <td style="font-size: 12px;">{{$course->course_end_time}}</td>
-                            <td style="font-size: 12px;">{{$course->course_start_date}}</td>
-                            <td style="font-size: 12px;">{{$course->course_end_date}}</td>
-                            <td style="font-size: 12px;">{{$course->course_price}}</td>
-                            <td style="font-size: 12px;">{{$course->course_status}}</td>
-                            <td style="font-size: 12px;">{{$course->course_type}}</td>
-                            <td style="font-size: 12px;">{{$course->course_days}}</td>
-                            <td style="font-size: 12px;"><a href="" class="btn btn-primary">Edit</a> </td>
+                            <td style="font-size: 12px;">{{$course->name}}</td>
+                            <td style="font-size: 12px;">{{$course->session}}</td>
+                            <td style="font-size: 12px;">{{$course->start_time}}</td>
+                            <td style="font-size: 12px;">{{$course->end_time}}</td>
+                            <td style="font-size: 12px;">{{$course->start_date}}</td>
+                            <td style="font-size: 12px;">{{$course->end_date}}</td>
+                            <td style="font-size: 12px;">{{$course->price}}</td>
+                            <td style="font-size: 12px;">{{$course->status}}</td>
+                            <td style="font-size: 12px;">{{$course->type}}</td>
+                            <td style="font-size: 12px;">{{$course->days}}</td>
+                            <td style="font-size: 12px;"><a href="{{url('/course/'.$course->id.'/edit')}}" class="btn btn-primary">Edit</a> </td>
                             <td style="font-size: 12px;"><a href="" class="btn btn-danger">Delete</a> </td>
                             <td style="font-size: 12px;"><a href="" class="btn btn-light">More</a> </td>
 

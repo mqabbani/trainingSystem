@@ -43,14 +43,14 @@ All Students Details
                     <tbody>
                     @foreach($students as $student)
                     <tr>
-                        <td style="font-size: 12px;">{{$student->std_sp_number}}</td>
-                        <td style="font-size: 12px;">{{$student->std_name}}</td>
-                        <td style="font-size: 12px;">{{$student->std_name_ar}}</td>
-                        <td style="font-size: 12px;">{{$student->std_national_id}}</td>
-                        <td style="font-size: 12px;">{{$student->std_phone_number}}</td>
-                        <td style="font-size: 12px;">{{$student->std_phone_number_second}}</td>
-                        <td style="font-size: 12px;">{{$student->std_discount}}</td>
-                        <td style="font-size: 12px;"><a href="{{url('/edit/'.$student->id.'/student')}}" class="btn btn-primary">Edit</a> </td>
+                        <td style="font-size: 12px;">{{$student->sp_number}}</td>
+                        <td style="font-size: 12px;">{{$student->name}}</td>
+                        <td style="font-size: 12px;">{{$student->name_ar}}</td>
+                        <td style="font-size: 12px;">{{$student->national_id}}</td>
+                        <td style="font-size: 12px;">{{$student->phone_number}}</td>
+                        <td style="font-size: 12px;">{{$student->phone_number_second}}</td>
+                        <td style="font-size: 12px;">{{$student->discount}}</td>
+                        <td style="font-size: 12px;"><a href="{{url('/student/'.$student->id.'/edit')}}" class="btn btn-primary">Edit</a> </td>
                         <td style="font-size: 12px;"><a href="" class="btn btn-danger">Delete</a> </td>
                         <td style="font-size: 12px;"><a href="{{url('/more/'.$student->id.'/student')}}" class="btn btn-light">More Details</a> </td>
                     </tr>

@@ -17,56 +17,56 @@ Register New Student
                         <div class="col-lg-4">
                             <div class="form-group">
                                 <label class="form-control-label">Full Name: <span class="tx-danger">*</span></label>
-                                <input class="form-control" type="text" name="std_name" required placeholder="Enter FullName">
+                                <input class="form-control" type="text" name="name" required placeholder="Enter FullName">
                             </div>
                         </div><!-- col-4 -->
                         <div class="col-lg-4">
                             <div class="form-group">
                                 <label class="form-control-label">Arabic Name: <span class="tx-danger">*</span></label>
-                                <input class="form-control" type="text" name="std_name_ar"  required placeholder="Enter Arabic Name">
+                                <input class="form-control" type="text" name="name_ar"  required placeholder="Enter Arabic Name">
                             </div>
                         </div><!-- col-4 -->
                         <div class="col-lg-4">
                             <div class="form-group">
                                 <label class="form-control-label">Email address: <span class="tx-danger">*</span></label>
-                                <input class="form-control" type="text" name="std_email"  placeholder="Enter email address" required>
+                                <input class="form-control" type="text" name="email"  placeholder="Enter email address" required>
                             </div>
                         </div><!-- col-4 -->
                         <div class="col-lg-6">
                             <div class="form-group mg-b-10-force">
                                 <label class="form-control-label">National Number: <span class="tx-danger">*</span></label>
-                                <input class="form-control" type="text" name="std_national_id"
+                                <input class="form-control" type="text" name="national_id"
                                        placeholder="Enter National ID" required>
                             </div>
                         </div><!-- col-8 -->
                         <div class="col-lg-6">
                             <div class="form-group mg-b-10-force">
                                 <label class="form-control-label">Student Special Number: <span class="tx-danger">*</span></label>
-                                <input class="form-control" type="text" name="std_sp_number" readonly value="{{$std_sp_number}}">
+                                <input class="form-control" type="text" name="sp_number" readonly value="{{$std_sp_number}}">
                             </div>
                         </div><!-- col-4 -->
                         <div class="col-lg-4">
                             <div class="form-group mg-b-10-force">
                                 <label class="form-control-label">Student Phone Number: <span class="tx-danger">*</span></label>
-                                <input class="form-control" type="text" name="std_phone_number" required >
+                                <input class="form-control" type="text" name="phone_number" required >
                             </div>
                         </div><!-- col-4 -->
                         <div class="col-lg-4">
                             <div class="form-group mg-b-10-force">
                                 <label class="form-control-label">Student Second Phone Number: <span class="tx-danger">*</span></label>
-                                <input class="form-control" type="text" name="std_phone_number_second" required >
+                                <input class="form-control" type="text" name="phone_number_second" required >
                             </div>
                         </div><!-- col-4 -->
                         <div class="col-lg-4">
                             <div class="form-group mg-b-10-force">
                                 <label class="form-control-file">Student Photo: <span class="tx-danger">*</span></label>
-                                <input class="form-control-file" type="file" name="std_photo"  >
+                                <input class="form-control-file" type="file" name="photo"  >
                             </div>
                         </div><!-- col-4 -->
                         <div class="col-lg-4">
                             <div class="form-group mg-b-10-force">
                                 <label class="form-control-file">Student Discount: <span class="tx-danger">*</span></label>
-                                <input class="form-control" type="text" name="std_discount"   placeholder="Discount">
+                                <input class="form-control" type="text" name="discount"   placeholder="Discount">
                             </div>
                         </div><!-- col-4 -->
                     </div><!-- row -->

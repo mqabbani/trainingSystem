@@ -90,6 +90,17 @@
                     <a class="collapse-item" href="{{url('/all/course')}}">Show Courses</a>
                 </div>
             </div>
+
+            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseFive" aria-expanded="true" aria-controls="collapseTwo">
+                <i class="fas fa-fw fa-user"></i>
+                <span>Student`s Course`s</span>
+            </a>
+            <div id="collapseFive" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+                <div class="bg-white py-2 collapse-inner rounded">
+                    <h6 class="collapse-header">Components:</h6>
+                    <a class="collapse-item" href="{{url('/register/student/course')}}">Register</a>
+                </div>
+            </div>
         </li>
 
         <!-- Nav Item - Utilities Collapse Menu -->
@@ -159,13 +170,17 @@
             <div class="container-fluid">
 
                 <!-- Page Heading -->
-                <h3 class="h4 mb-4 text-gray-800">@yield('page_name')</h3>
+                <h3 class="h4 mb-4 text-gray-800">
+                    @yield('page_name')
+
+                </h3>
                 @if(Session::has('message'))
                     <div class="alert alert-secondary" role="alert">
                         {{Session::get('message')}}
                     </div>
                 @endif
                 @yield('content')
+
             </div>
             <!-- /.container-fluid -->
 
