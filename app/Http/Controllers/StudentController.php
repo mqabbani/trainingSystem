@@ -81,7 +81,10 @@ class StudentController extends Controller
      */
     public function show($id)
     {
-        //
+        $student = Student::find($id)->course;
+        $stdData = Student::find($id);
+
+        return View('admin.students.show',compact('student','stdData'));
     }
 
     /**

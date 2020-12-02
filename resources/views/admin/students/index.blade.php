@@ -52,7 +52,7 @@ All Students Details
                         <td style="font-size: 12px;">{{$student->discount}}</td>
                         <td style="font-size: 12px;"><a href="{{url('/student/'.$student->id.'/edit')}}" class="btn btn-primary">Edit</a> </td>
                         <td style="font-size: 12px;"><a href="" class="btn btn-danger">Delete</a> </td>
-                        <td style="font-size: 12px;"><a href="{{url('/more/'.$student->id.'/student')}}" class="btn btn-light">More Details</a> </td>
+                        <td style="font-size: 12px;"><a href="{{url('/student/'.$student->id.'/show')}}" class="btn btn-light">More Details</a> </td>
                     </tr>
                     @endforeach
                     </tbody>

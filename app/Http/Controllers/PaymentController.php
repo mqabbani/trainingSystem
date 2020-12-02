@@ -2,12 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Course;
-use App\Student;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Session;
 
-class CourseStudentController extends Controller
+class PaymentController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,7 +13,7 @@ class CourseStudentController extends Controller
      */
     public function index()
     {
-        //
+
     }
 
     /**
@@ -26,11 +23,7 @@ class CourseStudentController extends Controller
      */
     public function create()
     {
-        $hardware = Course::whereName("Hardware")->get();
-        $software = Course::whereName("Software")->get();
-        $glass    = Course::whereName("Glass")->get();
-       // dd($hardware);
-       return  View('admin.course_student.create',compact('hardware','software','glass'));
+
     }
 
     /**
@@ -41,26 +34,7 @@ class CourseStudentController extends Controller
      */
     public function store(Request $request)
     {
-        $request->validate([
-            'sp_number'=>'required',
-        ]);
-        $array = array();
-        if(!is_null($request->course_session_h)){
-            array_push($array,$request->course_session_h);
-        }
-        if(!is_null($request->course_session_s)){
-            array_push($array,$request->course_session_s);
-        }
-        if(!is_null($request->course_session_g)){
-            array_push($array,$request->course_session_g);
-        }
-        $student = Student::where('sp_number', $request->sp_number)->firstOrFail();
-        $student->course()->attach($array);
-        Session::flash('message', 'Student Added to Courses successful!');
-       // return redirect()->action('PaymentController@create');
-      return redirect()->back();
-
-
+        //
     }
 
     /**

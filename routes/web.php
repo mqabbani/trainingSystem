@@ -40,15 +40,20 @@ Route::group(['middleware'=>'auth'],function (){
     Route::get('/search/student','StudentController@search')->name('/search/student');
     Route::get('/student/{id}/edit','StudentController@edit')->name('/student/{id}/edit');
     Route::post('/student/{id}/update','StudentController@update')->name('/student/{id}/update');
+    Route::get('/student/{id}/show','StudentController@show')->name('/student/{id}/show');
+
     //Course
     Route::get('/create/course','CourseController@create')->name('/create/course');
     Route::get('/ajax/request/{course_name1}','CourseController@ajaxReq');
     Route::post('/save/new/course','CourseController@store')->name('/save/new/course');
     Route::get('/all/course','CourseController@index')->name('/all/course');
     Route::get('/course/{id}/edit','CourseController@edit')->name('/course/{id}/edit');
-
+    Route::post('/course/{id}/update','CourseController@update')->name('/course/{id}/update');
     //
     Route::get('/register/student/course','CourseStudentController@create')->name('/register/student/course');
     Route::post('/register/student/course','CourseStudentController@store')->name('/register/student/course');
+
+    //Payment
+
 
 });

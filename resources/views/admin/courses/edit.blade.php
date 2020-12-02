@@ -9,7 +9,7 @@
             <h6 class="m-0 font-weight-bold text-primary">Create New Course</h6>
         </div>
         <div class="card-body">
-            <form method="post" action="{{url('/save/new/course')}}">
+            <form method="post" action="{{url('/course/'.$course->id.'/update')}}">
                 @csrf
                 <div class="form-layout">
                     <div class="row mg-b-25">
@@ -83,25 +83,25 @@
                                        <?php if(isset($day[2]) == 'Monday') { echo 'checked';}?>>Monday
                                 &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;
                                 <input class="form-check-input" type="checkbox" value="Tuesday" id="defaultCheck4" name="ch1[]"
-                                <?php if(isset($day[3]) == 'Tuesday') { echo checked;}?>>Tuesday
+                                <?php if(isset($day[3]) == 'Tuesday') { echo 'checked';}?>>Tuesday
                                 &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;
                                 <input class="form-check-input" type="checkbox" value="Wednesday" id="defaultCheck5" name="ch1[]"
                                 <?php if(isset($day[4]) == 'Wednesday') { echo 'checked';}?>  >Wednesday
                                 &nbsp;&nbsp;     &nbsp;&nbsp; &nbsp;&nbsp;
                                 <input class="form-check-input" type="checkbox" value="Thursday" id="defaultCheck6" name="ch1[]"
-                                <?php if(isset($day[2]) == 'Thursday'){ echo 'checked';}?>>Thursday
+                                <?php if(isset($day[5]) == 'Thursday'){ echo 'checked';}?>>Thursday
                             </div>
                         </div><!-- col-4 -->
                         <div class="col-lg-4">
                             <div class="form-group mg-b-10-force">
                                 <label class="form-control-label">Start Date: <span class="tx-danger">*</span></label>
-                               <input class="form-control" type="date" name="start_date">
+                               <input class="form-control" type="date" name="start_date" value="{{$course->start_date}}">
                             </div>
                         </div><!-- col-4 -->
                         <div class="col-lg-4">
                             <div class="form-group mg-b-10-force">
                                 <label class="form-control-label">End Date: <span class="tx-danger">*</span></label>
-                                <input class="form-control" type="date" name="end_date">
+                                <input class="form-control" type="date" name="end_date" value="{{$course->end_date}}">
                             </div>
                         </div><!-- col-4 -->
                     </div><!-- row -->

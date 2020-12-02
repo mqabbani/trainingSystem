@@ -62,7 +62,8 @@ class CourseController extends Controller
         ]);
 
         $courseName = array("0"=>'Hardware',"1"=>'Software',"2"=>'Glass');
-        Session::flash('message', 'Student Added successful!');
+        Session::flash('message', 'Course Create successful!');
+
         return View('admin.courses.create',compact('courseName'));
     }
 
@@ -110,8 +111,9 @@ class CourseController extends Controller
         $course->days       = $days;
         $course->status     = $request->status;
         $course->start_date = $request->start_date;
-        $course->end_date   = $request->start_date;
-        $course->update($request->all());
+        $course->end_date   = $request->end_date;
+        $course->save();
+        return redirect()->action('CourseController@index');
     }
 
     /**
