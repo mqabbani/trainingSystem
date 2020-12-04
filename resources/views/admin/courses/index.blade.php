@@ -44,7 +44,7 @@
                             <td style="font-size: 12px;">{{$course->days}}</td>
                             <td style="font-size: 12px;"><a href="{{url('/course/'.$course->id.'/edit')}}" class="btn btn-primary">Edit</a> </td>
                             <td style="font-size: 12px;"><a href="" class="btn btn-danger">Delete</a> </td>
-                            <td style="font-size: 12px;"><a href="" class="btn btn-light">More</a> </td>
+                            <td style="font-size: 12px;"><a href="{{url('show/'.$course->id.'/course')}}" class="btn btn-light">More</a> </td>
 
                         </tr>
                     @endforeach

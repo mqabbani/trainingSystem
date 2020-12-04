@@ -25,37 +25,48 @@
         </div> <!-- Col-lg4 !-->
 
         <div class="col-lg-9">
-            <table class="table table-striped">
+            <table class="table table-striped table-responsive-lg">
                 <thead>
                 <tr>
-                    <th scope="col">Name</th>
-                    <th scope="col">Session</th>
-                    <th scope="col">Start time</th>
-                    <th scope="col">End Time</th>
-                    <th scope="col">Start Date</th>
-                    <th scope="col">End Date</th>
-                    <th scope="col">Status</th>
-                    <th scope="col">Type</th>
-                    <th scope="col">Days</th>
-                    <th scope="col">Price</th>
-                    <th scope="col">Payments</th>
-                    <th scope="col">Action</th>
+                    <th scope="col" style="font-size: 12px;">Name</th>
+                    <th scope="col" style="font-size: 12px;">Session</th>
+                    <th scope="col" style="font-size: 12px;">Start time</th>
+                    <th scope="col" style="font-size: 12px;">End Time</th>
+                    <th scope="col" style="font-size: 12px;">Start Date</th>
+                    <th scope="col" style="font-size: 12px;">End Date</th>
+                    <th scope="col" style="font-size: 12px;">Status</th>
+                    <th scope="col" style="font-size: 12px;">Type</th>
+                    <th scope="col" style="font-size: 12px;">Days</th>
+                    <th scope="col" style="font-size: 12px;">Price Before Discount</th>
+                    <th scope="col" style="font-size: 12px;">After Discount Price</th>
+                    <th scope="col" style="font-size: 12px;">Payments</th>
+                    <th scope="col" style="font-size: 12px;">Action</th>
                 </tr>
                 </thead>
                 <tbody>
                        @for($i=0 ; $i< count($student) ;$i++)
                            <tr>
-                               <td>{{$student[$i]->name}}</td>
-                               <td>{{$student[$i]->session}}</td>
-                               <td>{{$student[$i]->start_time}}</td>
-                               <td>{{$student[$i]->end_time}}</td>
-                               <td>{{$student[$i]->start_date}}</td>
-                               <td>{{$student[$i]->end_date}}</td>
-                               <td>{{$student[$i]->status}}</td>
-                               <td>{{$student[$i]->type}}</td>
-                               <td>{{$student[$i]->days}}</td>
-                               <td>{{$student[$i]->price}}</td>
-                               <td>{{$amountPayment[$i]}}</td>
+                               <td style="font-size: 12px;">{{$student[$i]->name}}</td>
+                               <td style="font-size: 12px;">{{$student[$i]->session}}</td>
+                               <td style="font-size: 12px;">{{$student[$i]->start_time}}</td>
+                               <td style="font-size: 12px;">{{$student[$i]->end_time}}</td>
+                               <td style="font-size: 12px;">{{$student[$i]->start_date}}</td>
+                               <td style="font-size: 12px;">{{$student[$i]->end_date}}</td>
+                               <td style="font-size: 12px;">{{$student[$i]->status}}</td>
+                               <td style="font-size: 12px;">{{$student[$i]->type}}</td>
+                               <td style="font-size: 12px;">{{$student[$i]->days}}</td>
+                               <td style="font-size: 13px;">{{$student[$i]->price}}</td>
+                               @if(is_null($stdData->discount)){<td>{{$student[$i]->price}}</td>}
+                               @else
+
+                               <?php
+                                   $discountPrice = $student[$i]->price * $stdData->discount /100;
+                                   $afterDiscount = $student[$i]->price - $discountPrice;
+                                 ?>
+                                   <td style="font-size: 13px;">{{$afterDiscount}}</td>
+                               @endif
+
+                               <td style="font-size: 13px;">{{$amountPayment[$i]}}</td>
                                <td><a href="{{url('/add/'.$stdData->id.'/'.$student[$i]->id.'/payment')}}" class="btn btn-danger">Add Payment</a> </td>
                            </tr>
                        @endfor

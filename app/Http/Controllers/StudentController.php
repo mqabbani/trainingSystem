@@ -91,16 +91,11 @@ class StudentController extends Controller
                 array_push($array,$hard->id);
             }
         }
-        //dd($array);
-      //  $amount = Payment::totalPayment(1,5)->get();
 
-        //dd($amount->sum('payment'));
         $countArray = count($array);
         $amountPayment = array();
        for($i=0 ;$i< $countArray ; $i++){
            $amount = Payment::totalPayment($array[$i],$stdData->id)->get();
-           //array_push($amountPayment,$amount->sum('payment'));
-           //array_add( $amountPayment,$i,$amount->sum('payment'));
            $amountPayment[$i] = $amount->sum('payment');
 
        }

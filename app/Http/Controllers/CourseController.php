@@ -75,7 +75,12 @@ class CourseController extends Controller
      */
     public function show($id)
     {
-        //
+        $courseStudent  = Course::find($id)->student()->paginate(10);
+        //dd($courseStudent);
+        $courseInfo = Course::find($id);
+        $studentNumber = count($courseStudent);
+       // dd($studentNumber);
+        return view('admin.courses.show',compact('courseStudent','courseInfo','studentNumber'));
     }
 
     /**

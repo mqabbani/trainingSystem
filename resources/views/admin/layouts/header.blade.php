@@ -69,7 +69,7 @@
             </div>
 
             <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseThree" aria-expanded="true" aria-controls="collapseTwo">
-                <i class="fas fa-fw fa-user"></i>
+                <i class="fas fa-fw fa-people-carry"></i>
                 <span>Student`s</span>
             </a>
             <div id="collapseThree" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
@@ -80,7 +80,7 @@
                 </div>
             </div>
             <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseFour" aria-expanded="true" aria-controls="collapseTwo">
-                <i class="fas fa-fw fa-user"></i>
+                <i class="fas fa-fw fa-book"></i>
                 <span>Course`s</span>
             </a>
             <div id="collapseFour" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
@@ -92,7 +92,7 @@
             </div>
 
             <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseFive" aria-expanded="true" aria-controls="collapseTwo">
-                <i class="fas fa-fw fa-user"></i>
+                <i class="fas fa-fw fa-registered"></i>
                 <span>Student`s Course`s</span>
             </a>
             <div id="collapseFive" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
