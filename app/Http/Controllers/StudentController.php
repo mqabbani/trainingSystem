@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Payment;
 use App\Student;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
@@ -83,8 +84,29 @@ class StudentController extends Controller
     {
         $student = Student::find($id)->course;
         $stdData = Student::find($id);
+        $array = array();
+        if(!$student->isEmpty()){
+            foreach ($student as $hard)
+            {
+                array_push($array,$hard->id);
+            }
+        }
+        //dd($array);
+      //  $amount = Payment::totalPayment(1,5)->get();
 
-        return View('admin.students.show',compact('student','stdData'));
+        //dd($amount->sum('payment'));
+        $countArray = count($array);
+        $amountPayment = array();
+       for($i=0 ;$i< $countArray ; $i++){
+           $amount = Payment::totalPayment($array[$i],$stdData->id)->get();
+           //array_push($amountPayment,$amount->sum('payment'));
+           //array_add( $amountPayment,$i,$amount->sum('payment'));
+           $amountPayment[$i] = $amount->sum('payment');
+
+       }
+       //dd($amountPayment);
+
+        return View('admin.students.show',compact('student','stdData','amountPayment'));
     }
 
     /**

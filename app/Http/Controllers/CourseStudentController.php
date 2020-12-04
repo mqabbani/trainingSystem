@@ -44,6 +44,7 @@ class CourseStudentController extends Controller
         $request->validate([
             'sp_number'=>'required',
         ]);
+
         $array = array();
         if(!is_null($request->course_session_h)){
             array_push($array,$request->course_session_h);
@@ -54,9 +55,23 @@ class CourseStudentController extends Controller
         if(!is_null($request->course_session_g)){
             array_push($array,$request->course_session_g);
         }
-        $student = Student::where('sp_number', $request->sp_number)->firstOrFail();
-        $student->course()->attach($array);
-        Session::flash('message', 'Student Added to Courses successful!');
+        $student = Student::where('sp_number', $request->sp_number)->first();
+       if(is_null($student))
+       {
+           Session::flash('message', 'Student Number is InCorrect !!');
+       }else{
+           $check = $student->course()->whereIn('course_id',$array)->get();
+           if(!$check->isEmpty())
+           {
+               Session::flash('message', 'Student Already Registered On This Course');
+
+           }else{
+               Session::flash('message', 'Student Added to Courses successful!');
+               $student->course()->attach($array);
+           }
+
+       }
+
        // return redirect()->action('PaymentController@create');
       return redirect()->back();
 

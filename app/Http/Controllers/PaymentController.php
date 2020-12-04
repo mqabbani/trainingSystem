@@ -2,6 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Course;
+use App\Payment;
+use App\Student;
 use Illuminate\Http\Request;
 
 class PaymentController extends Controller
@@ -21,9 +24,12 @@ class PaymentController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create($std_id , $course_id)
     {
+        $student = Student::find($std_id);
+        $course  = Course::find($course_id);
 
+        return View('admin.payments.create',compact('student','course'));
     }
 
     /**
@@ -34,7 +40,19 @@ class PaymentController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
+       $course  = Course::whereName($request->course_name )->whereSession($request->course_session)->first();
+       $student = Student::find($request->std_id);
+
+       Payment::create([
+           'course_id'=>$course->id,
+           'student_id'=>$student->id,
+           'payment'=>$request->payment
+       ]);
+       session()->flash("message","Payment Added Successful to $course->name session $course->id Student name $student->name");
+
+       return redirect()->action('StudentController@index');
+
     }
 
     /**

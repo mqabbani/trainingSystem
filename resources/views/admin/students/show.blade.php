@@ -38,23 +38,30 @@
                     <th scope="col">Type</th>
                     <th scope="col">Days</th>
                     <th scope="col">Price</th>
+                    <th scope="col">Payments</th>
+                    <th scope="col">Action</th>
                 </tr>
                 </thead>
                 <tbody>
-                @foreach($student as $std)
-                <tr>
-                    <td>{{$std->name}}</td>
-                    <td>{{$std->session}}</td>
-                    <td>{{$std->start_time}}</td>
-                    <td>{{$std->end_time}}</td>
-                    <td>{{$std->start_date}}</td>
-                    <td>{{$std->end_date}}</td>
-                    <td>{{$std->status}}</td>
-                    <td>{{$std->type}}</td>
-                    <td>{{$std->days}}</td>
-                    <td>{{$std->price}}</td>
-                </tr>
-                @endforeach
+                       @for($i=0 ; $i< count($student) ;$i++)
+                           <tr>
+                               <td>{{$student[$i]->name}}</td>
+                               <td>{{$student[$i]->session}}</td>
+                               <td>{{$student[$i]->start_time}}</td>
+                               <td>{{$student[$i]->end_time}}</td>
+                               <td>{{$student[$i]->start_date}}</td>
+                               <td>{{$student[$i]->end_date}}</td>
+                               <td>{{$student[$i]->status}}</td>
+                               <td>{{$student[$i]->type}}</td>
+                               <td>{{$student[$i]->days}}</td>
+                               <td>{{$student[$i]->price}}</td>
+                               <td>{{$amountPayment[$i]}}</td>
+                               <td><a href="{{url('/add/'.$stdData->id.'/'.$student[$i]->id.'/payment')}}" class="btn btn-danger">Add Payment</a> </td>
+                           </tr>
+                       @endfor
+
+
+
                 </tbody>
             </table>
         </div> <!-- Col-lg4 !-->

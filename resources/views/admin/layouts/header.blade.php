@@ -175,7 +175,7 @@
 
                 </h3>
                 @if(Session::has('message'))
-                    <div class="alert alert-secondary" role="alert">
+                    <div class="alert alert-danger" role="alert">
                         {{Session::get('message')}}
                     </div>
                 @endif

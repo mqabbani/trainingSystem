@@ -54,6 +54,8 @@ Route::group(['middleware'=>'auth'],function (){
     Route::post('/register/student/course','CourseStudentController@store')->name('/register/student/course');
 
     //Payment
+    Route::get('/add/{std_id}/{course_id}/payment','PaymentController@create')->name('/add/{std_id}/{course_id}/payment');
+    Route::post('/add/payment','PaymentController@store')->name('/add/payment');
 
 
 });
