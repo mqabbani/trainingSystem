@@ -50,13 +50,18 @@ Route::group(['middleware'=>'auth'],function (){
     Route::get('/course/{id}/edit','CourseController@edit')->name('/course/{id}/edit');
     Route::post('/course/{id}/update','CourseController@update')->name('/course/{id}/update');
     Route::get('/show/{id}/course','CourseController@show')->name('/course/{id}/course');
+
     //
     Route::get('/register/student/course','CourseStudentController@create')->name('/register/student/course');
     Route::post('/register/student/course','CourseStudentController@store')->name('/register/student/course');
 
     //Payment
+    Route::get('student/{stdId}/payment/{courseId}/details','PaymentController@specificPayment')->name('student/{stdId}/payment/{courseId}/details');
     Route::get('/add/{std_id}/{course_id}/payment','PaymentController@create')->name('/add/{std_id}/{course_id}/payment');
     Route::post('/add/payment','PaymentController@store')->name('/add/payment');
+    Route::get('payment/details','PaymentController@index')->name('payment/details');
+
+    Route::get('add/new/question','ExamController@create')->name('add/new/question');
 
 
 });

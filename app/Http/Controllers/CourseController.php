@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Course;
+use App\Payment;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
@@ -79,8 +80,25 @@ class CourseController extends Controller
         //dd($courseStudent);
         $courseInfo = Course::find($id);
         $studentNumber = count($courseStudent);
-       // dd($studentNumber);
-        return view('admin.courses.show',compact('courseStudent','courseInfo','studentNumber'));
+        $array = array();
+        if(!$courseStudent->isEmpty()){
+            foreach ($courseStudent as $hard)
+            {
+                array_push($array,$hard->id);
+            }
+        }
+
+        $countArray = count($array);
+        $amountPayment = array();
+        for($i=0 ;$i< $countArray ; $i++){
+            $amount = Payment::totalPayment($courseInfo->id,$array[$i])->get();
+            $amountPayment[$i] = $amount->sum('payment');
+
+        }
+        $totalPaymentForAll = Payment::studentTotalPaymentPerCourse($id)->sum('payment');
+       // dd($totalPaymentForAll);
+        return view('admin.courses.show',
+            compact('courseStudent','courseInfo','studentNumber','amountPayment','totalPaymentForAll'));
     }
 
     /**

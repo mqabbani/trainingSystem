@@ -4,17 +4,17 @@
 @endsection
 @section('content')
     <div class="row">
-    <div class="card text-white bg-success mb-3" style="width: 220px;">
+    <div class="card text-white bg-success mb-3" style="width: 235px;">
         <div class="card-header bg-success" style="font-size: 12px;">Student Register In Course : {{$studentNumber}}</div>
     </div>
         <div class="card text-white bg-danger mb-3" style="width: 220px;">
-            <div class="card-header bg-danger" style="font-size: 12px;">Total Money: {{$studentNumber}}</div>
+            <div class="card-header bg-danger" style="font-size: 12px;">Total Money: {{$totalPaymentForAll}} JOD</div>
         </div>
         <div class="card text-white bg-warning mb-3" style="width: 220px;">
-            <div class="card-header bg-warning" style="font-size: 12px;">Status Course: {{$studentNumber}}</div>
+            <div class="card-header bg-warning" style="font-size: 12px;">Status Course: {{$courseInfo->status}}</div>
         </div>
         <div class="card text-white bg-dark mb-3" style="width: 160px;">
-            <div class="card-header bg-dark" style="font-size: 12px;">Type Course: Private</div>
+            <div class="card-header bg-dark" style="font-size: 12px;">Type Course: {{$courseInfo->type}}</div>
         </div>
 
     </div>
@@ -38,8 +38,8 @@
                         <th style="font-size: 12px;">Second Phone</th>
                         <th style="font-size: 12px;">Before Discount Price</th>
                         <th style="font-size: 12px;">After Discount Price</th>
-                        <th style="font-size: 12px;">Payment</th>
-                        <th style="font-size: 12px;">All Payment</th>
+                        <th style="font-size: 12px;">Total Payment</th>
+                       <th style="font-size: 12px;">Show Payment Details</th>
                     </tr>
                     </thead>
                     <tbody>
@@ -52,9 +52,19 @@
                             <td style="font-size: 12px;">{{$courseStudent[$i]->phone_number}}</td>
                             <td style="font-size: 12px;">{{$courseStudent[$i]->phone_number_second}}</td>
                             <td style="font-size: 12px;">{{$courseInfo->price}}</td>
-                            <td style="font-size: 12px;">
-                                
-                            </td>
+
+                                @if(!is_null($courseStudent[$i]->discount))
+                                   <?php
+
+                                   $after =($courseStudent[$i]->discount * $courseInfo->price)/100 ;
+                                   $priceAfter = $courseInfo->price - $after
+                                   ?>
+                                       <td style="font-size: 12px;">{{$priceAfter}}</td>
+                                @else
+                                <td style="font-size: 12px;">{{$courseInfo->price}}</td>
+                                @endif
+                                <td style="font-size: 12px;">{{$amountPayment[$i]}}</td>
+                            <td> <a href="{{url('student/'.$courseStudent[$i]->id.'/payment/'.$courseInfo->id.'/details')}}" class="btn btn-danger" style="font-size: 12px;">Show Payments</a> </td>
 
                         </tr>
                     @endfor
