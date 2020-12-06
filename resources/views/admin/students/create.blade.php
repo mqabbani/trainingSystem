@@ -16,63 +16,63 @@ Register New Student
                     <div class="row mg-b-25">
                         <div class="col-lg-4">
                             <div class="form-group">
-                                <label class="form-control-label">Full Name: <span class="tx-danger">*</span></label>
-                                <input class="form-control" type="text" name="name" required placeholder="Enter FullName">
+                                <label class="form-control-label" style="font-family: cursive;">Full Name: <span class="tx-danger">*</span></label>
+                                <input class="form-control" type="text" name="name" style="font-family: cursive;" required placeholder="Enter FullName">
                             </div>
                         </div><!-- col-4 -->
                         <div class="col-lg-4">
                             <div class="form-group">
-                                <label class="form-control-label">Arabic Name: <span class="tx-danger">*</span></label>
-                                <input class="form-control" type="text" name="name_ar"  required placeholder="Enter Arabic Name">
+                                <label class="form-control-label" style="font-family: cursive;">Arabic Name: <span class="tx-danger">*</span></label>
+                                <input class="form-control" style="font-family: cursive;" type="text" name="name_ar"  required placeholder="Enter Arabic Name">
                             </div>
                         </div><!-- col-4 -->
                         <div class="col-lg-4">
-                            <div class="form-group">
-                                <label class="form-control-label">Email address: <span class="tx-danger">*</span></label>
-                                <input class="form-control" type="text" name="email"  placeholder="Enter email address" required>
+                            <div class="form-group" >
+                                <label class="form-control-label" style="font-family: cursive;">Email address: <span class="tx-danger">*</span></label>
+                                <input class="form-control" style="font-family: cursive;" type="text" name="email"  placeholder="Enter email address" required>
                             </div>
                         </div><!-- col-4 -->
                         <div class="col-lg-6">
                             <div class="form-group mg-b-10-force">
-                                <label class="form-control-label">National Number: <span class="tx-danger">*</span></label>
+                                <label class="form-control-label" style="font-family: cursive;">National Number: <span class="tx-danger">*</span></label>
                                 <input class="form-control" type="text" name="national_id"
-                                       placeholder="Enter National ID" required>
+                                       placeholder="Enter National ID" style="font-family: cursive;" required>
                             </div>
                         </div><!-- col-8 -->
                         <div class="col-lg-6">
                             <div class="form-group mg-b-10-force">
-                                <label class="form-control-label">Student Special Number: <span class="tx-danger">*</span></label>
-                                <input class="form-control" type="text" name="sp_number" readonly value="{{$std_sp_number}}">
+                                <label class="form-control-label" style="font-family: cursive;">Student Special Number: <span class="tx-danger">*</span></label>
+                                <input class="form-control"  style="font-family: cursive;" type="text" name="sp_number" readonly value="{{$std_sp_number}}">
                             </div>
                         </div><!-- col-4 -->
                         <div class="col-lg-4">
                             <div class="form-group mg-b-10-force">
-                                <label class="form-control-label">Student Phone Number: <span class="tx-danger">*</span></label>
-                                <input class="form-control" type="text" name="phone_number" required >
+                                <label class="form-control-label" style="font-family: cursive;">Student Phone Number: <span class="tx-danger">*</span></label>
+                                <input class="form-control" style="font-family: cursive;" type="text" name="phone_number" required >
                             </div>
                         </div><!-- col-4 -->
                         <div class="col-lg-4">
                             <div class="form-group mg-b-10-force">
-                                <label class="form-control-label">Student Second Phone Number: <span class="tx-danger">*</span></label>
-                                <input class="form-control" type="text" name="phone_number_second" required >
+                                <label class="form-control-label" style="font-family: cursive;" >Student Second Phone Number: <span class="tx-danger">*</span></label>
+                                <input class="form-control" style="font-family: cursive;" type="text" name="phone_number_second" required >
                             </div>
                         </div><!-- col-4 -->
                         <div class="col-lg-4">
                             <div class="form-group mg-b-10-force">
-                                <label class="form-control-file">Student Photo: <span class="tx-danger">*</span></label>
-                                <input class="form-control-file" type="file" name="photo"  >
+                                <label class="form-control-file" style="font-family: cursive;">Student Photo: <span class="tx-danger">*</span></label>
+                                <input class="form-control-file" style="font-family: cursive;" type="file" name="photo"  >
                             </div>
                         </div><!-- col-4 -->
                         <div class="col-lg-4">
                             <div class="form-group mg-b-10-force">
-                                <label class="form-control-file">Student Discount: <span class="tx-danger">*</span></label>
-                                <input class="form-control" type="text" name="discount"   placeholder="Discount">
+                                <label class="form-control-file" style="font-family: cursive;">Student Discount: <span class="tx-danger">*</span></label>
+                                <input class="form-control" style="font-family: cursive;" type="text" name="discount"   placeholder="Discount">
                             </div>
                         </div><!-- col-4 -->
                     </div><!-- row -->
 
                     <div class="form-layout-footer">
-                        <button class="btn btn-info mg-r-5">Register</button>
+                        <button class="btn btn-info mg-r-5" style="font-family: cursive;">Register</button>
                     </div><!-- form-layout-footer -->
                 </div><!-- form-layout -->
             </form>

@@ -61,7 +61,20 @@ Route::group(['middleware'=>'auth'],function (){
     Route::post('/add/payment','PaymentController@store')->name('/add/payment');
     Route::get('payment/details','PaymentController@index')->name('payment/details');
 
+    //Questions
     Route::get('add/new/question','ExamController@create')->name('add/new/question');
+    Route::post('add/new/question','ExamController@store')->name('add/new/question');
+    Route::get('/all/questions','ExamController@index')->name('/all/questions');
+    Route::get('/search/question','ExamController@search')->name('/search/question');
+    Route::get('/edit/{id}/question','ExamController@edit')->name('/edit/{id}/question');
+    Route::post('/update/{id}/question','ExamController@update')->name('/update/{id}/question');
+    Route::get('/delete/{id}/question','ExamController@destroy')->name('/delete/{id}/question');
 
+});
 
+Route::get('/print',function(){
+
+    $student = \App\Student::find(1);
+    $course  = \App\Course::find(1);
+   return view('admin.payments.print_invoice',compact('student','course'));
 });

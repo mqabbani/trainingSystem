@@ -27,32 +27,32 @@ All Students Details
                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                     <thead>
                     <tr>
-                        <th style="font-size: 12px;">Student Number</th>
-                        <th style="font-size: 12px;">English Name</th>
-                        <th style="font-size: 12px;">Arabic Name</th>
-                        <th style="font-size: 12px;"> National ID</th>
-                        <th style="font-size: 12px;"> Phone Number</th>
-                        <th style="font-size: 12px;"> Extra Number</th>
-                        <th style="font-size: 12px;">Discount</th>
-                        <th style="font-size: 12px;">Edit</th>
-                        <th style="font-size: 12px;">Delete</th>
-                        <th style="font-size: 12px;">More Details</th>
+                        <th style="font-size: 12px; font-family: cursive">Student Number</th>
+                        <th style="font-size: 12px;font-family: cursive">English Name</th>
+                        <th style="font-size: 12px;font-family: cursive">Arabic Name</th>
+                        <th style="font-size: 12px;font-family: cursive"> National ID</th>
+                        <th style="font-size: 12px;font-family: cursive"> Phone Number</th>
+                        <th style="font-size: 12px;font-family: cursive"> Extra Number</th>
+                        <th style="font-size: 12px;font-family: cursive">Discount</th>
+                        <th style="font-size: 12px;font-family: cursive">Edit</th>
+                        <th style="font-size: 12px;font-family: cursive">Delete</th>
+                        <th style="font-size: 12px;font-family: cursive">More Details</th>
                     </tr>
                     </thead>
 
                     <tbody>
                     @foreach($students as $student)
                     <tr>
-                        <td style="font-size: 12px;">{{$student->sp_number}}</td>
-                        <td style="font-size: 12px;">{{$student->name}}</td>
-                        <td style="font-size: 12px;">{{$student->name_ar}}</td>
-                        <td style="font-size: 12px;">{{$student->national_id}}</td>
-                        <td style="font-size: 12px;">{{$student->phone_number}}</td>
-                        <td style="font-size: 12px;">{{$student->phone_number_second}}</td>
-                        <td style="font-size: 12px;">{{$student->discount}}</td>
-                        <td style="font-size: 12px;"><a href="{{url('/student/'.$student->id.'/edit')}}" class="btn btn-primary">Edit</a> </td>
-                        <td style="font-size: 12px;"><a href="" class="btn btn-danger">Delete</a> </td>
-                        <td style="font-size: 12px;"><a href="{{url('/student/'.$student->id.'/show')}}" class="btn btn-light">More Details</a> </td>
+                        <td style="font-size: 12px;font-family: cursive">{{$student->sp_number}}</td>
+                        <td style="font-size: 12px;font-family: cursive">{{$student->name}}</td>
+                        <td style="font-size: 12px;font-family: cursive">{{$student->name_ar}}</td>
+                        <td style="font-size: 12px;font-family: cursive">{{$student->national_id}}</td>
+                        <td style="font-size: 12px;font-family: cursive">{{$student->phone_number}}</td>
+                        <td style="font-size: 12px;font-family: cursive">{{$student->phone_number_second}}</td>
+                        <td style="font-size: 12px;font-family: cursive">{{$student->discount}}</td>
+                        <td style="font-size: 12px;font-family: cursive"><a href="{{url('/student/'.$student->id.'/edit')}}" class="btn btn-primary">Edit</a> </td>
+                        <td style="font-size: 12px;font-family: cursive"><a href="" class="btn btn-danger">Delete</a> </td>
+                        <td style="font-size: 12px;font-family: cursive"><a href="{{url('/student/'.$student->id.'/show')}}" class="btn btn-light">More Details</a> </td>
                     </tr>
                     @endforeach
                     </tbody>

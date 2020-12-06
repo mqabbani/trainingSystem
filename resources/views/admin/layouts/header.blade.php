@@ -41,7 +41,7 @@
 
         <!-- Nav Item - Dashboard -->
         <li class="nav-item">
-            <a class="nav-link" href="index.html">
+            <a class="nav-link" href="#">
                 <i class="fas fa-fw fa-tachometer-alt"></i>
                 <span>Dashboard</span></a>
         </li>
@@ -111,6 +111,7 @@
                 <div class="bg-white py-2 collapse-inner rounded">
                     <h6 class="collapse-header">Components:</h6>
                     <a class="collapse-item" href="{{url('/add/new/question')}}">Add New Question</a>
+                    <a class="collapse-item" href="{{url('/all/questions')}}">All Question</a>
                 </div>
             </div>
         </li>
@@ -182,10 +183,20 @@
             <div class="container-fluid">
 
                 <!-- Page Heading -->
-                <h3 class="h4 mb-4 text-gray-800">
+                <h3 class="h4 mb-4 text-gray-800" style="font-family: cursive;">
                     @yield('page_name')
 
                 </h3>
+                @if ($errors->any())
+                    <div class="alert alert-danger">
+                        <ul>
+                            @foreach ($errors->all() as $error)
+                                <li>{{ $error }}</li>
+                            @endforeach
+                        </ul>
+                    </div>
+                @endif
+
                 @if(Session::has('message'))
                     <div class="alert alert-danger" role="alert">
                         {{Session::get('message')}}
