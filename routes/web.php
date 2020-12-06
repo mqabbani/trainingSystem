@@ -69,12 +69,9 @@ Route::group(['middleware'=>'auth'],function (){
     Route::get('/edit/{id}/question','ExamController@edit')->name('/edit/{id}/question');
     Route::post('/update/{id}/question','ExamController@update')->name('/update/{id}/question');
     Route::get('/delete/{id}/question','ExamController@destroy')->name('/delete/{id}/question');
+    Route::get('/print/exam','ExamController@print')->name('/print/exam');
+    Route::post('print/random/questions','ExamController@randomExam')->name('print/random/questions');
 
 });
 
-Route::get('/print',function(){
 
-    $student = \App\Student::find(1);
-    $course  = \App\Course::find(1);
-   return view('admin.payments.print_invoice',compact('student','course'));
-});

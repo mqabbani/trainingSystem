@@ -125,4 +125,17 @@ class ExamController extends Controller
 
         return View('admin.exams.index',compact('exams'));
     }
+
+    public function print(){
+        //$questions = Exam::whereName(name)->random(10);
+
+        return view('admin.exams.create_exam');
+    }
+
+    public function randomExam(Request $request){
+       // User::all()->random(10);
+        $questions = Exam::whereName($request->name)->get()->random(6);
+        //dd($questions);
+        return View('admin.exams.print_exam',compact('questions'));
+    }
 }

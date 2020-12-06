@@ -112,6 +112,7 @@
                     <h6 class="collapse-header">Components:</h6>
                     <a class="collapse-item" href="{{url('/add/new/question')}}">Add New Question</a>
                     <a class="collapse-item" href="{{url('/all/questions')}}">All Question</a>
+                    <a class="collapse-item" href="{{url('/print/exam')}}">Print Exam</a>
                 </div>
             </div>
         </li>
