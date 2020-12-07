@@ -134,8 +134,9 @@ class ExamController extends Controller
 
     public function randomExam(Request $request){
        // User::all()->random(10);
-        $questions = Exam::whereName($request->name)->get()->random(6);
-        //dd($questions);
+        $questions = Exam::whereName($request->name)->get()->random($request->number);
+
+
         return View('admin.exams.print_exam',compact('questions'));
     }
 }

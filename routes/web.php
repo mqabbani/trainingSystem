@@ -11,11 +11,11 @@
 |
 */
 
-Route::get('/', function () {
+/*Route::get('/', function () {
     return view('admin.auth.login');
 });
-
-
+*/
+//Route::get('/home','LoginController@index')->name('/home');
 
 
 
@@ -60,7 +60,7 @@ Route::group(['middleware'=>'auth'],function (){
     Route::get('/add/{std_id}/{course_id}/payment','PaymentController@create')->name('/add/{std_id}/{course_id}/payment');
     Route::post('/add/payment','PaymentController@store')->name('/add/payment');
     Route::get('payment/details','PaymentController@index')->name('payment/details');
-
+    Route::post('payment/details','PaymentController@returnAllPaymentForStudent')->name('payment/details');
     //Questions
     Route::get('add/new/question','ExamController@create')->name('add/new/question');
     Route::post('add/new/question','ExamController@store')->name('add/new/question');

@@ -76,8 +76,8 @@ class CourseController extends Controller
      */
     public function show($id)
     {
-        $courseStudent  = Course::find($id)->student()->paginate(10);
-        //dd($courseStudent);
+        $courseStudent  = Course::find($id)->student()->paginate(20);
+       // dd($courseStudent);
         $courseInfo = Course::find($id);
         $studentNumber = count($courseStudent);
         $array = array();

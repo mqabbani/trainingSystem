@@ -22,8 +22,15 @@
                                     <option value="Glass">Glass</option>
                                 </select>
                             </div>
-                        </div><!-- col-4 -->
+                        </div><!-- col-6 -->
+                        <div class="col-lg-4">
+                            <div class="form-group">
+                                <label class="col-form-label" style="font-family: cursive;">Number Of Question</label>
+                                <input type="number"  min="1" max="30" class="form-control" name="number" style="font-family: cursive;"
+                                       required>
 
+                            </div>
+                        </div><!-- col-6 -->
                         <div class="col-lg-2">
                             <div class="form-group">
                                 <button class="btn btn-info mg-r-5" style="margin-top: 30px; font-family: cursive;">Print Exam</button>

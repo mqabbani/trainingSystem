@@ -11,25 +11,25 @@
             @csrf
             <div class="card-body">
                 <div class="row form-group mr-4">
-                    <label class="col-sm-4 form-control-label">Firstname: <span class="tx-danger">*</span></label>
+                    <label class="col-sm-4 form-control-label" style="font-family: cursive;">Firstname: <span class="tx-danger">*</span></label>
                     <div class="col-sm-8 mg-t-10 mg-sm-t-0">
-                        <input type="text" class="form-control" name="name" value="{{$users->name}}" required>
+                        <input type="text" style="font-family: cursive;" class="form-control" name="name" value="{{$users->name}}" required>
                     </div>
                 </div><!-- row -->
                 <div class="row form-group mr-4">
-                    <label class="col-sm-4 form-control-label">Password: <span class="tx-danger">*</span></label>
+                    <label class="col-sm-4 form-control-label" style="font-family: cursive;">Password: <span class="tx-danger">*</span></label>
                     <div class="col-sm-8 mg-t-10 mg-sm-t-0">
-                        <input type="password" class="form-control" name="password"  required>
+                        <input type="password" style="font-family: cursive;" class="form-control" name="password"  required>
                     </div>
                 </div>
                 <div class="row form-group mr-4">
-                    <label class="col-sm-4 form-control-label">Email: <span class="tx-danger">*</span></label>
+                    <label class="col-sm-4 form-control-label" style="font-family: cursive;">Email: <span class="tx-danger">*</span></label>
                     <div class="col-sm-8 mg-t-10 mg-sm-t-0">
-                        <input type="text" class="form-control" name="email" value="{{$users->email}}" required>
+                        <input type="text" style="font-family: cursive;" class="form-control" name="email" value="{{$users->email}}" required>
                     </div>
                 </div>
                 <div class="form-layout-footer mg-t-30">
-                    <button class="btn btn-info mg-r-5" name="submit">Update</button>
+                    <button class="btn btn-info mg-r-5" style="font-family: cursive;" name="submit">Update</button>
                 </div><!-- form-layout-footer -->
             </div>
         </form>

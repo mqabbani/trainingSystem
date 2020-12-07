@@ -2,6 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Course;
+use App\Payment;
+use App\Student;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -23,6 +27,26 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('admin.home');
+        $student = Student::count();
+        $array = array();
+        $coursePending   = Course::whereStatus('Pending')->count();
+        $courseActive    = Course::whereStatus('Active')->count();
+        $courseFinished  = Course::whereStatus('Finished')->count();
+        $ldate = date('Y-m-d');
+        $numberOfPayment = Payment::where('created_at','like','%'.$ldate.'%')->count('payment');
+        //dd($numberOfPayment);
+        $payments = Payment::where('created_at','like','%'.$ldate.'%')->get();
+        $totalCashPerDay = 0 ;
+        foreach ($payments as $pay){
+            $totalCashPerDay  =$totalCashPerDay + $pay->payment;
+        }
+
+        $array['Number Of Student'] = $student ;
+        $array['Course Pending'] = $coursePending ;
+        $array['Course Active'] = $courseActive ;
+        $array['Course Finished'] = $courseFinished ;
+        $array['Students Pay For today'] = $numberOfPayment;
+        $array['Total Cash Per Day'] =  $totalCashPerDay ;
+        return view('admin.home',compact('array'));
     }
 }

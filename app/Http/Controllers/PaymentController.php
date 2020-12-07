@@ -23,6 +23,14 @@ class PaymentController extends Controller
         return view('admin.payments.index');
     }
 
+    public function returnAllPaymentForStudent(Request $request)
+    {
+        $student = Student::whereSpNumber($request->sp_number)->first();
+        $courseInfo = Student::find($student->id)->course;
+
+        return view('admin.payments.student_payment',compact('courseInfo','student'));
+
+    }
     /**
      * Show the form for creating a new resource.
      *

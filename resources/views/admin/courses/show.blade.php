@@ -16,6 +16,18 @@
         <div class="card text-white bg-dark mb-3" style="width: 160px;">
             <div class="card-header bg-dark" style="font-size: 12px;">Type Course: {{$courseInfo->type}}</div>
         </div>
+        <div class="card text-white bg-gradient-light mb-3" style="width: 160px;">
+            <div class="card-header bg-gradient-success" style="font-size: 12px;">Total Course :
+            <?php
+                $totalPrice = 0;
+            for($i = 0 ; $i < $studentNumber ; $i++){
+                $before = ($courseInfo->price * $courseStudent[$i]->discount)/100;
+                $after  = $courseInfo->price - $before;
+                $totalPrice = $totalPrice + $after;
+            }
+            ?>{{$totalPrice}}
+            </div>
+        </div>
 
     </div>
 

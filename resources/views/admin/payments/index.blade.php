@@ -6,17 +6,17 @@
     <!-- Basic Card Example -->
     <div class="card shadow mb-4">
         <div class="card-header py-3">
-            <h6 class="m-0 font-weight-bold text-primary">Add Payment</h6>
+            <h6 class="m-0 font-weight-bold text-primary">Search Payment</h6>
         </div>
         <div class="card-body">
-            <form method="post" action="{{url('search/payment')}}">
+            <form method="post" action="{{url('payment/details')}}">
                 @csrf
                 <div class="form-layout">
                     <div class="row mg-b-25">
                         <div class="col-lg-4">
                             <div class="form-group">
                                 <label >Student Special Number: <span class="tx-danger">*</span></label>
-                                <input class="form-control" name="name" id="sp_number">
+                                <input class="form-control" name="sp_number" id="sp_number">
                             </div>
                         </div><!-- col-4 -->
                         <div class="col-lg-4">

@@ -17,7 +17,14 @@
         <div class="card-header bg-dark"> Session :{{$course->session}}</div>
     </div>
     <div class="card text-white bg-gradient-light- mb-3" style="max-width: 18rem;">
-        <div class="card-header bg-gradient-info">{{$total}} JOD</div>
+        <div class="card-header bg-gradient-info">Received Until Now {{$total}} JOD</div>
+    </div>
+    <div class="card text-white bg-gradient-danger mb-3" style="max-width: 20rem;">
+        <div class="card-header bg-gradient-danger">Price With Discount:
+           <?php  $price = $course->price ;
+           $before = ($price * $student->discount)/100;
+           $after  = $course->price - $before;
+          echo $after ;?> JOD</div>
     </div>
 
 </div>
