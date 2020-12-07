@@ -5,10 +5,12 @@ namespace App\Http\Controllers;
 use App\Course;
 use App\Payment;
 use App\Student;
+use App\Http\Controllers\MailController;
 use Illuminate\Http\Request;
 
 class PaymentController extends Controller
 {
+
     public function __construct()
     {
         $this->middleware('auth');
@@ -61,9 +63,10 @@ class PaymentController extends Controller
            'student_id'=>$student->id,
            'payment'=>$request->payment
        ]);
-       session()->flash("message","Payment Added Successful to $course->name session $course->id Student name $student->name");
+       session()->flash("message","Payment Added Successful to $course->name session $course->id Student name $student->name Email Sending");
+        app('App\Http\Controllers\MailController')->sendMail($student->name , $course->name , $request->payment, $request->course_session);
 
-       return redirect()->action('StudentController@index');
+        return redirect()->action('StudentController@index');
 
     }
 
