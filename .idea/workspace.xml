@@ -20,9 +20,23 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="60cd9df1-644a-4e20-88b0-b69c86748b16" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/resources/views/emails/mail.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/admin/courses/active_course.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/admin/courses/finished_course.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/admin/courses/pending_course.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/admin/marks/create.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/admin/payments/print_invoice.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Course.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Course.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/CourseController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/CourseController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/PaymentController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/PaymentController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Payment.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Payment.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_12_02_202613_create_payments_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_12_02_202613_create_payments_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_12_05_184357_create_exams_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_12_05_184357_create_exams_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/layouts/header.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/layouts/header.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/payments/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/payments/create.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/payments/print_Invoice.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/students/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/students/show.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -134,7 +148,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../relationship" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
@@ -172,7 +186,14 @@
       <workItem from="1607089021037" duration="12739000" />
       <workItem from="1607180853947" duration="9990000" />
       <workItem from="1607261572370" duration="14865000" />
-      <workItem from="1607351815452" duration="19078000" />
+      <workItem from="1607351815452" duration="21395000" />
+      <workItem from="1607433970295" duration="7008000" />
+      <workItem from="1608050536595" duration="446000" />
+      <workItem from="1608055881004" duration="299000" />
+      <workItem from="1608056892730" duration="79000" />
+      <workItem from="1608057337403" duration="1174000" />
+      <workItem from="1608061372448" duration="427000" />
+      <workItem from="1608313654677" duration="285000" />
     </task>
     <servers />
   </component>
@@ -192,14 +213,18 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="410" y="80" key="#Illuminated_Cloud" timestamp="1608057370904">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="410" y="80" key="#Illuminated_Cloud/0.0.1536.824@0.0.1536.824" timestamp="1608057370904" />
     <state x="499" y="167" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1607289478115">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="499" y="167" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1536.824@0.0.1536.824" timestamp="1607289478115" />
-    <state x="549" y="167" key="FileChooserDialogImpl" timestamp="1606936689840">
+    <state x="549" y="167" key="FileChooserDialogImpl" timestamp="1608059334791">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="549" y="167" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1606936689840" />
+    <state x="549" y="167" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1608059334791" />
     <state x="604" y="336" key="NewPhpFileDialog" timestamp="1605977640557">
       <screen x="0" y="0" width="1536" height="824" />
     </state>

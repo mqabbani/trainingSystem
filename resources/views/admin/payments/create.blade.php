@@ -45,6 +45,15 @@
                         </div><!-- col-4 -->
                         <div class="col-lg-2">
                             <div class="form-group">
+                                <label >Payment Method: <span class="tx-danger">*</span></label>
+                                <select class="form-control" name="payment_method" required>
+                                    <option value="Cash">Cash</option>
+                                    <option value="Visa">Visa</option>
+                                </select>
+                            </div>
+                        </div><!-- col-4 -->
+                        <div class="col-lg-2">
+                            <div class="form-group">
                                 <button class="btn btn-info mg-r-5" style="margin-top: 30px;">Add Payment</button>
                             </div>
                         </div><!-- col-4 -->

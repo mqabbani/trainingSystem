@@ -11,10 +11,10 @@
 |
 */
 
-/*Route::get('/', function () {
+Route::get('/', function () {
     return view('admin.auth.login');
 });
-*/
+
 //Route::get('/home','LoginController@index')->name('/home');
 
 
@@ -50,7 +50,9 @@ Route::group(['middleware'=>'auth'],function (){
     Route::get('/course/{id}/edit','CourseController@edit')->name('/course/{id}/edit');
     Route::post('/course/{id}/update','CourseController@update')->name('/course/{id}/update');
     Route::get('/show/{id}/course','CourseController@show')->name('/course/{id}/course');
-
+    Route::get('/pending/course','CourseController@pending')->name('/pending/course');
+    Route::get('/active/course','CourseController@active')->name('/active/course');
+    Route::get('/finished/course','CourseController@finished')->name('/finished/course');
     //
     Route::get('/register/student/course','CourseStudentController@create')->name('/register/student/course');
     Route::post('/register/student/course','CourseStudentController@store')->name('/register/student/course');
@@ -72,6 +74,14 @@ Route::group(['middleware'=>'auth'],function (){
     Route::get('/print/exam','ExamController@print')->name('/print/exam');
     Route::post('print/random/questions','ExamController@randomExam')->name('print/random/questions');
 
+    // Mark
+
 });
+
+Route::get('print/invoice',function(){
+   return view('admin.payments.print_invoice');
+});
+
+
 
 

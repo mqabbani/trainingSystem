@@ -4,7 +4,7 @@
 @endsection
 @section('content')
     <div class="row">
-        <div class="col-lg-3">
+        <div class="col-lg-2">
             <div class="card" >
                 <div class="card-body">
                     <h5 class="card-title">Student Information </h5>
@@ -24,7 +24,7 @@
             </div>
         </div> <!-- Col-lg4 !-->
 
-        <div class="col-lg-9">
+        <div class="col-lg-10">
             <table class="table table-striped table-responsive-lg">
                 <thead>
                 <tr>
@@ -41,6 +41,7 @@
                     <th scope="col" style="font-size: 12px;">After Discount Price</th>
                     <th scope="col" style="font-size: 12px;">Payments</th>
                     <th scope="col" style="font-size: 12px;">Action</th>
+                    
                 </tr>
                 </thead>
                 <tbody>
@@ -56,7 +57,7 @@
                                <td style="font-size: 12px;">{{$student[$i]->type}}</td>
                                <td style="font-size: 12px;">{{$student[$i]->days}}</td>
                                <td style="font-size: 13px;">{{$student[$i]->price}}</td>
-                               @if(is_null($stdData->discount)){<td>{{$student[$i]->price}}</td>}
+                               @if(is_null($stdData->discount))<td>{{$student[$i]->price}}</td>
                                @else
 
                                <?php

@@ -155,4 +155,18 @@ class CourseController extends Controller
         $session = $session+1;
         return $session;
     }
+
+    public function pending(){
+        $status = Course::Pending('Pending');
+    
+        return View('admin.courses.pending_course',compact('status'));
+    }
+    public function active(){
+        $status = Course::Active('Active');
+        return View('admin.courses.active_course',compact('status'));
+    }
+    public function finished(){
+        $status = Course::Finished('Finished');
+        return View('admin.courses.finished_course',compact('status'));
+    }
 }

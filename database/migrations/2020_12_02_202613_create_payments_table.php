@@ -18,6 +18,7 @@ class CreatePaymentsTable extends Migration
             $table->bigInteger('course_id')->unsigned();
             $table->bigInteger('student_id')->unsigned();
             $table->string("payment");
+            $table->string("payment_method");
             $table->foreign('course_id')->references('id')->on('courses');
             $table->foreign('student_id')->references('id')->on('students');
             $table->timestamps();

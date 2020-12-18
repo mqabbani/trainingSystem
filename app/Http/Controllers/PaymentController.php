@@ -8,6 +8,7 @@ use App\Student;
 use App\Http\Controllers\MailController;
 use Illuminate\Http\Request;
 
+
 class PaymentController extends Controller
 {
 
@@ -58,10 +59,12 @@ class PaymentController extends Controller
        $course  = Course::whereName($request->course_name )->whereSession($request->course_session)->first();
        $student = Student::find($request->std_id);
 
+      // dd($request->payment_method);
        Payment::create([
            'course_id'=>$course->id,
            'student_id'=>$student->id,
-           'payment'=>$request->payment
+           'payment'=> $request->payment,
+           'payment_method'=> $request->payment_method
        ]);
        session()->flash("message","Payment Added Successful to $course->name session $course->id Student name $student->name Email Sending");
         app('App\Http\Controllers\MailController')->sendMail($student->name , $course->name , $request->payment, $request->course_session);
