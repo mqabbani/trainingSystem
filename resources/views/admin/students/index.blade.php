@@ -51,7 +51,7 @@ All Students Details
                         <td style="font-size: 12px;font-family: cursive">{{$student->phone_number_second}}</td>
                         <td style="font-size: 12px;font-family: cursive">{{$student->discount}}</td>
                         <td style="font-size: 12px;font-family: cursive"><a href="{{url('/student/'.$student->id.'/edit')}}" class="btn btn-primary">Edit</a> </td>
-                        <td style="font-size: 12px;font-family: cursive"><a href="" class="btn btn-danger">Delete</a> </td>
+                        <td style="font-size: 12px;font-family: cursive"><a href="{{url('/delete/'.$student->id.'/student')}}" class="btn btn-danger">Delete</a> </td>
                         <td style="font-size: 12px;font-family: cursive"><a href="{{url('/student/'.$student->id.'/show')}}" class="btn btn-light">More Details</a> </td>
                     </tr>
                     @endforeach

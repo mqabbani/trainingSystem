@@ -5,13 +5,14 @@ namespace App\Http\Controllers;
 use App\Course;
 use App\Payment;
 use App\Student;
-use App\Http\Controllers\MailController;
+use GuzzleHttp\Client;
+use GuzzleHttp\RequestOptions;
 use Illuminate\Http\Request;
 
 
 class PaymentController extends Controller
 {
-
+    private $client;
     public function __construct()
     {
         $this->middleware('auth');
@@ -59,17 +60,35 @@ class PaymentController extends Controller
        $course  = Course::whereName($request->course_name )->whereSession($request->course_session)->first();
        $student = Student::find($request->std_id);
 
-      // dd($request->payment_method);
-       Payment::create([
+       $createPayment = Payment::create([
            'course_id'=>$course->id,
            'student_id'=>$student->id,
            'payment'=> $request->payment,
            'payment_method'=> $request->payment_method
        ]);
-       session()->flash("message","Payment Added Successful to $course->name session $course->id Student name $student->name Email Sending");
+       $studentNumber = $student->phone_number;
+       $phoneNumber   = ltrim($studentNumber, $studentNumber[0]);
+       $textSend = "$student->name is Pay $request->payment For $request->course_name session $request->course_session";
+        //Sending Email To Nour
         app('App\Http\Controllers\MailController')->sendMail($student->name , $course->name , $request->payment, $request->course_session);
+       //Sending SMS To Student
+        $client = new \GuzzleHttp\Client(['base_uri' => 'http://sms.email-soft.com:8000/']);
+        $response = $client->request('GET', "?Phonenumber=962'.$phoneNumber.
+        &Text=.$textSend.&User=harmonex&Password=harmonex");
 
-        return redirect()->action('StudentController@index');
+        if($response->getStatusCode() == 200)
+        {
+            session()->flash("message","Payment Added Successful to $course->name session $course->id Student name $student->name Email Sending And Sms Sending");
+        }else{
+            session()->flash("message","Payment Added Successful to $course->name session $course->id Student name $student->name Email Sending Sms Not Sending");
+        }
+        $DataInvoice =array();
+        $DataInvoice[0] = $request->payment;
+        $DataInvoice[1] = $request->payment_method;
+        $DataInvoice[2] = $createPayment->id;
+        //return redirect()->action('StudentController@index');
+        //Go to Print Invoice ..
+        return View('admin.payments.print_invoice',compact('course','student','DataInvoice'));
 
     }
 

@@ -146,15 +146,33 @@ class StudentController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $student = Student::find($id);
+        $courses = $student->course()->where('student_id',$student->id)->get();
+        //dd($courses);
+        if(is_null($courses)){
+
+            Session::flash('message', 'Student Delete successful!');
+            $student->delete();
+        }else{
+            Session::flash('message', 'Student Not Deleted Because register in courses !');
+        }
+        return redirect()->back();
+
     }
 
     public function search(Request $request){
         $input = $request->std_search;
+        $count = strlen((string)$input);
         if(is_numeric($input)){
-         $students = Student::where('sp_number',$input)->paginate(1);
-        }else{
+            if( $count== 11){
+                $students = Student::where('sp_number',$input)->paginate(5);
+            }
+            if($count==10){
+                $students = Student::where('phone_number',$input)->paginate(5);
+            }
 
+        }else if (is_string($input)){
+            $students = Student::where('name','like','%'.$input.'%')->paginate(5);
         }
 
         return View('admin.students.index',compact('students'));

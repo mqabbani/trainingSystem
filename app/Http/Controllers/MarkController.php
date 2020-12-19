@@ -2,6 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Course;
+use App\Mark;
+use App\Student;
 use Illuminate\Http\Request;
 
 class MarkController extends Controller
@@ -21,9 +24,11 @@ class MarkController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create($stdid ,$courseid)
     {
-
+        $Student  = Student::find($stdid);
+        $Course  = Course::find($courseid);
+        return View('admin.marks.create',compact('Student','Course'));
     }
 
     /**
@@ -34,7 +39,20 @@ class MarkController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $course  = Course::whereName($request->course_name)->whereSession($request->course_session)->first();
+        $student = Student::whereSpNumber($request->std_sp)->first();
+       // dd($course);
+        Mark::UpdateOrcreate([
+            'course_id' => $course->id,
+            'student_id'=>$student->id,
+        ],[
+            'course_id' => $course->id,
+             'student_id'=>$student->id,
+             'mark' => $request->mark
+        ]);
+        session()->flash("message","Mark Added Successful to $student->name");
+        return redirect()->back();
+
     }
 
     /**

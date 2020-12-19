@@ -41,6 +41,7 @@ Route::group(['middleware'=>'auth'],function (){
     Route::get('/student/{id}/edit','StudentController@edit')->name('/student/{id}/edit');
     Route::post('/student/{id}/update','StudentController@update')->name('/student/{id}/update');
     Route::get('/student/{id}/show','StudentController@show')->name('/student/{id}/show');
+    Route::get('/delete/{id}/student','StudentController@destroy')->name('/delete/{id}/student');
 
     //Course
     Route::get('/create/course','CourseController@create')->name('/create/course');
@@ -75,12 +76,15 @@ Route::group(['middleware'=>'auth'],function (){
     Route::post('print/random/questions','ExamController@randomExam')->name('print/random/questions');
 
     // Mark
-
+    Route::get('/add/{stdid}/{courseid}/mark','MarkController@create')->name('/add/{stdid}/{courseid}/mark');
+    Route::post('/add/mark','MarkController@store')->name('/add/mark');
+    //Route::get('/print/invoice','PaymentController@printInvoice')->name('print/invoice');
+   // Route::get('print/invoice',function(){
+       // return view('admin.payments.print_invoice')->name('print/invoice');
+   // });
 });
 
-Route::get('print/invoice',function(){
-   return view('admin.payments.print_invoice');
-});
+
 
 
 

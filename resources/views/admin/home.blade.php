@@ -44,7 +44,7 @@
 
     <div class="col-lg-3">
         <div class="card text-white bg-gradient-dark mb-3">
-            <div class="card-header bg-gradient-dark" >Student Pay For Today </div>
+            <div class="card-header bg-gradient-dark" >Number Of Payments</div>
             <div class="card-body">
                 <h5 class="card-title"><li class="fa fa-user"></li> {{$array['Students Pay For today']}}</h5>
             </div>

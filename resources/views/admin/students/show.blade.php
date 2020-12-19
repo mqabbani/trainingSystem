@@ -41,7 +41,7 @@
                     <th scope="col" style="font-size: 12px;">After Discount Price</th>
                     <th scope="col" style="font-size: 12px;">Payments</th>
                     <th scope="col" style="font-size: 12px;">Action</th>
-                    
+                    <th scope="col" style="font-size: 12px;">Add Mark</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -69,6 +69,7 @@
 
                                <td style="font-size: 13px;">{{$amountPayment[$i]}}</td>
                                <td><a href="{{url('/add/'.$stdData->id.'/'.$student[$i]->id.'/payment')}}" style="font-size: 12px;" class="btn btn-danger">Add Payment</a> </td>
+                               <td><a href="{{url('/add/'.$stdData->id.'/'.$student[$i]->id.'/mark')}}" style="font-size: 12px;" class="btn btn-danger">Add Payment</a> </td>
                            </tr>
                        @endfor
 

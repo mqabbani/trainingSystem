@@ -116,6 +116,7 @@
                     <a class="collapse-item" href="{{url('/add/new/question')}}" style="font-family: cursive;">Add New Question</a>
                     <a class="collapse-item" href="{{url('/all/questions')}}" style="font-family: cursive;"> All Question</a>
                     <a class="collapse-item" href="{{url('/print/exam')}}" style="font-family: cursive;">Print Exam</a>
+
                 </div>
             </div>
 
@@ -127,10 +128,10 @@
             <div id="collapseSeven" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                 <div class="bg-white py-2 collapse-inner rounded">
                     <h6 class="collapse-header">Components:</h6>
-                    <a class="collapse-item" href="{{url('/add/new/question')}}" style="font-family: cursive;">Student Register`s</a>
-                    <a class="collapse-item" href="{{url('/all/questions')}}" style="font-family: cursive;">Course Cash</a>
-                    <a class="collapse-item" href="{{url('/print/exam')}}" style="font-family: cursive;"> Total Per Date</a>
-                    <a class="collapse-item" href="{{url('/print/exam')}}" style="font-family: cursive;">Student Details</a>
+                    <a class="collapse-item" href="" style="font-family: cursive;">Student Register`s</a>
+                    <a class="collapse-item" href="" style="font-family: cursive;">Course Cash</a>
+                    <a class="collapse-item" href="" style="font-family: cursive;"> Total Per Date</a>
+                    <a class="collapse-item" href="" style="font-family: cursive;">Student Details</a>
                 </div>
             </div>
         </li>

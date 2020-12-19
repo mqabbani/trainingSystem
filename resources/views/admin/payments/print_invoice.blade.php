@@ -11,9 +11,9 @@
     <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
     <title>Print Invoice</title>
 </head>
-<body>
+<body onload="window.print()">
 
-<div class="container">
+<div class="container" >
     <div class="row">
         <div class="well col-xs-10 col-sm-10 col-md-6 col-xs-offset-1 col-sm-offset-1 col-md-offset-3">
             <div class="row">
@@ -41,29 +41,29 @@
                     <h6>Date : {{\Carbon\Carbon::now()}}</h6>
                 </div>
                 <div class="text-left">
-                    <h6>Payment Number : 4856abc</h6>
+                    <h6>Payment Number : {{$DataInvoice[2]}}</h6>
                 </div>
                 <div class="text-right">
-                    <h6> 50.00:JOD </h6>
+                    <h6> {{$DataInvoice[0]}}:JOD </h6>
                 </div>
-                </span>
+
                 <table class="table table-hover">
                     <thead >
-                    <tr >Student Name : Mohammad Qabbani</tr>
+                    <tr >Student Name : {{$student->name}}</tr>
                     <br>
-                        <tr>Student Number :079*******  </tr>
+                        <tr>Student Number :{{$student->phone_number}} </tr>
                     <br>
-                        <tr>National ID : 9961005354</tr>
+                        <tr>National ID : {{$student->national_id}}</tr>
                     <br>
-                        <tr>Student Sp Number : 202011302</tr>
+                        <tr>Student Sp Number : {{$student->sp_number}}</tr>
                     <br>
-                        <tr>Received From : استلمنا من يلدز ياسين </tr>
+                        <tr>Received From : استلمنا من  {{$student->name_ar}} </tr>
                     <br>
                         <tr>The Sum of : خمسون دينار فقط </tr>
                     <br>
-                        <tr>Payment Method :</tr>
+                        <tr>Payment Method :{{$DataInvoice[1]}}</tr>
                     <br>
-                        <tr>Reason Of :</tr>
+                        <tr>Reason Of : جزء من سعر الدوره</tr>
                     <br>
                     <td>
 
@@ -78,5 +78,14 @@
             </div>
         </div>
     </div>
+</div>
 </body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script type="text/javascript">
+    $(document).ready(function (){
+        setTimeout(5000);
+        document.location.href = '{{URL::to('/all/student')}}';
+    });
+</script>
+
 </html>
