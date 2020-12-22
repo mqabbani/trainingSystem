@@ -27,12 +27,12 @@
                                 <input class="form-control" type="text" name="session1" id="course_session" readonly/>
                             </div>
                         </div><!-- col-4 -->
-                        <div class="col-lg-4">
+                       <!-- <div class="col-lg-4">
                             <div class="form-group">
                                 <label class="form-control-label">Course Price: <span class="tx-danger">*</span></label>
                                 <input class="form-control" type="text" name="price"  placeholder="Enter Price" required>
                             </div>
-                        </div><!-- col-4 -->
+                        </div>--><!-- col-4 -->
                         <div class="col-lg-4">
                             <div class="form-group mg-b-10-force">
                                 <label class="form-control-label">Start Course time: <span class="tx-danger">*</span></label>

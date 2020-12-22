@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Payment;
 use App\Student;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Session;
 
 class StudentController extends Controller
@@ -84,6 +85,8 @@ class StudentController extends Controller
     {
         $student = Student::find($id)->course;
         $stdData = Student::find($id);
+        $price   = DB::table("course_student")->where('student_id',$stdData->id)->pluck("price");
+
         $array = array();
         if(!$student->isEmpty()){
             foreach ($student as $hard)
@@ -99,9 +102,10 @@ class StudentController extends Controller
            $amountPayment[$i] = $amount->sum('payment');
 
        }
+
        //dd($amountPayment);
 
-        return View('admin.students.show',compact('student','stdData','amountPayment'));
+        return View('admin.students.show',compact('student','stdData','amountPayment','price'));
     }
 
     /**

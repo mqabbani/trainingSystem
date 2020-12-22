@@ -84,12 +84,6 @@ Route::group(['middleware'=>'auth'],function (){
     //Report`s
     Route::get('student/marks','ReportController@studentMarks')->name('student/marks');
 
-
-
-    //Route::get('/print/invoice','PaymentController@printInvoice')->name('print/invoice');
-   // Route::get('print/invoice',function(){
-       // return view('admin.payments.print_invoice')->name('print/invoice');
-   // });
 });
 
 

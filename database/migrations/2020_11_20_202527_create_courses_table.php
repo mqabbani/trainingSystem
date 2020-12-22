@@ -17,7 +17,7 @@ class CreateCoursesTable extends Migration
             $table->bigIncrements('id');
             $table->string("name");
             $table->string("session");
-            $table->string("price");
+            //$table->string("price");
             $table->string("start_time");
             $table->string("end_time");
             $table->string("days");

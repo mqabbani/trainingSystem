@@ -7,6 +7,7 @@ use App\Mark;
 use App\Payment;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Session;
 
 class CourseController extends Controller
@@ -57,7 +58,7 @@ class CourseController extends Controller
             'session'=>$request->session1,
             'start_time'=>$request->start_time,
             'end_time'=>$request->end_time,
-            'price'=>$request->price,
+          //  'price'=>$request->price,
             'days'=>$days,
             'status'=>$request->status,
             'type'=>$request->type
@@ -81,6 +82,7 @@ class CourseController extends Controller
        // dd($courseStudent);
         $courseInfo = Course::find($id);
         $studentNumber = count($courseStudent);
+
         $array = array();
         if(!$courseStudent->isEmpty()){
             foreach ($courseStudent as $hard)
@@ -94,15 +96,18 @@ class CourseController extends Controller
         for($i=0 ;$i< $countArray ; $i++){
             $amount = Payment::totalPayment($courseInfo->id,$array[$i])->get();
             $amountPayment[$i] = $amount->sum('payment');
-
         }
         $totalPaymentForAll = Payment::studentTotalPaymentPerCourse($id)->sum('payment');
-
         $marks = Mark::whereCourseId($courseInfo->id)->get();
+        $coursePriceAll = DB::table("course_student")->where('course_id',$courseInfo->id)->pluck('price');
+        $courseFinalPrice = 0;
+        foreach ($coursePriceAll as $price){
+            $courseFinalPrice = $courseFinalPrice + $price;
+        }
+      // dd($amountPayment);
 
-       // dd($totalPaymentForAll);
         return view('admin.courses.show',
-            compact('courseStudent','courseInfo','studentNumber','amountPayment','totalPaymentForAll','marks'));
+            compact('courseStudent','courseInfo','studentNumber','amountPayment','coursePriceAll','totalPaymentForAll','marks','courseFinalPrice'));
     }
 
     /**
@@ -130,7 +135,7 @@ class CourseController extends Controller
        $course = Course::find($id);
        $course->name        = $request->name;
        $course->session     = $request->session1;
-       $course->price       = $request->price;
+     //  $course->price       = $request->price;
        $course->start_time  = $request->start_time;
        $course->end_time    = $request->end_time;
         $days = array();

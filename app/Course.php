@@ -14,20 +14,20 @@ class Course extends Model
     }
 
     public function scopePending($status){
-      
+
         return Course::whereStatus('Pending')->paginate(5);
-      
+
     }
 
     public function scopeActive($status){
-       
+
             return Course::whereStatus('Active')->paginate(5);
-       
+
     }
 
     public function scopeFinished($status){
-    
+
      return Course::whereStatus('Finished')->paginate(5);
     }
-    
+
 }

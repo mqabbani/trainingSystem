@@ -56,13 +56,6 @@
                                 <input class="form-control" type="text" value="{{$student->phone_number_second}}" name="phone_number_second" required >
                             </div>
                         </div><!-- col-4 -->
-
-                        <div class="col-lg-4">
-                            <div class="form-group mg-b-10-force">
-                                <label class="form-control-file">Student Discount: <span class="tx-danger">*</span></label>
-                                <input class="form-control" type="text" value="{{$student->discount}}" name="discount"   >
-                            </div>
-                        </div><!-- col-4 -->
                     </div><!-- row -->
 
                     <div class="form-layout-footer">

@@ -20,13 +20,13 @@
                             </div>
                         </div><!-- col-4 -->
 
-                        <div class="col-lg-6">
+                        <div class="col-lg-3">
                             <div class="form-group">
                                 <label class="form-control-label">Hardware Course </label>
                                 <input class="form-control" type="text" name="course_name_h" value="Hardware" readonly>
                             </div>
                         </div><!-- col-4 -->
-                        <div class="col-lg-6">
+                        <div class="col-lg-3">
                             <div class="form-group">
                                 <label class="form-control-label">Session Course</label>
                                 <select class="form-control" type="text" name="course_session_h" >
@@ -37,14 +37,26 @@
                                 </select>
                             </div>
                         </div><!-- col-4 -->
+                        <div class="col-lg-3">
+                            <div class="form-group">
+                                <label class="form-control-label">Price Hardware</label>
+                                <input  class="form-control" type="text" name="price_h" >
+                            </div>
+                        </div><!-- col-4 -->
+                        <div class="col-lg-3">
+                            <div class="form-group mg-b-10-force">
+                                <label class="form-control-label">Certificate </label>
+                                <input class="form-check" type="checkbox" value="1" id="defaultCheck1" name="ch1">
+                               </div>
+                        </div><!-- col-4 -->
 
-                        <div class="col-lg-6">
+                        <div class="col-lg-3">
                             <div class="form-group">
                                 <label class="form-control-label">Software Course </label>
                                 <input class="form-control" type="text" value="Software" name="course_name_s" readonly>
                             </div>
                         </div><!-- col-4 -->
-                        <div class="col-lg-6">
+                        <div class="col-lg-3">
                             <div class="form-group">
                                 <label class="form-control-label">Session Course</label>
                                 <select class="form-control"  name="course_session_s" >
@@ -55,14 +67,25 @@
                                 </select>
                             </div>
                         </div><!-- col-4 -->
-
-                        <div class="col-lg-6">
+                        <div class="col-lg-3">
+                            <div class="form-group">
+                                <label class="form-control-label">Price Software</label>
+                                <input  class="form-control" type="text" name="price_s" >
+                            </div>
+                        </div><!-- col-4 -->
+                        <div class="col-lg-3">
+                            <div class="form-group mg-b-10-force">
+                                <label class="form-control-label">Certificate </label>
+                                <input class="form-check" type="checkbox" value="1" id="defaultCheck1" name="ch2">
+                            </div>
+                        </div><!-- col-4 -->
+                        <div class="col-lg-3">
                             <div class="form-group">
                                 <label class="form-control-label">Glass Course </label>
                                 <input class="form-control" type="text" value="Glass" name="course_name_g" readonly>
                             </div>
                         </div><!-- col-4 -->
-                        <div class="col-lg-6">
+                        <div class="col-lg-3">
                             <div class="form-group">
                                 <label class="form-control-label">Session Course</label>
                                 <select class="form-control"  name="course_session_g" >
@@ -73,7 +96,18 @@
                                 </select>
                             </div>
                         </div><!-- col-4 -->
-
+                        <div class="col-lg-3">
+                            <div class="form-group">
+                                <label class="form-control-label">Price Glass</label>
+                                <input  class="form-control" type="text" name="price_g" >
+                            </div>
+                        </div><!-- col-4 -->
+                        <div class="col-lg-3">
+                            <div class="form-group mg-b-10-force">
+                                <label class="form-control-label">Certificate </label>
+                                <input class="form-check" type="checkbox" value="1" id="defaultCheck1" name="ch3">
+                            </div>
+                        </div><!-- col-4 -->
                     </div><!-- row -->
 
                     <div class="form-layout-footer">
