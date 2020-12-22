@@ -52,6 +52,18 @@
                                 </select>
                             </div>
                         </div><!-- col-4 -->
+                        <div class="col-lg-6">
+                            <div class="form-group">
+                                <label >Received By: <span class="tx-danger">*</span></label>
+                                <input class="form-control" name="receivedby" type="text" required placeholder="Received By">
+                            </div>
+                        </div><!-- col-4 -->
+                        <div class="col-lg-6">
+                            <div class="form-group">
+                                <label >Sum of: <span class="tx-danger">*</span></label>
+                                <input class="form-control" name="sum_of" type="text" required placeholder="خمسون دينار فقط" >
+                            </div>
+                        </div><!-- col-4 -->
                         <div class="col-lg-2">
                             <div class="form-group">
                                 <button class="btn btn-info mg-r-5" style="margin-top: 30px;">Add Payment</button>

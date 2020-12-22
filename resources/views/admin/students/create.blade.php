@@ -60,7 +60,7 @@ Register New Student
                         <div class="col-lg-4">
                             <div class="form-group mg-b-10-force">
                                 <label class="form-control-file" style="font-family: cursive;">Student Photo: <span class="tx-danger">*</span></label>
-                                <input class="form-control-file" style="font-family: cursive;" type="file" name="photo"  >
+                                <input class="form-control-file" style="font-family: cursive;" type="file" name="photo" required  >
                             </div>
                         </div><!-- col-4 -->
                         <div class="col-lg-4">

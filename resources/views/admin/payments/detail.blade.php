@@ -40,6 +40,7 @@
                 <thead>
                 <tr>
                     <th style="font-size: 12px;">Student Pay</th>
+                    <th style="font-size: 12px;">Received By </th>
                     <th style="font-size: 12px;">Date</th>
                 </tr>
                 </thead>
@@ -47,6 +48,7 @@
                 @foreach($payment as $value)
                     <tr>
                         <td style="font-size: 12px;">{{$value->payment}} JOD</td>
+                        <td style="font-size: 12px;">{{$value->received_by}} </td>
                         <td style="font-size: 12px;">{{$value->created_at}}</td>
                     </tr>
                 @endforeach

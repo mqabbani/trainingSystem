@@ -69,7 +69,7 @@
 
                                <td style="font-size: 13px;">{{$amountPayment[$i]}}</td>
                                <td><a href="{{url('/add/'.$stdData->id.'/'.$student[$i]->id.'/payment')}}" style="font-size: 12px;" class="btn btn-danger">Add Payment</a> </td>
-                               <td><a href="{{url('/add/'.$stdData->id.'/'.$student[$i]->id.'/mark')}}" style="font-size: 12px;" class="btn btn-danger">Add Payment</a> </td>
+                               <td><a href="{{url('/add/'.$stdData->id.'/'.$student[$i]->id.'/mark')}}" style="font-size: 12px;" class="btn btn-primary">Add Mark</a> </td>
                            </tr>
                        @endfor
 

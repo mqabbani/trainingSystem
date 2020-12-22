@@ -77,9 +77,11 @@
                                 <td style="font-size: 12px;">{{$courseInfo->price}}</td>
                                 @endif
                                 <td style="font-size: 12px;">{{$amountPayment[$i]}}</td>
+
+
+
                             <td> <a href="{{url('student/'.$courseStudent[$i]->id.'/payment/'.$courseInfo->id.'/details')}}" class="btn btn-danger" style="font-size: 12px;">Show Payments</a> </td>
                             <td> <a href="{{url('add/'.$courseStudent[$i]->id.'/'.$courseInfo->id.'/mark')}}" class="btn btn-primary" style="font-size: 12px;">Add Mark</a> </td>
-
                         </tr>
                     @endfor
                     </tbody>

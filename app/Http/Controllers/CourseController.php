@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Course;
+use App\Mark;
 use App\Payment;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
@@ -96,9 +97,12 @@ class CourseController extends Controller
 
         }
         $totalPaymentForAll = Payment::studentTotalPaymentPerCourse($id)->sum('payment');
+
+        $marks = Mark::whereCourseId($courseInfo->id)->get();
+
        // dd($totalPaymentForAll);
         return view('admin.courses.show',
-            compact('courseStudent','courseInfo','studentNumber','amountPayment','totalPaymentForAll'));
+            compact('courseStudent','courseInfo','studentNumber','amountPayment','totalPaymentForAll','marks'));
     }
 
     /**
@@ -158,7 +162,7 @@ class CourseController extends Controller
 
     public function pending(){
         $status = Course::Pending('Pending');
-    
+
         return View('admin.courses.pending_course',compact('status'));
     }
     public function active(){

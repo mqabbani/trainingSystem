@@ -11,70 +11,130 @@
     <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
     <title>Print Invoice</title>
 </head>
+<!--onload="window.print()"-->
 <body onload="window.print()">
+<div class="container"  >
+    <div class="row">
+        <div class="well col-xs-10 col-sm-10 col-md-6 col-xs-offset-1 col-sm-offset-1 col-md-offset-3">
+            <div class="row">
+                <div class="col-xs-4 col-sm-4 col-md-4">
+                    <img src="{{asset('images/logoharmonex.png')}}" width="50" height="50">
+                </div>
+                <div class="col-xs-4 col-sm-4 col-md-4 text-center">
+                    <p>
+                        <em>Harmonex -سند قبض </em>
+                    </p>
+                </div>
+                <div class="col-xs-8 col-sm-8 col-md-8">
+                    <p>
+                        <em style="font-size: 12px;">Receipt voucher Harmonex training Center </em>
+                    </p>
+                </div>
+            </div>
 
+            <div class="row">
+
+                <div class="col-xs-4 col-sm-4 col-md-4 text-center">
+                    <p>
+                        <em>Serial Number :  </em>
+                    </p>
+                </div>
+                <div class="col-xs-8 col-sm-8 col-md-8">
+                    <p class="text-right">
+                        <em style="font-size: 12px;">Date : {{\Illuminate\Support\Carbon::now()}} </em>
+                    </p>
+                </div>
+            </div>
+
+
+            <div class="row" style="margin-left: 25px;">
+
+                <table class="table table-hover"  >
+                    <tr >Company Name       : Harmonex Training Center </tr> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    &nbsp;&nbsp;&nbsp;<tr>{{ $DataInvoice[0]}} JOD</tr><br>
+                    <tr >Student Name      : {{$student->name}} </tr><br>
+                    <tr>Student Number     :  {{$student->phone_number}} </tr><br>
+                    <tr>Student Sp Number  : {{$student->sp_number}} </tr><br>
+                    <tr>Received From      :   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  استلمنا من {{$DataInvoice[3]}}</tr><br>
+                    <tr>The Sum Of         :  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; مبلغ وقدره {{$DataInvoice[4]}} </tr><br>
+                    <tr>Payment Method     :   {{$DataInvoice[1]}} طريقه الدفع </tr><br>
+                    <tr>Reason Of Payment  :    سبب الدفع تكمله من سعر الدوره</tr><br><br>
+                    <tr>Signature By         :  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;     الوقيع     </tr><br>
+                    <br>
+                </table>
+
+            </div>
+            <div class="row" style="margin-left: 200px;">
+                <table class="table table-hover" >
+                    <tr>Harmonex Training Center </tr><br>
+                    <tr>0785858775 - 0781555517 </tr><br>
+                </table>
+        </div>
+    </div>
+</div>
+</div>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 <div class="container" >
     <div class="row">
         <div class="well col-xs-10 col-sm-10 col-md-6 col-xs-offset-1 col-sm-offset-1 col-md-offset-3">
             <div class="row">
                 <div class="col-xs-4 col-sm-4 col-md-4">
                     <img src="{{asset('images/logoharmonex.png')}}" width="50" height="50">
-                    <address>
-                        <h6><b>Harmonex Training Center</b> </h6>
-
-                        <abbr title="Phone">P:</abbr> 078-5858775
-                        <br>
-                        <abbr title="Phone">P:</abbr> 078-1555517
-                    </address>
                 </div>
-                <div class="col-xs-8 col-sm-8 col-md-8 text-right">
+                <div class="col-xs-4 col-sm-4 col-md-4 text-center">
                     <p>
                         <em>Harmonex -سند قبض </em>
                     </p>
+                </div>
+                <div class="col-xs-8 col-sm-8 col-md-8">
                     <p>
-                        <em>Receipt voucher Harmonex training Center </em>
+                        <em style="font-size: 12px;">Receipt voucher Harmonex training Center </em>
                     </p>
                 </div>
             </div>
+
             <div class="row">
-                <div class="text-right">
-                    <h6>Date : {{\Carbon\Carbon::now()}}</h6>
-                </div>
-                <div class="text-left">
-                    <h6>Payment Number : {{$DataInvoice[2]}}</h6>
-                </div>
-                <div class="text-right">
-                    <h6> {{$DataInvoice[0]}}:JOD </h6>
-                </div>
 
-                <table class="table table-hover">
-                    <thead >
-                    <tr >Student Name : {{$student->name}}</tr>
-                    <br>
-                        <tr>Student Number :{{$student->phone_number}} </tr>
-                    <br>
-                        <tr>National ID : {{$student->national_id}}</tr>
-                    <br>
-                        <tr>Student Sp Number : {{$student->sp_number}}</tr>
-                    <br>
-                        <tr>Received From : استلمنا من  {{$student->name_ar}} </tr>
-                    <br>
-                        <tr>The Sum of : خمسون دينار فقط </tr>
-                    <br>
-                        <tr>Payment Method :{{$DataInvoice[1]}}</tr>
-                    <br>
-                        <tr>Reason Of : جزء من سعر الدوره</tr>
-                    <br>
-                    <td>
+                <div class="col-xs-4 col-sm-4 col-md-4 text-center">
+                    <p>
+                        <em>Serial Number :  </em>
+                    </p>
+                </div>
+                <div class="col-xs-8 col-sm-8 col-md-8">
+                    <p class="text-right">
+                        <em style="font-size: 12px;">Date : {{\Illuminate\Support\Carbon::now()}} </em>
+                    </p>
+                </div>
+            </div>
 
-                        <tr>  Signature :  &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;
-                            &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;
-                            &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;</tr>
-                        <tr>Recevied By  : </tr>
-                    </td>
-                    </thead>
+
+            <div class="row" style="margin-left: 25px;">
+
+                <table class="table table-hover"  >
+                    <tr >Company Name       : Harmonex Training Center </tr>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    &nbsp;&nbsp;&nbsp;<tr>{{ $DataInvoice[0]}} JOD</tr><br>
+                    <tr >Student Name      : {{$student->name}} </tr><br>
+                    <tr>Student Number     :  {{$student->phone_number}} </tr><br>
+                    <tr>Student Sp Number  : {{$student->sp_number}} </tr><br>
+                    <tr>Received From      :   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  استلمنا من {{$DataInvoice[3]}}</tr><br>
+                    <tr>The Sum Of         :  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; مبلغ وقدره {{$DataInvoice[4]}} </tr><br>
+                    <tr>Payment Method     :   {{$DataInvoice[1]}} طريقه الدفع </tr><br>
+                    <tr>Reason Of Payment  :    سبب الدفع تكمله من سعر الدوره</tr><br><br>
+                    <tr>Received By         :  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;     الوقيع     </tr><br>
+                    <br>
                 </table>
 
+            </div>
+            <div class="row" style="margin-left: 200px;">
+                <table class="table table-hover" >
+                    <tr>Harmonex Training Center </tr><br>
+                    <tr>0785858775 - 0781555517 </tr><br>
+                </table>
             </div>
         </div>
     </div>
@@ -83,7 +143,7 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script type="text/javascript">
     $(document).ready(function (){
-        setTimeout(5000);
+        setTimeout(9000);
         document.location.href = '{{URL::to('/all/student')}}';
     });
 </script>

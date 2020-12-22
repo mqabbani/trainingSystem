@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Payment extends Model
 {
-    protected $fillable = ['course_id' , 'student_id' , 'payment','payment_method'];
+    protected $fillable = ['course_id' , 'student_id' , 'payment','payment_method','received_by','sum_of'];
 
     public static  function totalPayment($course_id ,$student_id){
      return   Payment::whereCourseId($course_id)->whereStudentId($student_id)->Sum('payment');

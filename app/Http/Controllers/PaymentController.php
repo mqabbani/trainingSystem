@@ -60,11 +60,14 @@ class PaymentController extends Controller
        $course  = Course::whereName($request->course_name )->whereSession($request->course_session)->first();
        $student = Student::find($request->std_id);
 
+
        $createPayment = Payment::create([
            'course_id'=>$course->id,
            'student_id'=>$student->id,
            'payment'=> $request->payment,
-           'payment_method'=> $request->payment_method
+           'payment_method'=> $request->payment_method,
+           'received_by'=>  $request->receivedby,
+           'sum_of'=>   $request->sum_of,
        ]);
        $studentNumber = $student->phone_number;
        $phoneNumber   = ltrim($studentNumber, $studentNumber[0]);
@@ -86,6 +89,8 @@ class PaymentController extends Controller
         $DataInvoice[0] = $request->payment;
         $DataInvoice[1] = $request->payment_method;
         $DataInvoice[2] = $createPayment->id;
+        $DataInvoice[3] = $createPayment->received_by;
+        $DataInvoice[4] = $createPayment->sum_of;
         //return redirect()->action('StudentController@index');
         //Go to Print Invoice ..
         return View('admin.payments.print_invoice',compact('course','student','DataInvoice'));

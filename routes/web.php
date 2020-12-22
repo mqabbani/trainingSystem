@@ -11,6 +11,9 @@
 |
 */
 
+use App\Course;
+use App\Student;
+
 Route::get('/', function () {
     return view('admin.auth.login');
 });
@@ -78,6 +81,11 @@ Route::group(['middleware'=>'auth'],function (){
     // Mark
     Route::get('/add/{stdid}/{courseid}/mark','MarkController@create')->name('/add/{stdid}/{courseid}/mark');
     Route::post('/add/mark','MarkController@store')->name('/add/mark');
+    //Report`s
+    Route::get('student/marks','ReportController@studentMarks')->name('student/marks');
+
+
+
     //Route::get('/print/invoice','PaymentController@printInvoice')->name('print/invoice');
    // Route::get('print/invoice',function(){
        // return view('admin.payments.print_invoice')->name('print/invoice');
