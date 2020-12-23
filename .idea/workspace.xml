@@ -20,7 +20,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="60cd9df1-644a-4e20-88b0-b69c86748b16" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/reports/student_marks.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/reports/student_marks.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/PaymentController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/PaymentController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Payment.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Payment.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/payments/detail.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/payments/detail.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/payments/print_invoice.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/payments/print_invoice.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -191,7 +195,7 @@
       <workItem from="1608628986811" duration="227000" />
       <workItem from="1608651515754" duration="23091000" />
       <workItem from="1608713380333" duration="14103000" />
-      <workItem from="1608754311295" duration="9241000" />
+      <workItem from="1608754311295" duration="10685000" />
     </task>
     <servers />
   </component>

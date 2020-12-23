@@ -36,7 +36,7 @@
 
                 <div class="col-xs-4 col-sm-4 col-md-4 text-center">
                     <p>
-                        <em>Serial Number :  </em>
+                        <em>Serial Number :  {{$DataInvoice[5]}}</em>
                     </p>
                 </div>
                 <div class="col-xs-8 col-sm-8 col-md-8">

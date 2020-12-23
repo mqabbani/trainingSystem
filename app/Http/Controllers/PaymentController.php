@@ -6,9 +6,9 @@ use App\Course;
 use App\Payment;
 use App\Student;
 use GuzzleHttp\Client;
-use GuzzleHttp\RequestOptions;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+
 
 
 class PaymentController extends Controller
@@ -69,6 +69,7 @@ class PaymentController extends Controller
            'payment_method'=> $request->payment_method,
            'received_by'=>  $request->receivedby,
            'sum_of'=>   $request->sum_of,
+           'serial'=>str_random(15)
        ]);
        $studentNumber = $student->phone_number;
        $phoneNumber   = ltrim($studentNumber, $studentNumber[0]);
@@ -92,6 +93,7 @@ class PaymentController extends Controller
         $DataInvoice[2] = $createPayment->id;
         $DataInvoice[3] = $createPayment->received_by;
         $DataInvoice[4] = $createPayment->sum_of;
+        $DataInvoice[5] = $createPayment->serial;
         //return redirect()->action('StudentController@index');
         //Go to Print Invoice ..
         return View('admin.payments.print_invoice',compact('course','student','DataInvoice'));

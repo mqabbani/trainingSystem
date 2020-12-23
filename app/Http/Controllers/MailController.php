@@ -15,7 +15,7 @@ class MailController extends Controller
         Mail::send('emails.mail', $data, function($message) use ($to_name, $to_email) {
             $message->to($to_email, $to_name)
                 ->subject("Student Pay For Course ");
-            $message->from("qabbani454@gmail.com","Payment Email ");
+            $message->from("harmonextraining1@gmail.com","Payment Email ");
         });
     }
 }

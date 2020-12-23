@@ -38,6 +38,7 @@
                     <th style="font-size: 12px;">Student Pay</th>
                     <th style="font-size: 12px;">Received By </th>
                     <th style="font-size: 12px;">Date</th>
+                    <th style="font-size: 12px;">Serial</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -46,6 +47,7 @@
                         <td style="font-size: 12px;">{{$value->payment}} JOD</td>
                         <td style="font-size: 12px;">{{$value->received_by}} </td>
                         <td style="font-size: 12px;">{{$value->created_at}}</td>
+                        <td style="font-size: 12px;">{{$value->serial}}</td>
                     </tr>
                 @endforeach
                 </tbody>
