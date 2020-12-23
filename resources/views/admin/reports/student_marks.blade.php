@@ -1,11 +1,11 @@
 @extends('admin.layouts.header')
 @section('page_name')
-    Student Marks
+    Search Student Marks
 @endsection
 @section('content')
     <div class="card shadow mb-4">
         <div class="card-header py-3">
-            <h6 class="m-0 font-weight-bold text-primary "style="font-family: cursive;">Add Mark</h6>
+            <h6 class="m-0 font-weight-bold text-primary "style="font-family: cursive;">Search Mark For Student</h6>
         </div>
         <div class="card-body">
             <form method="post" action="{{url('/get/student/course')}}">
