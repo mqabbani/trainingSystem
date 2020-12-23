@@ -13,6 +13,8 @@ class Course extends Model
         return $this->belongsToMany(Student::class);
     }
 
+
+
     public function scopePending($status){
 
         return Course::whereStatus('Pending')->paginate(5);

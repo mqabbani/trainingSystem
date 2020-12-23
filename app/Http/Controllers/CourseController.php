@@ -105,10 +105,12 @@ class CourseController extends Controller
         foreach ($coursePriceAll as $price){
             $courseFinalPrice = $courseFinalPrice + $price;
         }
+        $certificate = DB::table("course_student")->where("course_id",$id)->pluck('certificate');
+        //dd($certificate);
 
 
         return view('admin.courses.show',
-            compact('courseStudent','courseInfo','studentNumber','amountPayment','coursePriceAll','totalPaymentForAll','courseFinalPrice'));
+            compact('certificate','courseStudent','courseInfo','studentNumber','amountPayment','coursePriceAll','totalPaymentForAll','courseFinalPrice'));
     }
 
     /**
@@ -157,7 +159,15 @@ class CourseController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $course = Course::find($id)->student()->get();
+        if($course->isEmpty())
+        {
+            $course2 = Course::find($id)->delete();
+            \session()->flash("message","Delete Course Success");
+        }else{
+            session()->flash("message","Can`t Delete It Student Register");
+        }
+        return redirect()->back();
     }
 
     public function ajaxReq($course_name1){

@@ -38,7 +38,8 @@
                     <th scope="col" style="font-size: 12px;">Days</th>
                     <th scope="col" style="font-size: 12px;">Price</th>
                     <th scope="col" style="font-size: 12px;">Payments</th>
-                    <th scope="col" style="font-size: 12px;">Action</th>
+                    <th scope="col" style="font-size: 12px;">Show Payment</th>
+                    <th scope="col" style="font-size: 12px;">Add Payment</th>
                     <th scope="col" style="font-size: 12px;">Add Mark</th>
                 </tr>
                 </thead>
@@ -56,6 +57,7 @@
                                <td style="font-size: 12px;">{{$student[$i]->days}}</td>
                                <td style="font-size: 12px;">{{$price[$i]}}</td>
                                <td style="font-size: 12px;">{{$amountPayment[$i]}}</td>
+                               <td><a href="{{url('student/'.$stdData->id.'/payment/'.$student[$i]->id.'/details')}}" style="font-size: 12px;" class="btn btn-success">Show Payment</a> </td>
                                <td><a href="{{url('/add/'.$stdData->id.'/'.$student[$i]->id.'/payment')}}" style="font-size: 12px;" class="btn btn-danger">Add Payment</a> </td>
                                <td><a href="{{url('/add/'.$stdData->id.'/'.$student[$i]->id.'/mark')}}" style="font-size: 12px;" class="btn btn-primary">Add Mark</a> </td>
                            </tr>

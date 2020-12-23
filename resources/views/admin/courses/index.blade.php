@@ -53,7 +53,7 @@
                             @endif
                             <td style="font-size: 12px;font-family: cursive">{{$course->days}}</td>
                             <td style="font-size: 12px;font-family: cursive"><a href="{{url('/course/'.$course->id.'/edit')}}" style="font-size: 12px;" class="btn btn-primary">Edit</a> </td>
-                            <td style="font-size: 12px;font-family: cursive"><a style="font-size: 12px;" href="" class="btn btn-danger">Delete</a> </td>
+                            <td style="font-size: 12px;font-family: cursive"><a style="font-size: 12px;" href="{{url('/delete/'.$course->id.'/course')}}" class="btn btn-danger">Delete</a> </td>
                             <td style="font-size: 12px;font-family: cursive"><a href="{{url('show/'.$course->id.'/course')}}" style="font-size: 12px;" class="btn btn-light">More</a> </td>
 
                         </tr>

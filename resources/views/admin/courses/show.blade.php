@@ -41,8 +41,8 @@
                         <th style="font-size: 12px;">Phone Number</th>
                         <th style="font-size: 12px;">Second Phone</th>
                         <th style="font-size: 12px;">Price</th>
+                        <th style="font-size: 12px;">Certificate</th>
                         <th style="font-size: 12px;">Total Payment</th>
-
                        <th style="font-size: 12px;">Show Payment Details</th>
                         <th style="font-size: 12px;">Add Mark</th>
                     </tr>
@@ -56,6 +56,11 @@
                             <td style="font-size: 12px;">{{$courseStudent[$i]->national_id}}</td>
                             <td style="font-size: 12px;">{{$courseStudent[$i]->phone_number}}</td>
                             <td style="font-size: 12px;">{{$courseStudent[$i]->phone_number_second}}</td>
+                            @if($certificate[$i] == 1)
+                                <td style="font-size: 12px;">Yes</td>
+                            @else
+                                <td style="font-size: 12px;">No</td>
+                            @endif
                             <td style="font-size: 12px;">{{$coursePriceAll[$i]}}</td>
                             <td style="font-size: 12px;">{{$amountPayment[$i]}}</td>
                             <td> <a href="{{url('student/'.$courseStudent[$i]->id.'/payment/'.$courseInfo->id.'/details')}}" class="btn btn-danger" style="font-size: 12px;">Show Payments</a> </td>
