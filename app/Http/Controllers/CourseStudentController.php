@@ -29,13 +29,23 @@ class CourseStudentController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create($sp_number)
     {
         $hardware = Course::whereName("Hardware")->get();
         $software = Course::whereName("Software")->get();
         $glass    = Course::whereName("Glass")->get();
        // dd($hardware);
-       return  View('admin.course_student.create',compact('hardware','software','glass'));
+
+       return  View('admin.course_student.create',compact('hardware','software','glass','sp_number'));
+    }
+
+    public function createManullay(){
+        $hardware = Course::whereName("Hardware")->get();
+        $software = Course::whereName("Software")->get();
+        $glass    = Course::whereName("Glass")->get();
+        // dd($hardware);
+
+        return  View('admin.course_student.create_manually',compact('hardware','software','glass'));
     }
 
     /**

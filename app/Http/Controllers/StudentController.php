@@ -72,7 +72,9 @@ class StudentController extends Controller
         ]);
 
         Session::flash('message', 'Student Added successful!');
-        return  redirect()->back();
+        //return  redirect()->back();
+        $sp_number = $request->sp_number;
+        return redirect()->action('CourseStudentController@create',['sp_number'=>$sp_number]);
     }
 
     /**
@@ -180,5 +182,10 @@ class StudentController extends Controller
         }
 
         return View('admin.students.index',compact('students'));
+    }
+
+
+    public function createContract(){
+        return View('admin.contracts.create');
     }
 }

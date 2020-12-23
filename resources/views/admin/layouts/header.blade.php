@@ -101,7 +101,8 @@
             <div id="collapseFive" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                 <div class="bg-white py-2 collapse-inner rounded">
                     <h6 class="collapse-header" style="font-family: cursive;">Components:</h6>
-                    <a class="collapse-item" href="{{url('/register/student/course')}}"style="font-family: cursive;">Register</a>
+                    <a class="collapse-item" href="{{url('/create/contract')}}" style="font-family: cursive;">Create Contracts</a>
+                    <a class="collapse-item" href="{{url('/register/student/course')}}"style="font-family: cursive;">Register on Course</a>
                     <a class="collapse-item" href="{{url('/payment/details')}}" style="font-family: cursive;">Payment Details</a>
                 </div>
             </div>

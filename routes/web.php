@@ -45,6 +45,7 @@ Route::group(['middleware'=>'auth'],function (){
     Route::post('/student/{id}/update','StudentController@update')->name('/student/{id}/update');
     Route::get('/student/{id}/show','StudentController@show')->name('/student/{id}/show');
     Route::get('/delete/{id}/student','StudentController@destroy')->name('/delete/{id}/student');
+    Route::get('/create/contract','StudentController@createContract')->name('/create/contract');
 
     //Course
     Route::get('/create/course','CourseController@create')->name('/create/course');
@@ -58,7 +59,9 @@ Route::group(['middleware'=>'auth'],function (){
     Route::get('/active/course','CourseController@active')->name('/active/course');
     Route::get('/finished/course','CourseController@finished')->name('/finished/course');
     //
-    Route::get('/register/student/course','CourseStudentController@create')->name('/register/student/course');
+    Route::get('/register/student/course/{sp_number}','CourseStudentController@create')->name('/register/student/course/{sp_number}');
+    Route::get('/register/student/course','CourseStudentController@createManullay')->name('/register/student/course');
+    // Register To Course Manually
     Route::post('/register/student/course','CourseStudentController@store')->name('/register/student/course');
 
     //Payment
@@ -83,6 +86,8 @@ Route::group(['middleware'=>'auth'],function (){
     Route::post('/add/mark','MarkController@store')->name('/add/mark');
     //Report`s
     Route::get('student/marks','ReportController@studentMarks')->name('student/marks');
+
+    Route::get('/get/student/course','ReportController@getCourse')->name('/get/student/course');
 
 });
 

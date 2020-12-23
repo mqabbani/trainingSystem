@@ -8,6 +8,7 @@ use App\Student;
 use GuzzleHttp\Client;
 use GuzzleHttp\RequestOptions;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 
 class PaymentController extends Controller
@@ -77,7 +78,7 @@ class PaymentController extends Controller
        //Sending SMS To Student
         $client = new \GuzzleHttp\Client(['base_uri' => 'http://sms.email-soft.com:8000/']);
         $response = $client->request('GET', "?Phonenumber=962'.$phoneNumber.
-        &Text=.$textSend.&User=harmonex&Password=harmonex");
+        &Text=$textSend.&User=harmonex&Password=harmonex");
 
         if($response->getStatusCode() == 200)
         {
@@ -149,7 +150,9 @@ class PaymentController extends Controller
         $array = array();
         $total = Payment::totalPayment($courseID,$stdId)->sum('payment');
 
-        return View('admin.payments.detail',compact('payment','course','student','total'));
+        $totalCourse = DB::table('course_student')->whereStudentId($stdId)->whereCourseId($courseID)->pluck('price');
+
+        return View('admin.payments.detail',compact('totalCourse','payment','course','student','total'));
     }
 
 }

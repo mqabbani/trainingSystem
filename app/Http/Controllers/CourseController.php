@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Course;
 use App\Mark;
 use App\Payment;
+use App\Student;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -98,16 +99,16 @@ class CourseController extends Controller
             $amountPayment[$i] = $amount->sum('payment');
         }
         $totalPaymentForAll = Payment::studentTotalPaymentPerCourse($id)->sum('payment');
-        $marks = Mark::whereCourseId($courseInfo->id)->get();
+
         $coursePriceAll = DB::table("course_student")->where('course_id',$courseInfo->id)->pluck('price');
         $courseFinalPrice = 0;
         foreach ($coursePriceAll as $price){
             $courseFinalPrice = $courseFinalPrice + $price;
         }
-      // dd($amountPayment);
+
 
         return view('admin.courses.show',
-            compact('courseStudent','courseInfo','studentNumber','amountPayment','coursePriceAll','totalPaymentForAll','marks','courseFinalPrice'));
+            compact('courseStudent','courseInfo','studentNumber','amountPayment','coursePriceAll','totalPaymentForAll','courseFinalPrice'));
     }
 
     /**

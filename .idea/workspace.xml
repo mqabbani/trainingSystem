@@ -20,22 +20,27 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="60cd9df1-644a-4e20-88b0-b69c86748b16" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/resources/views/admin/contracts/create.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Course.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Course.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/CourseController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/CourseController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/CourseStudentController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/CourseStudentController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/PaymentController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/PaymentController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ReportController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ReportController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/StudentController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/StudentController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_11_20_202527_create_courses_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_11_20_202527_create_courses_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_12_01_164148_create_course_student_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_12_01_164148_create_course_student_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Mark.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Mark.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/admin/course_student/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/course_student/create.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/courses/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/courses/create.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/courses/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/courses/edit.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/courses/active_course.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/courses/active_course.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/courses/finished_course.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/courses/finished_course.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/admin/courses/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/courses/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/courses/pending_course.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/courses/pending_course.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/admin/courses/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/courses/show.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/exams/create_exam.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/exams/create_exam.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/exams/print_exam.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/exams/print_exam.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/admin/layouts/header.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/layouts/header.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/payments/detail.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/payments/detail.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/reports/student_marks.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/reports/student_marks.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/admin/students/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/students/create.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/students/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/students/edit.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/students/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/students/show.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/students/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/students/index.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -205,7 +210,9 @@
       <workItem from="1608409875291" duration="2215000" />
       <workItem from="1608581266919" duration="9661000" />
       <workItem from="1608628986811" duration="227000" />
-      <workItem from="1608651515754" duration="22751000" />
+      <workItem from="1608651515754" duration="23091000" />
+      <workItem from="1608713380333" duration="14103000" />
+      <workItem from="1608754311295" duration="3561000" />
     </task>
     <servers />
   </component>
@@ -229,6 +236,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="410" y="80" key="#Illuminated_Cloud/0.0.1536.824@0.0.1536.824" timestamp="1608057370904" />
+    <state x="528" y="214" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1608714870243">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="528" y="214" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1536.824@0.0.1536.824" timestamp="1608714870243" />
     <state x="499" y="167" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1608581920834">
       <screen x="0" y="0" width="1536" height="824" />
     </state>

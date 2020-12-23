@@ -18,7 +18,7 @@
                                 <label class="form-control-label">Student Number: </label>
                                 <input class="form-control" type="text" name="sp_number"
                                        placeholder="Special  Student Number"
-                                       required value="{{$sp_number}}">
+                                       required >
                             </div>
                         </div><!-- col-4 -->
 
@@ -49,7 +49,7 @@
                             <div class="form-group mg-b-10-force">
                                 <label class="form-control-label">Certificate </label>
                                 <input class="form-check" type="checkbox" value="1" id="defaultCheck1" name="ch1">
-                               </div>
+                            </div>
                         </div><!-- col-4 -->
 
                         <div class="col-lg-3">

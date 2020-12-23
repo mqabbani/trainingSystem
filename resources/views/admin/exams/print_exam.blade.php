@@ -140,25 +140,32 @@
 </style>
 <body  onload="window.print()">
 <div class="wrapper bg-white rounded" id="btnprn">
-    <p class="text-muted">Multiple Choice Question</p>
+    <p class="text-muted">Student Name :</p>
+    <p class="text-muted">Student Sp :</p>
+
+    <p class="text-muted">Multiple Choice Questions</p>
     @foreach($questions as $value)
-        <p class="text-justify h5 pb-2 font-weight-bold">{{$value->text}}?</p>
-        <div class="options py-3">
-            <label class="rounded p-2 option"> {{$value->answer1}}
-                <input type="radio" name="radio"> <span class="crossmark"></span>
-            </label> <label class="rounded p-2 option"> {{$value->answer2}}
-                <input type="radio" name="radio"> <span class="checkmark"></span>
-            </label> <label class="rounded p-2 option"> {{$value->answer3}} <input type="radio" name="radio">
-                <span class="crossmark"></span> </label>
-            <label class="rounded p-2 option"> {{$value->answer4}}
-                <input type="radio" name="radio"> <span class="crossmark"></span> </label> </div>
+        <p class="text-justify h5 pb-2 font-weight-bold">{{$value->text}}</p>
+        <div class="form-layout">
+            <div class="row mg-b-25">
+                <div class="col-lg-12">
+                    <div class="form-group">
+                        <input class="form-control" type="radio"> {{$value->answer1}} &nbsp;
+                        <input class="form-control" type="radio"> {{$value->answer2}}&nbsp;
+                        <input class="form-control" type="radio"> {{$value->answer3}}&nbsp;
+                        <input class="form-control" type="radio"> {{$value->answer4}}&nbsp;
+                    </div>
+                </div><!-- col-4 -->
+
+        </div><!-- form-layout -->
     @endforeach
+</div>
 </div>
 </body>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script type="text/javascript">
     $(document).ready(function (){
-        setTimeout(3000);
+        setTimeout(15000);
         document.location.href = '{{URL::to('print/exam')}}';
     });
 </script>

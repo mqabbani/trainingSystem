@@ -42,6 +42,7 @@
                         <th style="font-size: 12px;">Second Phone</th>
                         <th style="font-size: 12px;">Price</th>
                         <th style="font-size: 12px;">Total Payment</th>
+
                        <th style="font-size: 12px;">Show Payment Details</th>
                         <th style="font-size: 12px;">Add Mark</th>
                     </tr>

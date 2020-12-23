@@ -4,7 +4,7 @@
 @endsection
 @section('content')
 <div class="row">
-    <div class="card text-white bg-danger mb-3" style="max-width: 18rem;">
+    <div class="card text-white bg-danger mb-3" style="width: 330px;">
         <div class="card-header bg-danger">{{$student->name}}</div>
     </div>
     <div class="card text-white bg-warning mb-3" style="max-width: 18rem;">
@@ -20,11 +20,7 @@
         <div class="card-header bg-gradient-info">Received Until Now {{$total}} JOD</div>
     </div>
     <div class="card text-white bg-gradient-danger mb-3" style="max-width: 20rem;">
-        <div class="card-header bg-gradient-danger">Price With Discount:
-           <?php  $price = $course->price ;
-           $before = ($price * $student->discount)/100;
-           $after  = $course->price - $before;
-          echo $after ;?> JOD</div>
+        <div class="card-header bg-gradient-danger">Price : {{$totalCourse[0]}} JOD</div>
     </div>
 
 </div>

@@ -20,7 +20,6 @@
                         <th style="font-size: 12px; font-family: cursive"> Course End Time</th>
                         <th style="font-size: 12px; font-family: cursive"> Course Start Date</th>
                         <th style="font-size: 12px; font-family: cursive"> Course End Date</th>
-                        <th style="font-size: 12px; font-family: cursive"> Course Price</th>
                         <th style="font-size: 12px; font-family: cursive">Course Status</th>
                         <th style="font-size: 12px; font-family: cursive">Course Type</th>
                         <th style="font-size: 12px; font-family: cursive">Course Days</th>
@@ -40,9 +39,13 @@
                             <td style="font-size: 12px;font-family: cursive">{{$course->end_time}}</td>
                             <td style="font-size: 12px;font-family: cursive">{{$course->start_date}}</td>
                             <td style="font-size: 12px;font-family: cursive">{{$course->end_date}}</td>
-                            <td style="font-size: 12px;font-family: cursive">{{$course->price}}</td>
                             <td style="font-size: 12px;font-family: cursive">{{$course->status}}</td>
-                            <td style="font-size: 12px;font-family: cursive">{{$course->type}}</td>
+
+                            @if($course->type == 'Public')
+                                <td style="font-size: 12px;font-family: cursive;color: green">{{$course->type}}</td>
+                            @else
+                                <td style="font-size: 12px;font-family: cursive;color: red">{{$course->type}}</td>
+                            @endif
                             <td style="font-size: 12px;font-family: cursive">{{$course->days}}</td>
                             <td style="font-size: 12px;font-family: cursive"><a href="{{url('/course/'.$course->id.'/edit')}}" style="font-size: 12px;" class="btn btn-primary">Edit</a> </td>
                             <td style="font-size: 12px;font-family: cursive"><a style="font-size: 12px;" href="" class="btn btn-danger">Delete</a> </td>
