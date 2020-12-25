@@ -130,7 +130,7 @@
                 <div class="bg-white py-2 collapse-inner rounded">
                     <h6 class="collapse-header">Components:</h6>
                     <a class="collapse-item" href="{{url('student/marks')}}" style="font-family: cursive;">Student Marks</a>
-
+                    <a class="collapse-item" href="{{url('/search/invoice/serial')}}" style="font-family: cursive;">Search Invoice Serial</a>
                 </div>
             </div>
         </li>
@@ -217,7 +217,7 @@
                 @endif
 
                 @if(Session::has('message'))
-                    <div class="alert alert-danger" role="alert">
+                    <div class="alert alert-success" role="alert">
                         {{Session::get('message')}}
                     </div>
                 @endif

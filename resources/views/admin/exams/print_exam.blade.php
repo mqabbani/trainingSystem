@@ -27,7 +27,7 @@
                 </div>
             </div>
 
-            <div class="row">
+            <div style="clear: both;">
 
                 <div class="col-xs-4 col-sm-4 col-md-4 text-center">
                     <p><em style="font-size: 12px;">Student Name :  </em></p>

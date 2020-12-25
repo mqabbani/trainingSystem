@@ -44,4 +44,8 @@ class LoginController extends Controller
         dd($student);
         return View('/home',compact('student'));
     }
+
+    public function forget(){
+        return View('forget');
+    }
 }

@@ -188,4 +188,19 @@ class StudentController extends Controller
     public function createContract(){
         return View('admin.contracts.create');
     }
+
+    public function printContract(Request $request){
+    $valideat=  $request->validate([
+            'name'=>'required',
+            'price'=>'required',
+          'national_id'=>'required'
+        ]);
+    if($request->ch1 == null){
+        return View('admin.contracts.print_contract_without_certificate',compact('request'));
+    }else{
+        return View('admin.contracts.print_contract_with_certificate',compact('request'));
+    }
+
+
+    }
 }
