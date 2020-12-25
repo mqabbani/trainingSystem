@@ -10,7 +10,7 @@ Register New Student
             <h6 class="m-0 font-weight-bold text-primary">Step One : Register New Student</h6>
         </div>
         <div class="card-body">
-            <form method="post" action="{{url('store/student')}}" enctype="multipart/form-data">
+            <form method="post" action="{{url('/store/student')}}" enctype="multipart/form-data">
                 @csrf
                 <div class="form-layout">
                     <div class="row mg-b-25">

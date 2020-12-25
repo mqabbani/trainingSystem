@@ -38,7 +38,7 @@ Route::group(['middleware'=>'auth'],function (){
 
     // Student Controller
     Route::get('/create/student','studentController@create')->name('/create/student');
-    Route::post('/','studentController@store')->name('/store/student');
+    Route::post('/store/student','studentController@store')->name('/store/student');
     Route::get('/all/student','studentController@index')->name('/all/student');
     Route::get('/search/student','studentController@search')->name('/search/student');
     Route::get('/student/{id}/edit','studentController@edit')->name('/student/{id}/edit');
