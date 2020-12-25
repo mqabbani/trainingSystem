@@ -37,16 +37,16 @@ Route::group(['middleware'=>'auth'],function (){
     Route::post('/user/{id}/update','UserController@update')->name('/user/{id}/update');
 
     // Student Controller
-    Route::get('/create/student','studentController@create')->name('/create/student');
-    Route::post('/store/student','studentController@store')->name('/store/student');
-    Route::get('/all/student','studentController@index')->name('/all/student');
-    Route::get('/search/student','studentController@search')->name('/search/student');
-    Route::get('/student/{id}/edit','studentController@edit')->name('/student/{id}/edit');
-    Route::post('/student/{id}/update','studentController@update')->name('/student/{id}/update');
-    Route::get('/student/{id}/show','studentController@show')->name('/student/{id}/show');
-    Route::get('/delete/{id}/student','studentController@destroy')->name('/delete/{id}/student');
-    Route::get('/create/contract','studentController@createContract')->name('/create/contract');
-    Route::post('/print/contract','studentController@printContract')->name('/create/contact');
+    Route::get('/create/student','StudentController@create')->name('/create/student');
+    Route::post('/store/student','StudentController@store');
+    Route::get('/all/student','StudentController@index')->name('/all/student');
+    Route::get('/search/student','StudentController@search')->name('/search/student');
+    Route::get('/student/{id}/edit','StudentController@edit')->name('/student/{id}/edit');
+    Route::post('/student/{id}/update','StudentController@update')->name('/student/{id}/update');
+    Route::get('/student/{id}/show','StudentController@show')->name('/student/{id}/show');
+    Route::get('/delete/{id}/student','StudentController@destroy')->name('/delete/{id}/student');
+    Route::get('/create/contract','StudentController@createContract')->name('/create/contract');
+    Route::post('/print/contract','StudentController@printContract')->name('/create/contact');
     //Course
     Route::get('/create/course','CourseController@create')->name('/create/course');
     Route::get('/ajax/request/{course_name1}','CourseController@ajaxReq');
