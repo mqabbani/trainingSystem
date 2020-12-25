@@ -38,14 +38,14 @@ Route::group(['middleware'=>'auth'],function (){
 
     // Student Controller
     Route::get('/create/student','studentController@create')->name('/create/student');
-    Route::post('store/student','StudentController@store')->name('store/student');
-    Route::get('/all/student','StudentController@index')->name('/all/student');
-    Route::get('/search/student','StudentController@search')->name('/search/student');
-    Route::get('/student/{id}/edit','StudentController@edit')->name('/student/{id}/edit');
-    Route::post('/student/{id}/update','StudentController@update')->name('/student/{id}/update');
-    Route::get('/student/{id}/show','StudentController@show')->name('/student/{id}/show');
-    Route::get('/delete/{id}/student','StudentController@destroy')->name('/delete/{id}/student');
-    Route::get('/create/contract','StudentController@createContract')->name('/create/contract');
+    Route::post('/','studentController@store')->name('/store/student');
+    Route::get('/all/student','studentController@index')->name('/all/student');
+    Route::get('/search/student','studentController@search')->name('/search/student');
+    Route::get('/student/{id}/edit','studentController@edit')->name('/student/{id}/edit');
+    Route::post('/student/{id}/update','studentController@update')->name('/student/{id}/update');
+    Route::get('/student/{id}/show','studentController@show')->name('/student/{id}/show');
+    Route::get('/delete/{id}/student','studentController@destroy')->name('/delete/{id}/student');
+    Route::get('/create/contract','studentController@createContract')->name('/create/contract');
     Route::post('/print/contract','studentController@printContract')->name('/create/contact');
     //Course
     Route::get('/create/course','CourseController@create')->name('/create/course');
@@ -66,27 +66,27 @@ Route::group(['middleware'=>'auth'],function (){
     Route::post('/register/student/course','CourseStudentController@store')->name('/register/student/course');
 
     //Payment
-    Route::get('student/{stdId}/payment/{courseId}/details','PaymentController@specificPayment')->name('student/{stdId}/payment/{courseId}/details');
+    Route::get('/student/{stdId}/payment/{courseId}/details','PaymentController@specificPayment')->name('student/{stdId}/payment/{courseId}/details');
     Route::get('/add/{std_id}/{course_id}/payment','PaymentController@create')->name('/add/{std_id}/{course_id}/payment');
     Route::post('/add/payment','PaymentController@store')->name('/add/payment');
     Route::get('payment/details','PaymentController@index')->name('payment/details');
-    Route::post('payment/details','PaymentController@returnAllPaymentForStudent')->name('payment/details');
+    Route::post('payment/details','PaymentController@returnAllPaymentForStudent')->name('/payment/details');
     //Questions
-    Route::get('add/new/question','ExamController@create')->name('add/new/question');
-    Route::post('add/new/question','ExamController@store')->name('add/new/question');
+    Route::get('/add/new/question','ExamController@create')->name('/add/new/question');
+    Route::post('/add/new/question','ExamController@store')->name('/add/new/question');
     Route::get('/all/questions','ExamController@index')->name('/all/questions');
     Route::get('/search/question','ExamController@search')->name('/search/question');
     Route::get('/edit/{id}/question','ExamController@edit')->name('/edit/{id}/question');
     Route::post('/update/{id}/question','ExamController@update')->name('/update/{id}/question');
     Route::get('/delete/{id}/question','ExamController@destroy')->name('/delete/{id}/question');
     Route::get('/print/exam','ExamController@print')->name('/print/exam');
-    Route::post('print/random/questions','ExamController@randomExam')->name('print/random/questions');
+    Route::post('/print/random/questions','ExamController@randomExam')->name('/print/random/questions');
 
     // Mark
     Route::get('/add/{stdid}/{courseid}/mark','MarkController@create')->name('/add/{stdid}/{courseid}/mark');
     Route::post('/add/mark','MarkController@store')->name('/add/mark');
     //Report`s
-    Route::get('student/marks','ReportController@studentMarks')->name('student/marks');
+    Route::get('/student/marks','ReportController@studentMarks')->name('/student/marks');
 
     //Search Mark
     Route::get('/get/student/course','ReportController@getCourse')->name('/get/student/course');
