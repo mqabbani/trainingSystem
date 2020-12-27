@@ -28,7 +28,7 @@
         color: white !important;
     }
 </style>
-<body onload="window.print()">
+<body>
 <div class="container"  >
     <div class="row">
         <div class="well col-xs-10 col-sm-10 col-md-6 col-xs-offset-1 col-sm-offset-1 col-md-offset-3">
@@ -57,7 +57,7 @@
                 </p>
 
                 <br>
-                <p class="text-right" style="font-size: 16px;">  يلتزم الفريق الثاني بدفع مبلغ لقاء الاشتراك بهذه الدورة {{$request->price}} دينار أردني.
+                <p class="text-right" style="font-size: 16px;">  يلتزم الفريق الثاني بدفع مبلغ لقاء الاشتراك بهذه الدورة {{$totalMoney}} دينار أردني.
                 </p>
                 <br>
                 <p class="text-right" style="font-size: 16px;">  يلتزم الفريق الثاني بجميع المبالغ المترتبة عليه في حال الانسحاب من الدورة لأي سبب كان و تنحصر مسوولية الفريق الأول في حال الانسحاب لأسباب صحية أو قاهرة بتأجيل موعد الدورة فقط مع تسديد كامل المستحقات .
@@ -82,11 +82,11 @@
                 </div>
             </div>
             <div class="row">
-                <p class="text-right" style="font-size: 20px;"> انا الموقع ادناه {{$request->name}}
-                    احمل الرقم الوطني    {{$request->national_id}} </p>
-                <p class="text-right" style="font-size: 20px;">أتعهد بدفع مبلغ {{$request->price}} دينار </p>
+                <p class="text-right" style="font-size: 20px;"> انا الموقع ادناه {{$student->name_ar}}
+                    احمل الرقم الوطني    {{$student->national_id}} </p>
+                <p class="text-right" style="font-size: 20px;">أتعهد بدفع مبلغ {{$totalMoney}} دينار </p>
                 <br><br>
-                <p class="text-right" style="font-size: 16px;"> للسادة شركة الألحان للخلويات بتاريخ {{$request->date}}  ويعتبر هذا المبلغ ديناً بذمتي، ويعتبر هذا السند سند تنفيذي قابل للتنفيذ لدى دوائر التنفيذ المختصة، وأسقط حقي بالطعن به بأي شكل من الأشكال.
+                <p class="text-right" style="font-size: 16px;"> للسادة شركة الألحان للخلويات بتاريخ {{\Carbon\Carbon::now()}}  ويعتبر هذا المبلغ ديناً بذمتي، ويعتبر هذا السند سند تنفيذي قابل للتنفيذ لدى دوائر التنفيذ المختصة، وأسقط حقي بالطعن به بأي شكل من الأشكال.
                 </p>
             </div>
             <div class="row">
@@ -107,8 +107,9 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script type="text/javascript">
     $(document).ready(function (){
-        setTimeout(9500);
-        document.location.href = '{{URL::to('/create/contract')}}';
+        window.print();
+        setTimeout(95000);
+        document.location.href = '{{URL::to('/create/student')}}';
     });
 </script>
 

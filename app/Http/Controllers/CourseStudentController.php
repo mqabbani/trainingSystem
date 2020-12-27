@@ -107,18 +107,19 @@ class CourseStudentController extends Controller
                     $student->course()->attach($array[$i],
                         ['price'=>$priceData[$i],'certificate'=>$certificateData[$i]]);
                 }
-
-              //  foreach($array as $filePath){
-                //    $student->course()->attach($filePath,
-                  //      ['price'=>collect($priceData),'certificate'=>collect($certificateData)]);
-                //}
-
-                    //$student->course()->attach($array,['price'=>collection($priceData),'certificate'=>collect($certificateData)]);
-                //$student->course()->attach($array);
             }
 
         }
-      return redirect()->back();
+        $totalMoney = $request->price_h + $request->price_s + $request->price_g;
+        if($request->ch1 == null || $request->ch2 == null || $request->ch3 == null )
+        {
+            return View('admin.contracts.print_contract_with_certificate',compact('student','totalMoney'));
+        }else{
+            return View('admin.contracts.print_contract_without_certificate');
+        }
+
+
+      //return redirect()->back();
 
 
     }

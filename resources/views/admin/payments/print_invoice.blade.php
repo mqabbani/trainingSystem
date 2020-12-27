@@ -12,7 +12,7 @@
     <title>Print Invoice</title>
 </head>
 <!--onload="window.print()"-->
-<body onload="window.print()">
+<body>
 <div class="container"  >
     <div class="row">
         <div class="well col-xs-10 col-sm-10 col-md-6 col-xs-offset-1 col-sm-offset-1 col-md-offset-3">
@@ -143,6 +143,7 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script type="text/javascript">
     $(document).ready(function (){
+        window.print();
         setTimeout(9000);
         document.location.href = '{{URL::to('/all/student')}}';
     });
