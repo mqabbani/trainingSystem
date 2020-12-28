@@ -144,7 +144,7 @@
 <script type="text/javascript">
     $(document).ready(function (){
         window.print();
-        setTimeout(9000);
+        //setTimeout(9000);
         document.location.href = '{{URL::to('/all/student')}}';
     });
 </script>

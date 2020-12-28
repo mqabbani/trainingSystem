@@ -74,7 +74,7 @@
 
 <script type="text/javascript">
     $(document).ready(function (){
-        setTimeout(9500);
+       // setTimeout(9500);
         document.location.href = '{{URL::to('print/exam')}}';
     });
 </script>
