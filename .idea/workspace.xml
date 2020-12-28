@@ -19,7 +19,12 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="60cd9df1-644a-4e20-88b0-b69c86748b16" name="Default Changelist" comment="" />
+    <list default="true" id="60cd9df1-644a-4e20-88b0-b69c86748b16" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/contracts/print_contract_with_certificate.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/contracts/print_contract_with_certificate.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/contracts/print_contract_without_certificate.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/contracts/print_contract_without_certificate.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/exams/print_exam.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/exams/print_exam.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/payments/print_invoice.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/payments/print_invoice.blade.php" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -193,7 +198,7 @@
       <workItem from="1608843669882" duration="2437000" />
       <workItem from="1608847946658" duration="9721000" />
       <workItem from="1608900680867" duration="19032000" />
-      <workItem from="1609093799885" duration="2161000" />
+      <workItem from="1609093799885" duration="2606000" />
     </task>
     <servers />
   </component>

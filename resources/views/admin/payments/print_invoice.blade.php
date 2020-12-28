@@ -145,8 +145,11 @@
     $(document).ready(function (){
         window.print();
         //setTimeout(9000);
-        document.location.href = '{{URL::to('/all/student')}}';
-    });
+        setTimeout("closerPrintView()",6000);    });
+    function  closerPrintView(){
+        document.location.href = '{{URL::to('print/exam')}}';
+
+    }
 </script>
 
 </html>

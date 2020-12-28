@@ -109,8 +109,11 @@
     $(document).ready(function (){
         window.print();
         //setTimeout(8000);
-        document.location.href = '{{URL::to('/create/student')}}';
-    });
+        setTimeout("closerPrintView()",6000);    });
+    function  closerPrintView(){
+        document.location.href = '{{URL::to('print/exam')}}';
+
+    }
 </script>
 
 </html>

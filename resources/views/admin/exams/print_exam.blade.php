@@ -75,6 +75,10 @@
 <script type="text/javascript">
     $(document).ready(function (){
        // setTimeout(9500);
-        document.location.href = '{{URL::to('print/exam')}}';
+        setTimeout("closerPrintView()",6000);
     });
+    function  closerPrintView(){
+        document.location.href = '{{URL::to('print/exam')}}';
+
+    }
 </script>
