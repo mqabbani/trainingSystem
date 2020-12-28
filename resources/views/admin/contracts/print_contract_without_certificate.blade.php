@@ -111,7 +111,7 @@
         //setTimeout(8000);
         setTimeout("closerPrintView()",6000);    });
     function  closerPrintView(){
-        document.location.href = '{{URL::to('print/exam')}}';
+        document.location.href = '{{URL::to('create/student')}}';
 
     }
 </script>
