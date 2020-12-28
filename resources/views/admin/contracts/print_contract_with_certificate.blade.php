@@ -108,7 +108,7 @@
 <script type="text/javascript">
     $(document).ready(function (){
         window.print();
-        setTimeout(95000);
+        setTimeout(8000);
         document.location.href = '{{URL::to('/create/student')}}';
     });
 </script>
