@@ -45,12 +45,16 @@ class StudentController extends Controller
      */
     public function store(Request $request)
     {
+
         $request->validate([
             'name'=>'required',
             'name_ar'=>'required',
-            'national_id'=>'required',
+            'national_id'=>'nullable|digits:10',
             'sp_number'=>'required|unique:students',
-
+            'phone_number'=>'required',
+            'phone_number_second'=>'required',
+            'photo'=>'required|mimes:jpeg,jpg,png,gif|max:25000',
+            'email'=>'required|unique:students'
         ]);
         $image_code  = '';
        $image = $request->file('photo');
@@ -58,23 +62,46 @@ class StudentController extends Controller
             $new_name = rand() . '.' .$image->getClientOriginalExtension();
             $image->move(public_path('backend/img'), $new_name);
         }
-        Student::create([
-            'name'=>$request->name,
-            'name_ar'=>$request->name_ar,
-            'email'=>$request->email,
-            'national_id'=>$request->national_id,
-            'phone_number'=>$request->phone_number,
-            'phone_number_second'=>$request->phone_number_second,
-            'sp_number'=>$request->sp_number,
-            'photo_name'=>$new_name,
-            'photo_path'=>'backend/img/'.$new_name,
-            'discount'=>$request->discount
-        ]);
 
-        Session::flash('message', 'Student Added successful!');
-        //return  redirect()->back();
-        $sp_number = $request->sp_number;
-        return redirect()->action('CourseStudentController@create',['sp_number'=>$sp_number]);
+        $check = null;
+        if($request->notJordan == "1"){
+            $check = true;
+        }else{
+            $check = false;
+        }
+
+        if($request->national_id != null && $check == true )
+        {
+            Session::flash('message', 'National ID is insert and student is not jordanian Not Added !!');
+            return redirect()->back();
+
+        }
+        if($request->national_id == null && $check == false)
+        {
+            Session::flash('message', 'National ID is not insert and student is  jordanian Not Added!!');
+            return redirect()->back();
+        }
+        else {
+
+            Student::create([
+                'name' => $request->name,
+                'name_ar' => $request->name_ar,
+                'email' => $request->email,
+                'national_id' => $request->national_id,
+                'phone_number' => $request->phone_number,
+                'phone_number_second' => $request->phone_number_second,
+                'sp_number' => $request->sp_number,
+                'photo_name' => $new_name,
+                'photo_path' => 'backend/img/' . $new_name,
+                'not_jordan' => $check,
+                'gender' => $request->gender
+            ]);
+
+            Session::flash('message', 'Student Added successful!');
+            //return  redirect()->back();
+           // $sp_number = $request->sp_number;
+        }
+        return redirect()->action('CourseStudentController@create',['sp_number'=>$request->sp_number]);
     }
 
     /**
@@ -133,6 +160,12 @@ class StudentController extends Controller
      */
     public function update(Request $request, $id)
     {
+        $request->validate([
+            'name'=>'required',
+            'name_ar'=>'required',
+            'phone_number'=>'required',
+
+        ]);
         $student = Student::find($id);
 
         $student->update($request->all());
@@ -152,11 +185,11 @@ class StudentController extends Controller
      */
     public function destroy($id)
     {
-        $student = Student::find($id);
-        $courses = $student->course()->where('student_id',$student->id)->get();
-        //dd($courses);
-        if(is_null($courses)){
 
+        $student = Student::find($id);
+        $courses = $student->course()->where('student_id',$student->id)->first();
+
+        if(is_null($courses)){
             Session::flash('message', 'Student Delete successful!');
             $student->delete();
         }else{

@@ -5,6 +5,7 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta http-equiv="content-language" content="text/html;charset=UTF-8">
     <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
     <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
     <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
@@ -40,32 +41,46 @@
                 </div>
                 <div class="col-xs-8 col-sm-8 col-md-8">
                     <p>
-                        <b style="font-size: 20px;">عقد اشتراك دوره تدريبيه</b>
+                        <b style="font-size: 19px;">عقد اشتراك دوره تدريبيه</b>
+                        <em></em>
                     </p>
                 </div>
             </div>
 
             <div class="row">
-                <p class="text-right" style="font-size: 16px;">الفريق الأول: شركة الألحان للخلويات  ( هارمونكس )</p>
+                <p class="text-right"dir="rtl" lang="ar" style="font-size: 19px;">
+                     الفريق الأول: شركة الألحان للخلويات
+                    <em>(</em>
+                    <em>هارمونكس</em>
+                    <em>)</em>
+                    </p>
+
                 <p class="text-right" style="font-size: 16px;"> : الفريق الثاني</p>
                 <p class="text-right" style="font-size: 16px;"> : مقدمه</p>
                 <p class="text-right" style="font-size: 16px;">حيث أن الفريق الأول شركة متخصصة في مجال صيانة الأجهزة الخلوية والشاشات وتقوم بعمل دورات تدريبية لصيانة الأجهزة الخلوية والشاشات، وحيث يرغب الفريق الثاني بالاشتراك بهذه الدورات، فقد تم الاتفاق على ما يلي:
                     - تعتبر مقدمة هذه الإتفاقية جزءً منها وتقرأ معها.
                 </p>
                 <br>
-                <p class="text-right" style="font-size: 16px;">من المتفق عليه والمفهوم للفريق الثاني أن الفريق الأول يقوم بعمل دورات تدريبية، وعند انتهاء الدورة يقوم بإصدار شهادة تفيد باشتراك الفريق الثاني في الدورة فقط وأن هذه الشهادة صادرة عن الفريق الأول وليس عن أي جهة أخرى.
+                <p class="text-right" style="font-size: 19px;">من المتفق عليه والمفهوم للفريق الثاني أن الفريق الأول يقوم بعمل دورات تدريبية، وعند انتهاء الدورة يقوم بإصدار شهادة تفيد باشتراك الفريق الثاني في الدورة فقط وأن هذه الشهادة صادرة عن الفريق الأول وليس عن أي جهة أخرى.
                 </p>
 
                 <br>
-                <p class="text-right" style="font-size: 16px;">  يلتزم الفريق الثاني بدفع مبلغ لقاء الاشتراك بهذه الدورة {{$totalMoney}} دينار أردني.
+                <p class="text-right" style="font-size: 19px;">  يلتزم الفريق الثاني بدفع مبلغ لقاء الاشتراك بهذه الدورة {{$totalMoney}} دينار أردني.
                 </p>
                 <br>
-                <p class="text-right" style="font-size: 16px;">  يلتزم الفريق الثاني بجميع المبالغ المترتبة عليه في حال الانسحاب من الدورة لأي سبب كان و تنحصر مسوولية الفريق الأول في حال الانسحاب لأسباب صحية أو قاهرة بتأجيل موعد الدورة فقط مع تسديد كامل المستحقات .
+                <p class="text-right" style="font-size: 19px;">  يلتزم الفريق الثاني بجميع المبالغ المترتبة عليه في حال الانسحاب من الدورة لأي سبب كان و تنحصر مسوولية الفريق الأول في حال الانسحاب لأسباب صحية أو قاهرة بتأجيل موعد الدورة فقط مع تسديد كامل المستحقات .
                 </p>
-                <div class="row">
+                <div class="flex-sm-row-reverse">
                     <div id="textbox">
-                        <p class="alignleft">الفرق الثاني</p>
-                        <p class="alignright">الفريق الاول</p>
+                        <p>
+                            &nbsp;&nbsp;&nbsp;الفريق الاول  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; الفريق الثاني&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+
                     </div>
                 </div>
 
@@ -75,23 +90,23 @@
             <div class="row">
                 <div class="col-xs-4 col-sm-4 col-md-4 text-center">
                 </div>
-                <div class="col-xs-8 col-sm-8 col-md-8">
+                <div class="col-xs-12 col-sm-12 col-md-12">
                     <p>
-                        <b style="font-size: 25px;" class="text-center">سند تعهد بالدفع</b>
+                        <b style="font-size: 25px;" class="text-center" dir="rtl" lang="ar">سند تعهد بالدفع</b>
                     </p>
                 </div>
             </div>
             <div class="row">
-                <p class="text-right" style="font-size: 20px;"> انا الموقع ادناه {{$student->name_ar}}
+                <p class="text-right" style="font-size: 23px;"> انا الموقع ادناه {{$student->name_ar}}
                     احمل الرقم الوطني    {{$student->national_id}} </p>
-                <p class="text-right" style="font-size: 20px;">أتعهد بدفع مبلغ {{$totalMoney}} دينار </p>
+                <p class="text-right" style="font-size: 23px;">أتعهد بدفع مبلغ {{$totalMoney}} دينار </p>
                 <br><br>
-                <p class="text-right" style="font-size: 16px;"> للسادة شركة الألحان للخلويات بتاريخ {{\Carbon\Carbon::now()}}  ويعتبر هذا المبلغ ديناً بذمتي، ويعتبر هذا السند سند تنفيذي قابل للتنفيذ لدى دوائر التنفيذ المختصة، وأسقط حقي بالطعن به بأي شكل من الأشكال.
+                <p class="text-right" style="font-size: 23px;"> للسادة شركة الألحان للخلويات بتاريخ {{\Carbon\Carbon::now()->toDateString()}}  ويعتبر هذا المبلغ ديناً بذمتي، ويعتبر هذا السند سند تنفيذي قابل للتنفيذ لدى دوائر التنفيذ المختصة، وأسقط حقي بالطعن به بأي شكل من الأشكال.
                 </p>
             </div>
             <div class="row">
                 <div id="textbox">
-                    <p class="alignleft" style="font-size: 20px;">عليه اوقع</p>
+                    <p class="alignleft" dir="rtl" lang="ar" style="font-size: 20px; margin-left: 20px;">عليه اوقع</p>
                 </div>
             </div>
             <!--<div class="row" style="margin-left: 200px;">

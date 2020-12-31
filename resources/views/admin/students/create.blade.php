@@ -17,38 +17,42 @@ Register New Student
                         <div class="col-lg-4">
                             <div class="form-group">
                                 <label class="form-control-label" style="font-family: cursive;">Full Name: <span class="tx-danger">*</span></label>
-                                <input class="form-control" type="text" name="name" style="font-family: cursive;" required placeholder="Enter FullName">
+                                <input class="form-control" type="text" name="name" style="font-family: cursive;"
+                                       placeholder="Enter FullName">
                             </div>
                         </div><!-- col-4 -->
                         <div class="col-lg-4">
                             <div class="form-group">
                                 <label class="form-control-label" style="font-family: cursive;">Arabic Name: <span class="tx-danger">*</span></label>
-                                <input class="form-control" style="font-family: cursive;" type="text" name="name_ar"  required placeholder="Enter Arabic Name">
+                                <input class="form-control" style="font-family: cursive;" type="text" name="name_ar"
+                                        placeholder="Enter Arabic Name">
                             </div>
                         </div><!-- col-4 -->
                         <div class="col-lg-4">
                             <div class="form-group" >
                                 <label class="form-control-label" style="font-family: cursive;">Email address: <span class="tx-danger">*</span></label>
-                                <input class="form-control" style="font-family: cursive;" type="text" name="email"  placeholder="Enter email address" required>
+                                <input class="form-control" style="font-family: cursive;" type="text" name="email"
+                                       placeholder="Enter email address" >
                             </div>
                         </div><!-- col-4 -->
                         <div class="col-lg-6">
                             <div class="form-group mg-b-10-force">
                                 <label class="form-control-label" style="font-family: cursive;">National Number: <span class="tx-danger">*</span></label>
                                 <input class="form-control" type="text" name="national_id"
-                                       placeholder="Enter National ID" style="font-family: cursive;" required>
+                                       placeholder="Enter National ID" style="font-family: cursive;" >
                             </div>
                         </div><!-- col-8 -->
                         <div class="col-lg-6">
                             <div class="form-group mg-b-10-force">
                                 <label class="form-control-label" style="font-family: cursive;">Student Special Number: <span class="tx-danger">*</span></label>
-                                <input class="form-control"  style="font-family: cursive;" type="text" name="sp_number" readonly value="{{$std_sp_number}}">
+                                <input class="form-control"  style="font-family: cursive;"
+                                       type="text" name="sp_number" readonly value="{{$std_sp_number}}">
                             </div>
                         </div><!-- col-4 -->
                         <div class="col-lg-4">
                             <div class="form-group mg-b-10-force">
                                 <label class="form-control-label" style="font-family: cursive;">Student Phone Number: <span class="tx-danger">*</span></label>
-                                <input class="form-control" style="font-family: cursive;" type="text" name="phone_number" required >
+                                <input class="form-control" style="font-family: cursive;" type="text" name="phone_number"  >
                             </div>
                         </div><!-- col-4 -->
                         <div class="col-lg-4">
@@ -60,17 +64,27 @@ Register New Student
                         <div class="col-lg-4">
                             <div class="form-group mg-b-10-force">
                                 <label class="form-control-file" style="font-family: cursive;">Student Photo: <span class="tx-danger">*</span></label>
-                                <input class="form-control-file" style="font-family: cursive;" type="file" name="photo" required  >
+                                <input class="form-control-file" style="font-family: cursive;" type="file" name="photo">
                             </div>
                         </div><!-- col-4 -->
-                      <!--  <div class="col-lg-4">
+                      <div class="col-lg-4">
                             <div class="form-group mg-b-10-force">
-                                <label class="form-control-file" style="font-family: cursive;">Student Discount: <span class="tx-danger">*</span></label>
-                                <input class="form-control" style="font-family: cursive;" type="text" name="discount"   placeholder="Discount">
+                                <label class="form-control-file" style="font-family: cursive;">Not Jordanian <span class="tx-danger">*</span></label>
+                                <input class="custom-checkbox" style="font-family: cursive;" type="checkbox"
+                                       name="notJordan" value="1">
                             </div>
-                        </div>-->
+                        </div>
+                        <div class="col-lg-4">
+                            <div class="form-group mg-b-10-force">
+                                <label class="form-control-file" style="font-family: cursive;">Gender <span class="tx-danger">*</span></label>
+                                <select class="form-control"
+                                       style="font-family: cursive;"  name="gender">
+                                    <option value="Male">Male</option>
+                                    <option value="Female">Female</option>
+                                </select>
+                            </div>
+                        </div>
                     </div><!-- row -->
-
                     <div class="form-layout-footer">
                         <button class="btn btn-info mg-r-5" style="font-family: cursive;">Register</button>
                     </div><!-- form-layout-footer -->

@@ -51,6 +51,9 @@ class CourseController extends Controller
     public function store(Request $request)
     {
 
+        $request->validate([
+            'ch1'=>"required"
+        ]);
        // dd($request->course_se);
         $days = array();
         $days = collect($request->ch1)->implode('-');
@@ -67,8 +70,8 @@ class CourseController extends Controller
 
         $courseName = array("0"=>'Hardware',"1"=>'Software',"2"=>'Glass');
         Session::flash('message', 'Course Create successful!');
-
-        return View('admin.courses.create',compact('courseName'));
+        return redirect()->back();
+       // return View('admin.courses.create',compact('courseName'));
     }
 
     /**

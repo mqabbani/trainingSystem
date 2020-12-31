@@ -20,10 +20,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="60cd9df1-644a-4e20-88b0-b69c86748b16" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/CourseController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/CourseController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/CourseStudentController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/CourseStudentController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/PaymentController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/PaymentController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/StudentController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/StudentController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/UserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/UserController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_11_18_223553_create_students_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_11_18_223553_create_students_table.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/admin/contracts/print_contract_with_certificate.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/contracts/print_contract_with_certificate.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/admin/contracts/print_contract_without_certificate.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/contracts/print_contract_without_certificate.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/admin/exams/print_exam.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/exams/print_exam.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/admin/payments/print_invoice.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/payments/print_invoice.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/students/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/students/create.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/users/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/users/create.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -198,7 +207,8 @@
       <workItem from="1608843669882" duration="2437000" />
       <workItem from="1608847946658" duration="9721000" />
       <workItem from="1608900680867" duration="19032000" />
-      <workItem from="1609093799885" duration="2606000" />
+      <workItem from="1609093799885" duration="3341000" />
+      <workItem from="1609278726595" duration="18061000" />
     </task>
     <servers />
   </component>

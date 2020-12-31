@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Contract;
 use App\Course;
 use App\Student;
 use Illuminate\Http\Request;
@@ -108,14 +109,20 @@ class CourseStudentController extends Controller
                         ['price'=>$priceData[$i],'certificate'=>$certificateData[$i]]);
                 }
             }
-
         }
         $totalMoney = $request->price_h + $request->price_s + $request->price_g;
+        Contract::create([
+            'sp_number'=>$request->sp_number,
+            'total'=>$totalMoney,
+            'national_id'=>$student->national_id
+                ]);
+        //dd($request->ch1);
+        //dd($request->ch1);
         if($request->ch1 == null || $request->ch2 == null || $request->ch3 == null )
         {
-            return View('admin.contracts.print_contract_with_certificate',compact('student','totalMoney'));
+            return View('admin.contracts.print_contract_without_certificate',compact('student','totalMoney'));
         }else{
-            return View('admin.contracts.print_contract_without_certificate');
+            return View('admin.contracts.print_contract_with_certificate',compact('student','totalMoney'));
         }
 
 

@@ -22,7 +22,7 @@
                 </div>
                 <div class="col-xs-8 col-sm-8 col-md-8">
                     <p>
-                        <em style="font-size: 12px;">Receipt voucher Harmonex training Center </em>
+                        <em style="font-size: 12px;"> Harmonex training Center </em>
                     </p>
                 </div>
             </div>
@@ -33,7 +33,7 @@
                     <p><em style="font-size: 12px;">Student Name :  </em></p>
                     <p><em style="font-size: 12px;">Student Sp Number:  </em></p>
                 </div>
-                <div class="col-xs-8 col-sm-8 col-md-8">
+                <div class="col-xs-12 col-sm-12 col-md-12">
                     <p class="text-right">
                         <em style="font-size: 12px;">Date : {{\Illuminate\Support\Carbon::now()}} </em>
                     </p>
@@ -43,17 +43,22 @@
                 </div>
             </div>
 
-            <div class="row" style="margin-left: 25px;">
+            <div class="row" >
                 @foreach($questions as $value)
-                <table class="table table-hover"  >
+                <table class="table" cellspacing="0" cellpadding="0">
                     <tr>
-                        <p class="text-right">{{$value->text}}</p>
+                        <p class="text"dir="rtl" lang="ar">
+                            {{$value->text}}
+
+                        </p>
                     </tr>
                     <td>  <input class="custom-radio" type="radio">{{$value->answer1}}</td>
                     <td>  <input class="custom-radio" type="radio">{{$value->answer2}}</td>
                     <td>  <input class="custom-radio" type="radio">{{$value->answer3}}</td>
                     <td>  <input class="custom-radio" type="radio">{{$value->answer4}}</td>
                 </table>
+                    <p>-----------------------------------------------------------------------------------------------</p>
+
                 @endforeach
 
             </div>

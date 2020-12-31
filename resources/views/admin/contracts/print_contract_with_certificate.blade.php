@@ -30,7 +30,7 @@
 </style>
 <body >
 <div class="container"  >
-    <div class="row">
+    <div class="row text-center" >
         <div class="well col-xs-10 col-sm-10 col-md-6 col-xs-offset-1 col-sm-offset-1 col-md-offset-3">
             <div class="row">
                 <div class="col-xs-12 col-sm-12 col-md-12 text-center">
@@ -40,53 +40,65 @@
                 </div>
                 <div class="col-xs-8 col-sm-8 col-md-8">
                     <p>
-                        <b style="font-size: 20px;">عقد اشتراك دوره تدريبيه</b>
+                        <b style="font-size: 19px;">عقد اشتراك دوره تدريبيه</b>
                     </p>
                 </div>
             </div>
 
-            <div class="row">
-               <p class="text-right" style="font-size: 16px;">الفريق الأول: شركة الألحان للخلويات  ( هارمونكس )</p>
-                <p class="text-right" style="font-size: 16px;"> : الفريق الثاني</p>
-                <p class="text-right" style="font-size: 16px;"> : مقدمه</p>
-                <p class="text-right" style="font-size: 16px;">حيث أن الفريق الأول شركة متخصصة في مجال صيانة الأجهزة الخلوية والشاشات وتقوم بعمل دورات تدريبية لصيانة الأجهزة الخلوية والشاشات، وحيث يرغب الفريق الثاني بالاشتراك بهذه الدورات، فقد تم الاتفاق على ما يلي:
+            <div class="row text-center">
+                <p class="text-right"dir="rtl" lang="ar" style="font-size: 19px;">
+                    الفريق الأول: شركة الألحان للخلويات
+                    <em>(</em>
+                    <em>هارمونكس</em>
+                    <em>)</em>
+                </p>
+                <p class="text-right" dir="rtl" lang="ar" style="font-size: 19px;"> : الفريق الثاني</p>
+                <p class="text-right" dir="rtl" lang="ar" style="font-size: 19px;"> : مقدمه</p>
+                <p class="text-right" dir="rtl" lang="ar" style="font-size: 19px;">حيث أن الفريق الأول شركة متخصصة في مجال صيانة الأجهزة الخلوية والشاشات وتقوم بعمل دورات تدريبية لصيانة الأجهزة الخلوية والشاشات، وحيث يرغب الفريق الثاني بالاشتراك بهذه الدورات، فقد تم الاتفاق على ما يلي:
                     - تعتبر مقدمة هذه الإتفاقية جزءً منها وتقرأ معها.
                 </p>
                 <br>
-                <p class="text-right" style="font-size: 16px;">- من المتفق عليه والمفهوم للفريق الثاني أن الفريق الأول يقوم بعمل دورات تدريبية، وعند انتهاء الدورة يقوم بتسليم الفريق الثاني شهادة صادرة عن المركز وشهادة من جامعة الأميرة سمية لتكنولوجيا المعلومات.
+                <p class="text-right" dir="rtl" lang="ar" style="font-size: 19px;">- من المتفق عليه والمفهوم للفريق الثاني أن الفريق الأول يقوم بعمل دورات تدريبية، وعند انتهاء الدورة يقوم بتسليم الفريق الثاني شهادة صادرة عن المركز وشهادة من جامعة الأميرة سمية لتكنولوجيا المعلومات.
                 </p>
 
                 <br>
-                <p class="text-right" style="font-size: 16px;">  يلتزم الفريق الثاني بدفع مبلغ لقاء الاشتراك بهذه الدورة {{$totalMoney}} دينار أردني.
+                <p class="text-right" dir="rtl" lang="ar" style="font-size: 19px;">  يلتزم الفريق الثاني بدفع مبلغ لقاء الاشتراك بهذه الدورة {{$totalMoney}} دينار أردني.
                 </p>
                 <br>
-                <p class="text-right" style="font-size: 16px;">  يلتزم الفريق الثاني بجميع المبالغ المترتبة عليه في حال الانسحاب من الدورة لأي سبب كان و تنحصر مسوولية الفريق الأول في حال الانسحاب لأسباب صحية أو قاهرة بتأجيل موعد الدورة فقط مع تسديد كامل المستحقات .
+                <p class="text-right" dir="rtl" lang="ar" style="font-size: 19px;">  يلتزم الفريق الثاني بجميع المبالغ المترتبة عليه في حال الانسحاب من الدورة لأي سبب كان و تنحصر مسوولية الفريق الأول في حال الانسحاب لأسباب صحية أو قاهرة بتأجيل موعد الدورة فقط مع تسديد كامل المستحقات .
                 </p>
                 <div class="row">
                     <div id="textbox">
-                        <p class="alignleft">الفرق الثاني</p>
-                        <p class="alignright">الفريق الاول</p>
+                        <p dir="rtl" lang="ar">
+                            &nbsp;&nbsp;&nbsp;الفريق الاول  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; الفريق الثاني&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+
                     </div>
                 </div>
 
             </div>
             <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
             <br><br>
-                <div class="row">
+                <div class="row text-center">
                     <div class="col-xs-4 col-sm-4 col-md-4 text-center">
                     </div>
                     <div class="col-xs-8 col-sm-8 col-md-8">
                         <p>
-                            <b style="font-size: 25px;" class="text-center">سند تعهد بالدفع</b>
+                            <b style="font-size: 25px;"  class="text-center" dir="rtl" lang="ar">سند تعهد بالدفع</b>
                         </p>
                     </div>
                 </div>
-                    <div class="row">
-                        <p class="text-right" style="font-size: 20px;"> انا الموقع ادناه {{$student->name_ar}}
+                    <div class="row text-center">
+                        <p class="text-right" dir="rtl" lang="ar" style="font-size: 23px;"> انا الموقع ادناه {{$student->name_ar}}
                             احمل الرقم الوطني    {{$student->national_id}} </p>
-                        <p class="text-right" style="font-size: 20px;">أتعهد بدفع مبلغ {{$totalMoney}} دينار </p>
+                        <p class="text-right" style="font-size: 23px;">أتعهد بدفع مبلغ {{$totalMoney}} دينار </p>
                         <br><br>
-                        <p class="text-right" style="font-size: 16px;"> للسادة شركة الألحان للخلويات بتاريخ {{\Carbon\Carbon::now()}}  ويعتبر هذا المبلغ ديناً بذمتي، ويعتبر هذا السند سند تنفيذي قابل للتنفيذ لدى دوائر التنفيذ المختصة، وأسقط حقي بالطعن به بأي شكل من الأشكال.
+                        <p class="text-right" style="font-size: 23px;"> للسادة شركة الألحان للخلويات بتاريخ {{\Carbon\Carbon::now()->toDateString()}}  ويعتبر هذا المبلغ ديناً بذمتي، ويعتبر هذا السند سند تنفيذي قابل للتنفيذ لدى دوائر التنفيذ المختصة، وأسقط حقي بالطعن به بأي شكل من الأشكال.
                         </p>
                     </div>
             <div class="row">

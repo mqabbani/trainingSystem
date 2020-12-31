@@ -83,7 +83,7 @@ class PaymentController extends Controller
 
         if($response->getStatusCode() == 200)
         {
-            session()->flash("message","Payment Added Successful to $course->name session $course->id Student name $student->name Email Sending And Sms Sending");
+            session()->flash("message","Payment Added Successful to $course->name session $course->session Student name $student->name Email Sending And Sms Sending");
         }else{
             session()->flash("message","Payment Added Successful to $course->name session $course->id Student name $student->name Email Sending Sms Not Sending");
         }
