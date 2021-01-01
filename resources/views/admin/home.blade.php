@@ -59,5 +59,21 @@
             </div>
         </div>
     </div><!--col-lg3 -->
+    <div class="col-lg-3">
+        <div class="card text-white  mb-3" style="background-color: #2c9faf;">
+            <div class="card-header" style="background-color: #2c9faf;" >Male Register </div>
+            <div class="card-body">
+                <h5 class="card-title"><li class="fa fa-user"></li> {{$array['Male Register']}}</h5>
+            </div>
+        </div>
+    </div><!--col-lg3 -->
+    <div class="col-lg-3">
+        <div class="card text-white  mb-3" style="background-color: #4e73df;">
+            <div class="card-header" style="background-color: #4e73df;" >Female Register </div>
+            <div class="card-body">
+                <h5 class="card-title"><li class="fa fa-user"></li> {{$array['Female Register']}}</h5>
+            </div>
+        </div>
+    </div><!--col-lg3 -->
 </div>
 @endsection

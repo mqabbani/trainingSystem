@@ -11,66 +11,58 @@
     <title>Print Exam</title>
 </head>
 <body onload="window.print()">
-<div class="container"  >
+<div class="container" >
     <div class="row">
-        <div class="well col-xs-10 col-sm-10 col-md-6 col-xs-offset-1 col-sm-offset-1 col-md-offset-3">
-            <div class="row">
-                <div class="col-xs-12 col-sm-12 col-md-12 text-center">
-                    <img src="{{asset('images/logoharmonex.png')}}" width="50" height="50">
-                </div>
-                <div class="col-xs-4 col-sm-4 col-md-4 text-center">
-                </div>
-                <div class="col-xs-8 col-sm-8 col-md-8">
-                    <p>
-                        <em style="font-size: 12px;"> Harmonex training Center </em>
-                    </p>
-                </div>
-            </div>
+        <div class="col-xs-12 col-sm-12 col-md-12 text-center">
+            <img src="{{asset('images/logoharmonex.png')}}" width="50" height="50">
+        </div>
 
-            <div style="clear: both;">
+        <div class="col-xs-12 col-sm-12 col-md-12 text-center">
+            <p>
+                <em style="font-size: 12px;"> Harmonex training Center </em>
+            </p>
+        </div>
+        <div class="col-xs-12 col-sm-12 col-md-12 ">
 
-                <div class="col-xs-4 col-sm-4 col-md-4 text-center">
-                    <p><em style="font-size: 12px;">Student Name :  </em></p>
-                    <p><em style="font-size: 12px;">Student Sp Number:  </em></p>
-                </div>
-                <div class="col-xs-12 col-sm-12 col-md-12">
-                    <p class="text-right">
-                        <em style="font-size: 12px;">Date : {{\Illuminate\Support\Carbon::now()}} </em>
-                    </p>
-                    <p class="text-right">
-                        <em style="font-size: 12px;">Course Name :{{$courseName}}  </em>
-                    </p>
-                </div>
-            </div>
+                <em style="font-size: 12px;"> Student Name :</em>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <em style="font-size: 12px;"> Student Sp Number : </em>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <em style="font-size: 12px;"> {{\Carbon\Carbon::now()->toDateString()}} </em>
+        </div>
+        <br>
+        <div class="col-xs-12 col-sm-12 col-md-12 ">
 
-            <div class="row" >
-                @foreach($questions as $value)
-                <table class="table" cellspacing="0" cellpadding="0">
-                    <tr>
-                        <p class="text"dir="rtl" lang="ar">
-                            {{$value->text}}
-
-                        </p>
-                    </tr>
-                    <td>  <input class="custom-radio" type="radio">{{$value->answer1}}</td>
-                    <td>  <input class="custom-radio" type="radio">{{$value->answer2}}</td>
-                    <td>  <input class="custom-radio" type="radio">{{$value->answer3}}</td>
-                    <td>  <input class="custom-radio" type="radio">{{$value->answer4}}</td>
-                </table>
-                    <p>-----------------------------------------------------------------------------------------------</p>
-
-                @endforeach
-
-            </div>
-            <div class="row" style="margin-left: 200px;">
-                <table class="table table-hover" >
-                    <tr>Harmonex Training Center </tr><br>
-                    <tr>0785858775 - 0781555517 </tr><br>
-                </table>
-            </div>
+            <em style="font-size: 12px;"> Course Name : {{$courseName}} </em>
         </div>
     </div>
-</div>
+    <hr class="row" >
+        @foreach($questions as $value)
+        <div class="col-xs-12 col-sm-12 col-md-12 text-right ">
+            <em dir="rtl" lang="ar" style="font-size: 16px;">{{$value->text}} </em>
+        </div>
+        <div class="col-xs-12 col-sm-12 col-md-12 ">
+            <input type="radio" class="custom-radio" dir="rtl" lang="ar" style="font-size: 12px;">{{$value->answer1}}
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <input type="radio" class="custom-radio" dir="rtl" lang="ar" style="font-size: 12px;">{{$value->answer2}}
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <input type="radio" class="custom-radio" dir="rtl" lang="ar" style="font-size: 12px;">{{$value->answer3}}
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <input type="radio" class="custom-radio" dir="rtl" lang="ar" style="font-size: 12px;">{{$value->answer4}}
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        </div>
+            <hr>
+
+        @endforeach
+
+    </div>
+
 </body>
 </html>
 <html>

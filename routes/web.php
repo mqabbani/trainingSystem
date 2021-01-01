@@ -46,7 +46,7 @@ Route::group(['middleware'=>'auth'],function (){
     Route::get('/student/{id}/show','StudentController@show')->name('/student/{id}/show');
     Route::get('/delete/{id}/student','StudentController@destroy')->name('/delete/{id}/student');
     //Route::get('/create/contract','StudentController@createContract')->name('/create/contract');
-    Route::post('/print/contract','StudentController@printContract')->name('/create/contact');
+    //Route::post('/print/contract','StudentController@printContract')->name('/create/contact');
     //Course
     Route::get('/create/course','CourseController@create')->name('/create/course');
     Route::get('/ajax/request/{course_name1}','CourseController@ajaxReq');

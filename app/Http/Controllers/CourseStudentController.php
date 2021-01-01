@@ -118,12 +118,16 @@ class CourseStudentController extends Controller
                 ]);
         //dd($request->ch1);
         //dd($request->ch1);
-        if($request->ch1 == null || $request->ch2 == null || $request->ch3 == null )
-        {
-            return View('admin.contracts.print_contract_without_certificate',compact('student','totalMoney'));
-        }else{
-            return View('admin.contracts.print_contract_with_certificate',compact('student','totalMoney'));
-        }
+       // if($request->ch1 == null || $request->ch2 == null || $request->ch3 == null )
+       // {
+           // return View('admin.contracts.print_contract_without_certificate',compact('student','totalMoney'));
+      //  }else{
+          //  return View('admin.contracts.print_contract_with_certificate',compact('student','totalMoney'));
+       // }
+       // dd($array);
+       // dd($certificateData);
+        return View('admin.contracts.print_contract_without_certificate',
+            compact('student','totalMoney','certificateData','array','request'));
 
 
       //return redirect()->back();

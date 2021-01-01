@@ -32,6 +32,8 @@ class HomeController extends Controller
         $coursePending   = Course::whereStatus('Pending')->count();
         $courseActive    = Course::whereStatus('Active')->count();
         $courseFinished  = Course::whereStatus('Finished')->count();
+        $maleRgister        = Student::whereGender('Male')->count();
+        $femaleRegister        = Student::whereGender('Female')->count();
         $ldate = date('Y-m-d');
         $numberOfPayment = Payment::where('created_at','like','%'.$ldate.'%')->count('payment');
         //dd($numberOfPayment);
@@ -47,6 +49,8 @@ class HomeController extends Controller
         $array['Course Finished'] = $courseFinished ;
         $array['Students Pay For today'] = $numberOfPayment;
         $array['Total Cash Per Day'] =  $totalCashPerDay ;
+        $array['Male Register'] =  $maleRgister ;
+        $array['Female Register'] =  $femaleRegister ;
         return view('admin.home',compact('array'));
     }
 }

@@ -134,7 +134,15 @@ class ExamController extends Controller
 
     public function randomExam(Request $request){
        // User::all()->random(10);
-        $questions = Exam::whereName($request->name)->get()->random($request->number);
+        $checkN = Exam::whereName($request->name)->count();
+
+        if($checkN >= $request->number){
+            $questions = Exam::whereName($request->name)->get()->random($request->number);
+        }
+        else{
+            session()->flash("message","Sorry You do not have Question enough ");
+            return redirect()->back();
+        }
         $courseName = $request->name;
         return View('admin.exams.print_exam',compact('questions','courseName'));
     }
