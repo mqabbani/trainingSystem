@@ -21,7 +21,7 @@ class Student extends Model
         {
             $month = sprintf("%02s", $month);
         }
-       
+
         if($day<=9){
             $day = sprintf("%02s", $day);
         }
