@@ -134,7 +134,7 @@
                     <a class="collapse-item" href="{{url('/search/invoice/serial')}}" style="font-family: cursive;">Search Invoice Serial</a>
                 </div>
             </div>
-            
+
         </li>
         <li class="nav-item">
             <a class="nav-link" href="{{url('/course/information')}}">
