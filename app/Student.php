@@ -15,13 +15,17 @@ class Student extends Model
     public static function generateSpStudentNumber(){
         $date =Carbon::now();
         $year   = $date->year;
-
         $month  = $date->month;
+        $day    = $date->day;
         if($year >=9)
         {
-            $month = "0".$date->month;
+            $month = sprintf("%02s", $month);
         }
-        $day    = $date->day;
+       
+        if($day<=9){
+            $day = sprintf("%02s", $day);
+        }
+
         //$number = rand(0,999);
         $number = Student::count();
         $number = $number + 1 ;
