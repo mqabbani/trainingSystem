@@ -6,6 +6,7 @@ use App\Contract;
 use App\Course;
 use App\Student;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Session;
 
 
@@ -116,16 +117,7 @@ class CourseStudentController extends Controller
             'total'=>$totalMoney,
             'national_id'=>$student->national_id
                 ]);
-        //dd($request->ch1);
-        //dd($request->ch1);
-       // if($request->ch1 == null || $request->ch2 == null || $request->ch3 == null )
-       // {
-           // return View('admin.contracts.print_contract_without_certificate',compact('student','totalMoney'));
-      //  }else{
-          //  return View('admin.contracts.print_contract_with_certificate',compact('student','totalMoney'));
-       // }
-       // dd($array);
-       // dd($certificateData);
+
         return View('admin.contracts.print_contract_without_certificate',
             compact('student','totalMoney','certificateData','array','request'));
 
@@ -178,5 +170,19 @@ class CourseStudentController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function change($stdid , $courseid){
+       $std_course= DB::table('course_student')->where('course_id',$courseid)->where('student_id',$stdid)->first();
+      //dd($std_course);
+       if($std_course->certificate == 0){
+          // $std_course->certificate = true;
+           DB::table('course_student')->where('course_id', $courseid)
+               ->where('student_id',$stdid)->update(['certificate' => true]);
+       }else{
+           DB::table('course_student')->where('course_id', $courseid)
+               ->where('student_id',$stdid)->update(['certificate' => false]);
+       }
+       return redirect()->back();
     }
 }

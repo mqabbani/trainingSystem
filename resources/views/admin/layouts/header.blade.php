@@ -132,6 +132,7 @@
                     <h6 class="collapse-header">Components:</h6>
                     <a class="collapse-item" href="{{url('student/marks')}}" style="font-family: cursive;">Student Marks</a>
                     <a class="collapse-item" href="{{url('/search/invoice/serial')}}" style="font-family: cursive;">Search Invoice Serial</a>
+                    <a class="collapse-item" href="{{url('/course/information')}}" style="font-family: cursive;">Courses Details</a>
                 </div>
             </div>
         </li>
@@ -234,7 +235,7 @@
         <footer class="sticky-footer bg-white">
             <div class="container my-auto">
                 <div class="copyright text-center my-auto">
-                    <span>Copyright &copy; Your Website 2019</span>
+                    <span>Copyright &copy; Your Website 2021</span>
                 </div>
             </div>
         </footer>

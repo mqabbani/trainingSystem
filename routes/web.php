@@ -59,6 +59,7 @@ Route::group(['middleware'=>'auth'],function (){
     Route::get('/active/course','CourseController@active')->name('/active/course');
     Route::get('/finished/course','CourseController@finished')->name('/finished/course');
     Route::get('/delete/{id}/course','CourseController@destroy')->name('/delete/{id}/course');
+    Route::get('course/{stdid}/certificate/{courseid}/change','CourseStudentController@change')->name('course/{stdid}/certificate/{courseid}/change');
     //
     Route::get('/register/student/course/{sp_number}','CourseStudentController@create')->name('/register/student/course/{sp_number}');
     Route::get('/register/student/course','CourseStudentController@createManullay')->name('/register/student/course');
@@ -94,5 +95,8 @@ Route::group(['middleware'=>'auth'],function (){
     Route::get('/search/invoice/serial','ReportController@searchSerial')->name('/search/invoice/serial');
     Route::post('/search/invoice/serial','ReportController@serialInvoice')->name('/search/invoice/serial');
 
+    Route::get('/course/information',function (){
+        return View('admin.courses.course_information');
+    })->name('/course/information');
 
 });

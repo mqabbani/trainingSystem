@@ -76,7 +76,7 @@ class PaymentController extends Controller
        $textSend = "$student->name is Pay $request->payment For $request->course_name session $request->course_session";
         //Sending Email To Nour
         app('App\Http\Controllers\MailController')->sendMail($student->name , $course->name , $request->payment, $request->course_session);
-       //Sending SMS To Student
+        //Sending SMS To Student
         $client = new \GuzzleHttp\Client(['base_uri' => 'http://sms.email-soft.com:8000/']);
         $response = $client->request('GET', "?Phonenumber=962'.$phoneNumber.
         &Text=$textSend.&User=harmonex&Password=harmonex");

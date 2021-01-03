@@ -40,11 +40,12 @@
                         <th style="font-size: 12px;">National ID</th>
                         <th style="font-size: 12px;">Phone Number</th>
                         <th style="font-size: 12px;">Second Phone</th>
-                        <th style="font-size: 12px;">Price</th>
                         <th style="font-size: 12px;">Certificate</th>
+                        <th style="font-size: 12px;">Price</th>
                         <th style="font-size: 12px;">Total Payment</th>
-                       <th style="font-size: 12px;">Show Payment Details</th>
+                        <th style="font-size: 12px;">Show Payment Details</th>
                         <th style="font-size: 12px;">Add Mark</th>
+                        <th style="font-size: 12px;">Change Certificate</th>
                     </tr>
                     </thead>
                     <tbody>
@@ -65,10 +66,10 @@
                             <td style="font-size: 12px;">{{$amountPayment[$i]}}</td>
                             <td> <a href="{{url('student/'.$courseStudent[$i]->id.'/payment/'.$courseInfo->id.'/details')}}" class="btn btn-danger" style="font-size: 12px;">Show Payments</a> </td>
                             <td> <a href="{{url('add/'.$courseStudent[$i]->id.'/'.$courseInfo->id.'/mark')}}" class="btn btn-primary" style="font-size: 12px;">Add Mark</a> </td>
+                            <td> <a href="{{url('course/'.$courseStudent[$i]->id.'/certificate/'.$courseInfo->id.'/change')}}" class="btn btn-success" style="font-size: 12px;">Change Certificate</a> </td>
                         </tr>
                     @endfor
                     </tbody>
-
                 </table>
                 {{$courseStudent->links()}}
             </div>
