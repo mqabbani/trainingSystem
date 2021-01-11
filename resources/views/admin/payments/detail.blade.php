@@ -39,6 +39,8 @@
                     <th style="font-size: 12px;">Received By </th>
                     <th style="font-size: 12px;">Date</th>
                     <th style="font-size: 12px;">Serial</th>
+                    <th style="font-size: 12px;">Edit</th>
+                    <th style="font-size: 12px;">Delete</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -48,6 +50,8 @@
                         <td style="font-size: 12px;">{{$value->received_by}} </td>
                         <td style="font-size: 12px;">{{$value->created_at}}</td>
                         <td style="font-size: 12px;">{{$value->serial}}</td>
+                        <td style="font-size: 12px;"><a href="{{url('payment/'.$value->id.'/student/'.$value->student_id.'/course/'.$value->course_id)}}" class="btn btn-primary">Edit</a> </td>
+                        <td style="font-size: 12px;"><a href="{{url('delete/payment/'.$value->id)}}" class="btn btn-danger">Delete</a> </td>
                     </tr>
                 @endforeach
                 </tbody>

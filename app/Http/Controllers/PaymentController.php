@@ -89,6 +89,8 @@ class PaymentController extends Controller
             }else{
                 session()->flash("message","Payment Added Successful to $course->name session $course->id Student name $student->name Email Sending Sms Not Sending");
             }
+        }else{
+            session()->flash("message","Payment Added Successful  to $course->name session $course->id Student name $student->name Email Without SMS ");
         }
         $DataInvoice =array();
         $DataInvoice[0] = $request->payment;
@@ -122,7 +124,8 @@ class PaymentController extends Controller
      */
     public function edit($id)
     {
-        //
+        $payment = Payment::find($id);
+        return view('admin.payments.edit',compact('payment'));
     }
 
     /**
@@ -134,7 +137,11 @@ class PaymentController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $payment = Payment::find($id);
+        $payment->payment = $request->payment;
+        $payment->save();
+        session()->flash("message","Payment {$payment->serial} is Updated Successfully");
+        return  redirect()->back();
     }
 
     /**
@@ -145,7 +152,9 @@ class PaymentController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $payment = Payment::find($id);
+        $payment->delete();
+        return  redirect()->back();
     }
     public function specificPayment($stdId , $courseID)
     {
