@@ -35,7 +35,7 @@
                             <div class="form-group mg-b-10-force">
                                 <label class="form-control-label">National Number: <span class="tx-danger">*</span></label>
                                 <input class="form-control" type="text" name="national_id"
-                                      value="{{$student->national_id}}" required>
+                                      value="{{$student->national_id}}" >
                             </div>
                         </div><!-- col-8 -->
                         <div class="col-lg-6">

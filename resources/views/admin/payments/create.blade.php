@@ -64,7 +64,13 @@
                                 <input class="form-control" name="sum_of" type="text" required placeholder="خمسون دينار فقط" >
                             </div>
                         </div><!-- col-4 -->
-                        <div class="col-lg-2">
+                        <div class="col-lg-10">
+                            <div class="form-group">
+                                <label  style="color: red;"><b>Send SMS </b><span class="tx-danger">*:</span></label>
+                                <input class="form-check-label" name="sendSms" type="checkbox">
+                            </div>
+                        </div><!-- col-4 -->
+                        <div class="col-lg-3">
                             <div class="form-group">
                                 <button class="btn btn-info mg-r-5" style="margin-top: 30px;">Add Payment</button>
                             </div>

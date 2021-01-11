@@ -77,15 +77,18 @@ class PaymentController extends Controller
         //Sending Email To Nour
         app('App\Http\Controllers\MailController')->sendMail($student->name , $course->name , $request->payment, $request->course_session);
         //Sending SMS To Student
-        $client = new \GuzzleHttp\Client(['base_uri' => 'http://sms.email-soft.com:8000/']);
-        $response = $client->request('GET', "?Phonenumber=962'.$phoneNumber.
+        if($request->sendSms == "on")
+        {
+            $client = new \GuzzleHttp\Client(['base_uri' => 'http://sms.email-soft.com:8000/']);
+            $response = $client->request('GET', "?Phonenumber=962'.$phoneNumber.
         &Text=$textSend.&User=harmonex&Password=harmonex");
 
-        if($response->getStatusCode() == 200)
-        {
-            session()->flash("message","Payment Added Successful to $course->name session $course->session Student name $student->name Email Sending And Sms Sending");
-        }else{
-            session()->flash("message","Payment Added Successful to $course->name session $course->id Student name $student->name Email Sending Sms Not Sending");
+            if($response->getStatusCode() == 200)
+            {
+                session()->flash("message","Payment Added Successful to $course->name session $course->session Student name $student->name Email Sending And Sms Sending");
+            }else{
+                session()->flash("message","Payment Added Successful to $course->name session $course->id Student name $student->name Email Sending Sms Not Sending");
+            }
         }
         $DataInvoice =array();
         $DataInvoice[0] = $request->payment;
