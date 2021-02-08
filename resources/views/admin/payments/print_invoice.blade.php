@@ -134,7 +134,7 @@
             <div class="row" style="margin-left: 200px;">
                 <table class="table table-hover" >
                     <tr>Harmonex Training Center </tr><br>
-                    <tr>0785858775 - 0781555517 </tr><br>
+                    <tr>065858775 - 0781555517 </tr><br>
                 </table>
             </div>
         </div>

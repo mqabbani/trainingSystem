@@ -22,7 +22,7 @@ class StudentController extends Controller
 
     public function index()
     {
-       $students= Student::orderBy('created_at','desc')->paginate(5);
+       $students= Student::orderBy('created_at','desc')->paginate(10);
         return View('admin.students.index',compact('students'));
     }
 
@@ -54,13 +54,20 @@ class StudentController extends Controller
             'phone_number'=>'required',
             'phone_number_second'=>'required',
             'photo'=>'required|mimes:jpeg,jpg,png,gif|max:25000',
-            'email'=>'required|unique:students'
+            'email'=>'required|unique:students',
+            'living'=>'required',
+            'photo_pass'=>'required|mimes:jpeg,jpg,png,gif|max:25000'
         ]);
         $image_code  = '';
        $image = $request->file('photo');
         if($request->hasFile('photo')){
             $new_name = rand() . '.' .$image->getClientOriginalExtension();
             $image->move(public_path('backend/img'), $new_name);
+        }
+        $image2 = $request->file('photo_pass');
+        if($request->hasFile('photo_pass')){
+            $newname = rand() . '.' .$image2->getClientOriginalExtension();
+            $image2->move(public_path('backend/img'), $newname);
         }
 
         $check = null;
@@ -94,7 +101,10 @@ class StudentController extends Controller
                 'photo_name' => $new_name,
                 'photo_path' => 'backend/img/' . $new_name,
                 'not_jordan' => $check,
-                'gender' => $request->gender
+                'gender' => $request->gender,
+                'living'=>$request->living,
+                'photo_passport'=>$newname,
+                'path_passport'=>'backend/img/' . $newname
             ]);
 
             Session::flash('message', 'Student Added successful!');

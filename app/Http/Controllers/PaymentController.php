@@ -73,15 +73,17 @@ class PaymentController extends Controller
        ]);
        $studentNumber = $student->phone_number;
        $phoneNumber   = ltrim($studentNumber, $studentNumber[0]);
-       $textSend = "$student->name is Pay $request->payment For $request->course_name session $request->course_session";
+       //$textSend = "$student->name is Pay $request->payment For $request->course_name session $request->course_session";
         //Sending Email To Nour
-        app('App\Http\Controllers\MailController')->sendMail($student->name , $course->name , $request->payment, $request->course_session);
+      //  app('App\Http\Controllers\MailController')->sendMail($student->name , $course->name , $request->payment, $request->course_session);
         //Sending SMS To Student
         if($request->sendSms == "on")
         {
             $client = new \GuzzleHttp\Client(['base_uri' => 'http://sms.email-soft.com:8000/']);
             $response = $client->request('GET', "?Phonenumber=962'.$phoneNumber.
-        &Text=$textSend.&User=harmonex&Password=harmonex");
+              &Text=$textSend.&User=harmonex&Password=harmonex");
+              $response2 = $client->request('GET', "?Phonenumber=962786666630'.
+              &Text=$textSend.&User=harmonex&Password=harmonex");
 
             if($response->getStatusCode() == 200)
             {
@@ -167,6 +169,23 @@ class PaymentController extends Controller
         $totalCourse = DB::table('course_student')->whereStudentId($stdId)->whereCourseId($courseID)->pluck('price');
 
         return View('admin.payments.detail',compact('totalCourse','payment','course','student','total'));
+    }
+
+    public function editStudentPrice($stdId ,$courseId){
+        $courseDetails  = DB::table('course_student')->whereStudentId($stdId)->whereCourseId($courseId)->first();
+        $student = Student::find($stdId);
+        $course  = Course::find($courseId);
+        return view('admin.students.course_edit_price',compact('courseDetails','student','course'));
+    }
+
+    public function updateCoursePriceStd(Request $request,$stdId,$courseId){
+        $courseDetails  =  DB::table('course_student')->whereStudentId($stdId)->whereCourseId($courseId)->update(['price'=>$request->price]);
+    
+        //$students= Student::orderBy('created_at','desc')->paginate(5);
+       
+       // return view('admin.students.index',compact('students' ));
+       return redirect()->action('StudentController@show',['id'=>$stdId]);
+
     }
 
 }

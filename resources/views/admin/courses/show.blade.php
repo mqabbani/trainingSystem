@@ -46,6 +46,7 @@
                         <th style="font-size: 12px;">Show Payment Details</th>
                         <th style="font-size: 12px;">Add Mark</th>
                         <th style="font-size: 12px;">Change Certificate</th>
+                        <th style="font-size: 12px;">Edit Price</th>
                     </tr>
                     </thead>
                     <tbody>
@@ -67,6 +68,9 @@
                             <td> <a href="{{url('student/'.$courseStudent[$i]->id.'/payment/'.$courseInfo->id.'/details')}}" class="btn btn-danger" style="font-size: 12px;">Show Payments</a> </td>
                             <td> <a href="{{url('add/'.$courseStudent[$i]->id.'/'.$courseInfo->id.'/mark')}}" class="btn btn-primary" style="font-size: 12px;">Add Mark</a> </td>
                             <td> <a href="{{url('course/'.$courseStudent[$i]->id.'/certificate/'.$courseInfo->id.'/change')}}" class="btn btn-success" style="font-size: 12px;">Change Certificate</a> </td>
+                            <td> 
+                            <a href="{{url('edit/'.$courseStudent[$i]->id.'/'.$courseInfo->id.'/course/price')}}" class="btn btn-warning" style="font-size: 12px;">Edit Price</a> </td>
+                           
                         </tr>
                     @endfor
                     </tbody>

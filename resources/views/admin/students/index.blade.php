@@ -27,6 +27,7 @@ All Students Details
                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                     <thead>
                     <tr>
+                    <th>#</th>
                         <th style="font-size: 12px; font-family: cursive">Student Number</th>
                         <th style="font-size: 12px; font-family: cursive">Student Image</th>
                         <th style="font-size: 12px;font-family: cursive">English Name</th>
@@ -43,6 +44,7 @@ All Students Details
                     <tbody>
                     @foreach($students as $student)
                     <tr>
+                    <td style="font-size: 12px;font-family: cursive">{{$loop->index}}</td>
                         <td style="font-size: 12px;font-family: cursive">{{$student->sp_number}}</td>
                         <td style="font-size: 12px;font-family: cursive"><img src="{{asset('/backend/img/'.$student->photo_name)}}" class="-image" width="50" height="50"/></td>
                         <td style="font-size: 12px;font-family: cursive">{{$student->name}}</td>

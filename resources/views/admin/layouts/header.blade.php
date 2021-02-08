@@ -33,7 +33,7 @@
             <div class="sidebar-brand-icon rotate-n-15">
                 <i class="fas fa-laugh-wink"></i>
             </div>
-            <div class="sidebar-brand-text mx-3" style="font-family: cursive;">Courses <sup></sup></div>
+            <div class="sidebar-brand-text mx-3" >Courses <sup></sup></div>
         </a>
 
         <!-- Divider -->
@@ -43,14 +43,14 @@
         <li class="nav-item">
             <a class="nav-link" href="{{url('/home')}}">
                 <i class="fas fa-fw fa-tachometer-alt"></i>
-                <span style="font-family: cursive;">Dashboard</span></a>
+                <span >Dashboard</span></a>
         </li>
 
         <!-- Divider -->
         <hr class="sidebar-divider">
 
         <!-- Heading -->
-        <div class="sidebar-heading" style="font-family: cursive;">
+        <div class="sidebar-heading" >
             Interface
         </div>
 
@@ -58,66 +58,66 @@
         <li class="nav-item">
             <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
                 <i class="fas fa-fw fa-user"></i>
-                <span style="font-family: cursive;">User`s</span>
+                <span >User`s</span>
             </a>
             <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                 <div class="bg-white py-2 collapse-inner rounded">
-                    <h6 class="collapse-header" style="font-family: cursive;">User Components:</h6>
-                    <a class="collapse-item" href="{{url('/create/user')}}" style="font-family: cursive;">Create User`s</a>
-                    <a class="collapse-item" href="{{url('/all/users')}}" style="font-family: cursive;">Show User`s</a>
+                    <h6 class="collapse-header" >User Components:</h6>
+                    <a class="collapse-item" href="{{url('/create/user')}}" >Create User`s</a>
+                    <a class="collapse-item" href="{{url('/all/users')}}" >Show User`s</a>
                 </div>
             </div>
 
             <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseThree" aria-expanded="true" aria-controls="collapseTwo">
                 <i class="fas fa-fw fa-people-carry"></i>
-                <span style="font-family: cursive;">Student`s</span>
+                <span >Student`s</span>
             </a>
             <div id="collapseThree" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                 <div class="bg-white py-2 collapse-inner rounded">
                     <h6 class="collapse-header">Student Components:</h6>
-                    <a class="collapse-item" href="{{url('/create/student')}}" style="font-family: cursive;"> Create Student</a>
-                    <a class="collapse-item" href="{{url('/all/student')}}" style="font-family: cursive;">Show Student</a>
+                    <a class="collapse-item" href="{{url('/create/student')}}" > Create Student</a>
+                    <a class="collapse-item" href="{{url('/all/student')}}" >Show Student</a>
                 </div>
             </div>
             <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseFour" aria-expanded="true" aria-controls="collapseTwo">
                 <i class="fas fa-fw fa-book"></i>
-                <span style="font-family: cursive;">Course`s</span>
+                <span >Course`s</span>
             </a>
             <div id="collapseFour" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                 <div class="bg-white py-2 collapse-inner rounded">
                     <h6 class="collapse-header" style="font-family: cursive;">Course`s Components:</h6>
-                    <a class="collapse-item" href="{{url('/create/course')}}" style="font-family: cursive;">Create Course</a>
-                    <a class="collapse-item" href="{{url('/all/course')}}" style="font-family: cursive;">Show Courses</a>
-                    <a class="collapse-item" href="{{url('/pending/course')}}" style="font-family: cursive;">Pending Courses</a>
-                    <a class="collapse-item" href="{{url('/active/course')}}" style="font-family: cursive;">Active Courses</a>
-                    <a class="collapse-item" href="{{url('/finished/course')}}" style="font-family: cursive;">Finished Courses</a>
+                    <a class="collapse-item" href="{{url('/create/course')}}" >Create Course</a>
+                    <a class="collapse-item" href="{{url('/all/course')}}" >Show Courses</a>
+                    <a class="collapse-item" href="{{url('/pending/course')}}" >Pending Courses</a>
+                    <a class="collapse-item" href="{{url('/active/course')}}" >Active Courses</a>
+                    <a class="collapse-item" href="{{url('/finished/course')}}" >Finished Courses</a>
                 </div>
             </div>
 
             <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseFive" aria-expanded="true" aria-controls="collapseTwo">
                 <i class="fas fa-fw fa-registered"></i>
-                <span style="font-family: cursive;">Student`s Course`s</span>
+                <span >Student`s Course`s</span>
             </a>
             <div id="collapseFive" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                 <div class="bg-white py-2 collapse-inner rounded">
-                    <h6 class="collapse-header" style="font-family: cursive;">Components:</h6>
+                    <h6 class="collapse-header" >Components:</h6>
                     <!--<a class="collapse-item"
                     href="url('/create/contract')" style="font-family: cursive;">Create Contracts</a> -->
-                    <a class="collapse-item" href="{{url('/register/student/course')}}"style="font-family: cursive;">Register on Course</a>
-                    <a class="collapse-item" href="{{url('/payment/details')}}" style="font-family: cursive;">Payment Details</a>
+                    <a class="collapse-item" href="{{url('/register/student/course')}}">Register on Course</a>
+                    <a class="collapse-item" href="{{url('/payment/details')}}" >Payment Details</a>
                 </div>
             </div>
 
             <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseSix" aria-expanded="true" aria-controls="collapseTwo">
                 <i class="fas fa-fw fa-paperclip"></i>
-                <span style="font-family: cursive;">Exam</span>
+                <span >Exam</span>
             </a>
             <div id="collapseSix" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                 <div class="bg-white py-2 collapse-inner rounded">
                     <h6 class="collapse-header">Components:</h6>
-                    <a class="collapse-item" href="{{url('/add/new/question')}}" style="font-family: cursive;">Add New Question</a>
-                    <a class="collapse-item" href="{{url('/all/questions')}}" style="font-family: cursive;"> All Question</a>
-                    <a class="collapse-item" href="{{url('/print/exam')}}" style="font-family: cursive;">Print Exam</a>
+                    <a class="collapse-item" href="{{url('/add/new/question')}}" >Add New Question</a>
+                    <a class="collapse-item" href="{{url('/all/questions')}}" > All Question</a>
+                    <a class="collapse-item" href="{{url('/print/exam')}}" >Print Exam</a>
 
                 </div>
             </div>
@@ -125,13 +125,13 @@
 
             <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseSeven" aria-expanded="true" aria-controls="collapseTwo">
                 <i class="fas fa-fw fa-file-excel"></i>
-                <span style="font-family: cursive;">Report`s</span>
+                <span >Report`s</span>
             </a>
             <div id="collapseSeven" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                 <div class="bg-white py-2 collapse-inner rounded">
                     <h6 class="collapse-header">Components:</h6>
-                    <a class="collapse-item" href="{{url('student/marks')}}" style="font-family: cursive;">Student Marks</a>
-                    <a class="collapse-item" href="{{url('/search/invoice/serial')}}" style="font-family: cursive;">Search Invoice Serial</a>
+                    <a class="collapse-item" href="{{url('student/marks')}}" >Student Marks</a>
+                    <a class="collapse-item" href="{{url('/search/invoice/serial')}}" >Search Invoice Serial</a>
                 </div>
             </div>
 
@@ -139,7 +139,7 @@
         <li class="nav-item">
             <a class="nav-link" href="{{url('/course/information')}}">
                 <i class="fas fa-fw fa-tachometer-alt"></i>
-                <span style="font-family: cursive;">Courses Details</span></a>
+                <span >Courses Details</span></a>
         </li>
         <!-- Nav Item - Utilities Collapse Menu -->
 
@@ -208,7 +208,7 @@
             <div class="container-fluid">
 
                 <!-- Page Heading -->
-                <h3 class="h4 mb-4 text-gray-800" style="font-family: cursive;">
+                <h3 class="h4 mb-4 text-gray-800" >
                     @yield('page_name')
 
                 </h3>

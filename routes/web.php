@@ -45,6 +45,8 @@ Route::group(['middleware'=>'auth'],function (){
     Route::post('/student/{id}/update','StudentController@update')->name('/student/{id}/update');
     Route::get('/student/{id}/show','StudentController@show')->name('/student/{id}/show');
     Route::get('/delete/{id}/student','StudentController@destroy')->name('/delete/{id}/student');
+    Route::get('/edit/{stdId}/{courseId}/course/price','PaymentController@editStudentPrice')->name('/edit/{stdId}/{courseId}/course/price');
+    Route::post('/student/{stdId}/edit/{courseId}/price','PaymentController@updateCoursePriceStd')->name('/student/{stdId}/edit/{courseId}/price');
     //Route::get('/create/contract','StudentController@createContract')->name('/create/contract');
     //Route::post('/print/contract','StudentController@printContract')->name('/create/contact');
     //Course
