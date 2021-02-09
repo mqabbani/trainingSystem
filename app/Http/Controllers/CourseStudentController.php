@@ -118,9 +118,10 @@ class CourseStudentController extends Controller
             'national_id'=>$student->national_id
                 ]);
 
-        return View('admin.contracts.print_contract_without_certificate',
+       // return View('admin.contracts.print_contract_without_certificate',
+            //compact('student','totalMoney','certificateData','array','request'));
+ return View('admin.contracts.finalContract',
             compact('student','totalMoney','certificateData','array','request'));
-
 
       //return redirect()->back();
 

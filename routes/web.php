@@ -106,3 +106,7 @@ Route::group(['middleware'=>'auth'],function (){
     })->name('/course/information');
 
 });
+
+Route::get('/test',function(){
+    return view('admin.contracts.finalContract');
+});
