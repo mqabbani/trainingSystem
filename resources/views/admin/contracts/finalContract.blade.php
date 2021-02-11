@@ -86,9 +86,12 @@
             <p class="text-right" dir="rtl" lang="ar" style="font-size: 18px;padding-right: 30px;">
                 <?php
             $arrCourse = array();
+            //dd($array);
              for($i =0 ; $i<count($array) ; $i++){
              $course=  \Illuminate\Support\Facades\DB::table("courses")->find($array[$i]);
+             
              array_push($arrCourse,$course->name);
+            
              }
              echo "  حيث يرغب الفريق الثاني بااللتحاق للدراسة في مركز و أكاديميه هارمونكس في دورة  ";
              for($i =0 ;$i<sizeof($arrCourse) ; $i++){
@@ -96,7 +99,7 @@
                      echo "هاردوير ,";
                  }
                  if($arrCourse[$i] == "Software"){
-                    echo "السوفتوير ";
+                    echo "السوفتوير ,";
                 }
                 if($arrCourse[$i] == "Glass"){
                     echo "الزجاج ,";
@@ -190,7 +193,15 @@
         </p>
         </br>
         <p class="text-right" dir="rtl" lang="ar" style="font-size: 19px;padding-right: 30px;">
-        بعد إتمام كامل الدراسة و النجاح في الدورة يحصل الطالب على شهادة من مركز هارمونكس و شهادة من جامعة الأميرة سمية لتكنولوجيا المعلومات.
+        بعد إتمام كامل الدراسة و النجاح في الدورة يحصل الطالب على شهادة من مركز هارمونكس .
+        </p>
+        <p class="text-right" dir="rtl" lang="ar" style="font-size: 19px;padding-right: 30px;">
+        <?php
+        if(in_array(true,$certificateData))
+        {
+            echo "و شهادة من جامعة الأميرة سمية لتكنولوجيا المعلومات";
+        }
+        ?>
         </p>
         </br>
         <p class="text-right" dir="rtl" lang="ar" style="font-size: 19px;padding-right: 30px;">
@@ -308,9 +319,12 @@
         </p>
        </br</br>
        <p class="text-right" dir="rtl" lang="ar" style="font-size: 19px;padding-right: 30px;">
-       الأكاديمية كلها و- أو بعضها بحسب ما تراه مناسبا. في حال وجود أي تحديات جسمية أو عقلية للطالب الملتحق يتوجب عليه مراجعة الحالات الخاصة و تعبئة النماذج الخاصة بحالته الصحية.
+       الأكاديمية كلها و- أو بعضها بحسب ما تراه مناسبا. في حال وجود أي تحديات جسمية أو عقلية للطالب الملتحق .
         </p>
-       
+        <p class="text-right" dir="rtl" lang="ar" style="font-size: 19px;padding-right: 30px;">
+        يتوجب عليه مراجعة الحالات الخاصة و تعبئة النماذج الخاصة بحالته الصحية
+        </p>
+       </br>
         <p class="text-right" dir="rtl" lang="ar" style="font-size: 19px;padding-right: 30px;">
         <b>ثامنا : الآباء و الأولياء أو الأوصياء (للطلاب ما دون الثامنة عشر)</b>
         </p>
@@ -345,8 +359,9 @@
         </p>
         </br>
         
-      
 
+        <div class="row">
+        <div class="text-right">
         <p class="text-right" dir="rtl" lang="ar" style="font-size: 17px;padding-right: 30px;">
         شاهد ( ولي الأمر)
         </p>
@@ -356,10 +371,9 @@
         <p class="text-right" dir="rtl" lang="ar" style="font-size: 17px;padding-right: 30px;">
         التوقيع :   
         </p>
-        
 
-       
-       <p class="text-right" dir="rtl" lang="ar" style="font-size: 17px;padding-right: 30px;">
+        <div class="text-left">
+        <p class="text-right" dir="rtl" lang="ar" style="font-size: 17px;padding-right: 30px;">
         الفريق الثاني  
             </p>
         <p class="text-right" dir="rtl" lang="ar" style="font-size: 17px;padding-right: 30px;">
@@ -368,6 +382,12 @@
         <p class="text-right" dir="rtl" lang="ar" style="font-size: 17px;padding-right: 30px;">
         التوقيع :   
         </p>
+        </div>
+        </div>
+        
+
+       
+       
         
         <p class="text-right" dir="rtl" lang="ar" style="font-size: 17px;padding-right: 30px;">
         الفريق الأول            </p>
@@ -390,8 +410,7 @@ $(document).ready(function() {
 });
 
 function closerPrintView() {
-
-
+    document.location.href = '{{URL::to('create/student')}}';
 }
 </script>
 

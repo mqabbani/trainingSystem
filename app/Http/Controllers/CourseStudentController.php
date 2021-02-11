@@ -186,4 +186,25 @@ class CourseStudentController extends Controller
        }
        return redirect()->back();
     }
+
+public function printAnotherContract($studentId){
+    $student    = Student::find($studentId)->first();
+    
+    $courses    = DB::table('course_student')->whereStudentId($studentId)->get();
+    $totalMoney = 0;
+    $array = array();
+    $certificateData = array();
+    foreach($courses as $c){
+        $totalMoney = $c->price + $totalMoney;
+        $courseRegStu = Course::find($c->course_id);
+        array_push($array,$courseRegStu->id);
+        array_push($certificateData,$c->certificate);
+    }
+    
+    //dd($certificateData);
+    
+    return View('admin.contracts.finalContract',
+    compact('student','totalMoney','certificateData','array'));
+}
+
 }

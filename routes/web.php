@@ -105,8 +105,6 @@ Route::group(['middleware'=>'auth'],function (){
         return View('admin.courses.course_information');
     })->name('/course/information');
 
-});
 
-Route::get('/test',function(){
-    return view('admin.contracts.finalContract');
+    Route::get("print/{studentId}/contract","CourseStudentController@printAnotherContract")->name('print/{studentId}/contract');
 });

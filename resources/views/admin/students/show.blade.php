@@ -42,6 +42,7 @@
                     <th scope="col" style="font-size: 12px;">Add Payment</th>
                     <th scope="col" style="font-size: 12px;">Edit Price</th>
                     <th scope="col" style="font-size: 12px;">Add Mark</th>
+                    <th scope="col" style="font-size: 12px;">Contract</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -62,6 +63,8 @@
                                <td><a href="{{url('/add/'.$stdData->id.'/'.$student[$i]->id.'/payment')}}" style="font-size: 12px;" class="btn btn-danger">Add Payment</a> </td>
                                <td><a href="{{url('/edit/'.$stdData->id.'/'.$student[$i]->id.'/course/price')}}" style="font-size: 12px;" class="btn btn-warning">Edit Price</a> </td>
                                <td><a href="{{url('/add/'.$stdData->id.'/'.$student[$i]->id.'/mark')}}" style="font-size: 12px;" class="btn btn-primary">Add Mark</a> </td>
+                               <td><a href="{{url('print/'.$stdData->id.'/contract')}}" style="font-size: 12px;" class="btn btn-info">Contract</a> </td>
+
                            </tr>
                        @endfor
 
