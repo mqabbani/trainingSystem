@@ -79,13 +79,16 @@
                     <a class="collapse-item" href="{{url('/all/student')}}" >Show Student</a>
                 </div>
             </div>
+
+           
+            <!--  Course -->
             <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseFour" aria-expanded="true" aria-controls="collapseTwo">
                 <i class="fas fa-fw fa-book"></i>
                 <span >Course`s</span>
             </a>
             <div id="collapseFour" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                 <div class="bg-white py-2 collapse-inner rounded">
-                    <h6 class="collapse-header" style="font-family: cursive;">Course`s Components:</h6>
+                    <h6 class="collapse-header" >Course`s Components:</h6>
                     <a class="collapse-item" href="{{url('/create/course')}}" >Create Course</a>
                     <a class="collapse-item" href="{{url('/all/course')}}" >Show Courses</a>
                     <a class="collapse-item" href="{{url('/pending/course')}}" >Pending Courses</a>
@@ -94,6 +97,7 @@
                 </div>
             </div>
 
+            <!--### -->
             <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseFive" aria-expanded="true" aria-controls="collapseTwo">
                 <i class="fas fa-fw fa-registered"></i>
                 <span >Student`s Course`s</span>

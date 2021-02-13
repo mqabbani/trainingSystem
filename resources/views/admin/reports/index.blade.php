@@ -14,23 +14,23 @@
                     <thead>
                     <tr>
 
-                        <th style="font-size: 12px; font-family: cursive">Student Name</th>
-                        <th style="font-size: 12px; font-family: cursive">Course Sp Number</th>
-                        <th style="font-size: 12px; font-family: cursive">Course Name</th>
-                        <th style="font-size: 12px; font-family: cursive">Course Session</th>
-                        <th style="font-size: 12px; font-family: cursive">Mark</th>
+                        <th style="font-size: 12px;">Student Name</th>
+                        <th style="font-size: 12px; ">Course Sp Number</th>
+                        <th style="font-size: 12px; ">Course Name</th>
+                        <th style="font-size: 12px; ">Course Session</th>
+                        <th style="font-size: 12px; ">Mark</th>
                     </tr>
                     </thead>
 
                     <tbody>
                     @for($i = 0 ; $i<count($marks) ; $i++)
                         <tr>
-                            <td style="font-size: 12px;font-family: cursive">{{$student->name}}</td>
-                            <td style="font-size: 12px;font-family: cursive">{{$student->sp_number}}</td>
-                            <td style="font-size: 12px;font-family: cursive">{{$courseDetails[$i]->name}}</td>
-                            <td style="font-size: 12px;font-family: cursive">{{$courseDetails[$i]->session}}</td>
+                            <td style="font-size: 12px;">{{$student->name}}</td>
+                            <td style="font-size: 12px;">{{$student->sp_number}}</td>
+                            <td style="font-size: 12px;">{{$courseDetails[$i]->name}}</td>
+                            <td style="font-size: 12px;">{{$courseDetails[$i]->session}}</td>
 
-                            <td style="font-size: 12px;font-family: cursive">{{$marks[$i]}}</td>
+                            <td style="font-size: 12px;">{{$marks[$i]}}</td>
 
                         </tr>
                     @endfor
