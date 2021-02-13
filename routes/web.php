@@ -105,6 +105,6 @@ Route::group(['middleware'=>'auth'],function (){
         return View('admin.courses.course_information');
     })->name('/course/information');
 
-
+    Route::get('/donwload/{courseId}','CourseController@excel')->name('/donwload/{courseId}');
     Route::get("print/{studentId}/contract","CourseStudentController@printAnotherContract")->name('print/{studentId}/contract');
 });

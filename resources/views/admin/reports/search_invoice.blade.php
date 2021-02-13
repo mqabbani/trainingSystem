@@ -14,14 +14,14 @@
                     <div class="row mg-b-25">
                         <div class="col-lg-4">
                             <div class="form-group">
-                                <label class="col-form-label" style="font-family: cursive;">Invoice Serial </label>
-                                <input class="form-control"  name="serial" id="serial" style="font-family: cursive;" required >
+                                <label class="col-form-label" >Invoice Serial </label>
+                                <input class="form-control"  name="serial" id="serial"  required >
                             </div>
                         </div><!-- col-4 -->
 
                         <div class="col-lg-2">
                             <div class="form-group">
-                                <button class="btn btn-primary mg-r-5" style="margin-top: 30px; font-family: cursive;">Search</button>
+                                <button class="btn btn-primary mg-r-5" style="margin-top: 30px;">Search</button>
                             </div>
                         </div><!-- col-4 -->
                     </div><!-- row -->

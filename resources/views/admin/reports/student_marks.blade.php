@@ -14,14 +14,14 @@
                     <div class="row mg-b-25">
                         <div class="col-lg-4">
                             <div class="form-group">
-                                <label class="col-form-label" style="font-family: cursive;">Student Number </label>
-                                <input class="form-control"  name="sp_number" id="course_name" style="font-family: cursive;" required >
+                                <label class="col-form-label" >Student Number </label>
+                                <input class="form-control"  name="sp_number" id="course_name"  required >
                             </div>
                         </div><!-- col-4 -->
 
                         <div class="col-lg-2">
                             <div class="form-group">
-                                <button class="btn btn-primary mg-r-5" style="margin-top: 30px; font-family: cursive;">Search</button>
+                                <button class="btn btn-primary mg-r-5" style="margin-top: 30px;">Search</button>
                             </div>
                         </div><!-- col-4 -->
                     </div><!-- row -->

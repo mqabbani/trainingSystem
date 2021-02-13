@@ -10,6 +10,7 @@ use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Session;
+use Maatwebsite\Excel\Facades\Excel;
 
 class CourseController extends Controller
 {
@@ -191,5 +192,44 @@ class CourseController extends Controller
     public function finished(){
         $status = Course::Finished('Finished');
         return View('admin.courses.finished_course',compact('status'));
+    }
+
+
+    public function excel($courseId){
+    $course            = Course::find($courseId);
+     $course_student   = DB::table('course_student')->whereCourseId($courseId)->get();
+   
+     $array = array();
+     for($i = 0 ; $i<count($course_student) ; $i++){
+        $AllData       = array();
+         array_push($AllData,$course->name);
+         array_push($AllData,$course->session);
+         array_push($AllData,$course->status);
+         array_push($AllData,$course->start_date);
+         array_push($AllData,$course->end_date);
+         $student = Student::find($course_student[$i]->student_id);
+         array_push($AllData,$student->name);
+         array_push($AllData,$student->national_id);
+         array_push($AllData,$student->phone_number);
+         array_push($AllData,$student->email);
+         array_push($AllData,$course_student[$i]->price);
+         $pay   = DB::table('payments')->whereCourseId($courseId)->whereStudentId($student->id)->get();
+         $payments = 0;
+         for($x = 0 ; $x<count($pay); $x++){
+             
+             $payments = $pay[$x]->payment + $payments;
+            
+         }
+         array_push($AllData,$payments);
+         array_push($array,$AllData);
+         
+     }
+     //$OneArray = [$arrayStudentName,$arrayPrice];
+    
+         $nameexcel = $course->name . $course->session . $course->status;
+     return Excel::download(new ExportExcelController($array),$nameexcel.'.xlsx');
+
+        // return Excel::download(new ExportExcelController, 'siswa.xlsx');
+
     }
 }
