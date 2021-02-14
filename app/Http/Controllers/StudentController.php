@@ -217,7 +217,8 @@ class StudentController extends Controller
                 $students = Student::where('sp_number',$input)->paginate(5);
             }
             if($count==10){
-                $students = Student::where('phone_number',$input)->paginate(5);
+                $students = Student::where('phone_number',$input)->orWhere('sp_number',$input)->paginate(5);
+               
             }
 
         }else if (is_string($input)){
