@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Transparent Login Form with Blur Background</title>
+    <title>Training Center</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;900&display=swap" rel="stylesheet">
     <link href="style.css" rel="stylesheet">
     <style>
