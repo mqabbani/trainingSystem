@@ -15,8 +15,8 @@
                     <div class="row mg-b-25">
                         <div class="col-lg-6">
                             <div class="form-group">
-                                <label class="col-form-label" style="font-family: cursive;">Choose Course</label>
-                                <select class="form-control" name="name" style="font-family: cursive;" required>
+                                <label class="col-form-label">Choose Course</label>
+                                <select class="form-control" name="name"  required>
                                     <option></option>
                                     <option  value="Hardware">Hardware</option>
                                     <option value="Software">Software</option>
@@ -27,32 +27,32 @@
 
                         <div class="col-lg-6">
                             <div class="form-group">
-                                <label class="col-form-label" style="font-family: cursive;">Question</label>
-                             <input class="form-control" type="text" style="font-family: cursive;" name="text"
+                                <label class="col-form-label" >Question</label>
+                             <input class="form-control" type="text"  name="text"
                                     placeholder="Enter Text For Question ..." required>
                             </div>
                         </div><!-- col-4 -->
 
                         <div class="col-lg-6">
                             <div class="form-group">
-                                <label class="col-form-label" style="font-family: cursive;">Answer One</label>
-                                <input class="form-control" type="text" name="answer1"  style="font-family: cursive;"
+                                <label class="col-form-label" >Answer One</label>
+                                <input class="form-control" type="text" name="answer1"  
                                        placeholder="Answer One" required>
                             </div>
                         </div><!-- col-4 -->
 
                         <div class="col-lg-6">
                             <div class="form-group">
-                                <label class="col-form-label" style="font-family: cursive;">Answer Two</label>
-                                <input class="form-control" type="text" name="answer2" style="font-family: cursive;"
+                                <label class="col-form-label" >Answer Two</label>
+                                <input class="form-control" type="text" name="answer2" 
                                        placeholder="Answer Two" required>
                             </div>
                         </div><!-- col-4 -->
 
                         <div class="col-lg-6">
                             <div class="form-group">
-                                <label class="col-form-label" style="font-family: cursive;">Answer Three</label>
-                                <input class="form-control" type="text" name="answer3" style="font-family: cursive;"
+                                <label class="col-form-label" >Answer Three</label>
+                                <input class="form-control" type="text" name="answer3" 
                                        placeholder="Answer Three" required>
                             </div>
                         </div><!-- col-4 -->
@@ -60,13 +60,13 @@
                         <div class="col-lg-6">
                             <div class="form-group">
                                 <label class="col-form-label" style="font-family: cursive;">Answer Four</label>
-                                <input class="form-control" type="text" name="answer4" style="font-family: cursive;"
+                                <input class="form-control" type="text" name="answer4" 
                                        placeholder="Answer Four" required>
                             </div>
                         </div><!-- col-4 -->
                         <div class="col-lg-2">
                             <div class="form-group">
-                                <button class="btn btn-info mg-r-5" style="margin-top: 30px; font-family: cursive;">Add Question</button>
+                                <button class="btn btn-info mg-r-5" style="margin-top: 30px;">Add Question</button>
                             </div>
                         </div><!-- col-4 -->
                     </div><!-- row -->

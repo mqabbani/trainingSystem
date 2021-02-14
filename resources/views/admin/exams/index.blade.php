@@ -27,29 +27,29 @@
                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                     <thead>
                     <tr>
-                        <th style="font-family: cursive;font-size: 12px;">#</th>
-                        <th style="font-family: cursive;font-size: 12px;">Course</th>
-                        <th style="font-family: cursive;font-size: 12px;">Text</th>
-                        <th style="font-family: cursive;font-size: 12px;">A1</th>
-                        <th style="font-family: cursive;font-size: 12px;">A2</th>
-                        <th style="font-family: cursive;font-size: 12px;">A3</th>
-                        <th style="font-family: cursive;font-size: 12px;">A4</th>
-                        <th style="font-family: cursive;font-size: 12px;">Edit</th>
-                        <th style="font-family: cursive;font-size: 12px;">Delete</th>
+                        <th style="font-size: 12px;">#</th>
+                        <th style="font-size: 12px;">Course</th>
+                        <th style="font-size: 12px;">Text</th>
+                        <th style=" font-size: 12px;">A1</th>
+                        <th style="font-size: 12px;">A2</th>
+                        <th style="font-size: 12px;">A3</th>
+                        <th style="font-size: 12px;">A4</th>
+                        <th style="font-size: 12px;">Edit</th>
+                        <th style="font-size: 12px;">Delete</th>
                     </tr>
                     </thead>
                     <tfoot>
                     <tbody>
                     @foreach($exams as $exam)
                         <tr>
-                            <td style="font-family: cursive;font-size: 12px;">{{$loop->index}}</td>
-                            <td style="font-family: cursive;font-size: 12px;">{{$exam->name}}</td>
-                            <td style="font-family: cursive;font-size: 12px;">{{$exam->text}}</td>
-                            <td style="font-family: cursive;font-size: 12px;"> {{$exam->answer1}}</td>
-                            <td style="font-family: cursive;font-size: 12px;"> {{$exam->answer2}}</td>
-                            <td style="font-family: cursive;font-size: 12px;"> {{$exam->answer3}}</td>
-                            <td style="font-family: cursive;font-size: 12px;"> {{$exam->answer4}}</td>
-                            <td style="font-family: cursive;font-size: 12px;">
+                            <td style="font-size: 12px;">{{$loop->index}}</td>
+                            <td style="font-size: 12px;">{{$exam->name}}</td>
+                            <td style="font-size: 12px;">{{$exam->text}}</td>
+                            <td style="font-size: 12px;"> {{$exam->answer1}}</td>
+                            <td style="font-size: 12px;"> {{$exam->answer2}}</td>
+                            <td style="font-size: 12px;"> {{$exam->answer3}}</td>
+                            <td style="font-size: 12px;"> {{$exam->answer4}}</td>
+                            <td style="font-size: 12px;">
                                 <a href="{{url('edit/'.$exam->id.'/question')}}" class=" btn btn-primary"> Edit</a> </td>
                             <td style="font-family: cursive;font-size: 12px;">
                                 <a href="{{url('/delete/'.$exam->id.'/question')}}" class="btn btn-danger">Delete</a> </td>

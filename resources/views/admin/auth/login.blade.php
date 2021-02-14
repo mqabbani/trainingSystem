@@ -1,70 +1,132 @@
-@extends('layouts.app')
+<!DOCTYPE html>
+<html lang="en">
 
-@section('content')
+<head>
+    <meta charset="UTF-8">
+    <title>Transparent Login Form with Blur Background</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;900&display=swap" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
+    <style>
+    body {
+        margin: 0;
+        padding: 0;
+        font-family: 'Poppins', sans-serif;
+    }
 
-    <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-md-8">
-                <div class="card">
-                    <div class="card-header">{{ __('Login') }}</div>
+    body:before {
+        content: '';
+        position: fixed;
+        width: 100vw;
+        height: 100vh;
+        background-image: url(https://i.postimg.cc/8cf6v1rk/1.jpg);
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        -webkit-background-size: cover;
+        background-size: cover;
+        -webkit-filter: blur(10px);
+        -moz-filter: blur(10px);
+        filter: blur(10px);
+    }
 
-                    <div class="card-body">
-                        <form method="POST" action="{{ route('login') }}">
-                            @csrf
+    .contact-form {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 400px;
+        height: 350px;
+        padding: 80px 40px;
+        background: rgba(0, 0, 0, 0.5);
+    }
 
-                            <div class="form-group row">
-                                <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
+    .avatar {
+        position: absolute;
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        overflow: hidden;
+        top: calc(-80px/2);
+        left: 190px;
+    }
 
-                                <div class="col-md-6">
-                                    <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
+    .contact-form h2 {
+        margin: 0;
+        padding: 0 0 20px;
+        color: #fff;
+        text-align: center;
+        text-transform: uppercase;
+    }
 
-                                    @error('email')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                    @enderror
-                                </div>
-                            </div>
+    .contact-form p {
+        margin: 0;
+        padding: 0;
+        font-weight: bold;
+        color: #fff;
+    }
 
-                            <div class="form-group row">
-                                <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>
+    .contact-form input {
+        width: 100%;
+        margin-bottom: 20px;
+    }
 
-                                <div class="col-md-6">
-                                    <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
+    .contact-form input[type=email],
+    .contact-form input[type=password] {
+        border: none;
+        border-bottom: 1px solid #fff;
+        background: transparent;
+        outline: none;
+        height: 40px;
+        color: #fff;
+        font-size: 16px;
+    }
 
-                                    @error('password')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                    @enderror
-                                </div>
-                            </div>
+    .contact-form input[type=submit] {
+        height: 30px;
+        color: #fff;
+        font-size: 15px;
+        background: red;
+        cursor: pointer;
+        border-radius: 25px;
+        border: none;
+        outline: none;
+        margin-top: 15%;
+    }
 
-                            <div class="form-group row">
-                                <div class="col-md-6 offset-md-4">
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
+    .contact-form a {
+        color: #fff;
+        font-size: 14px;
+        font-weight: bold;
+        text-decoration: none;
+    }
 
-                                        <label class="form-check-label" for="remember">
-                                            {{ __('Remember Me') }}
-                                        </label>
-                                    </div>
-                                </div>
-                            </div>
+    input[type=checkbox] {
+        width: 20%;
+    }
+    </style>
+</head>
 
-                            <div class="form-group row mb-0">
-                                <div class="col-md-8 offset-md-4">
-                                    <button type="submit" class="btn btn-primary">
-                                        {{ __('Login') }}
-                                    </button>
+<body>
+    <div class="contact-form">
+        <img alt="" class="avatar" src="{{asset('images/a1.jpg')}}">
+        <h2>Harmonex Training Center</h2>
+        <form method="POST" action="{{ route('login') }}">
+             @csrf
+            <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
+            <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email"
+                value="{{ old('email') }}" required autocomplete="email" autofocus>
 
-
-                                </div>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
+            @error('email')
+            <span class="invalid-feedback" role="alert">
+                <strong>{{ $message }}</strong>
+            </span>
+            @enderror
+            <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>
+            <input id="password" type="password" class="form-control @error('password') is-invalid @enderror"
+                name="password" required autocomplete="current-password">
+                <input type="submit" value="Sign in">
+        </form>
     </div>
-@endsection
+</body>
+
+</html>

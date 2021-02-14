@@ -6,6 +6,7 @@ use App\Course;
 use App\Payment;
 use App\Student;
 use Carbon\Carbon;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -51,6 +52,9 @@ class HomeController extends Controller
         $array['Total Cash Per Day'] =  $totalCashPerDay ;
         $array['Male Register'] =  $maleRgister ;
         $array['Female Register'] =  $femaleRegister ;
+       
+        
+        
         return view('admin.home',compact('array'));
     }
 }
