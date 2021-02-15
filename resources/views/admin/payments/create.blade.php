@@ -67,7 +67,7 @@
                         <div class="col-lg-10">
                             <div class="form-group">
                                 <label  style="color: red;"><b>Send SMS </b><span class="tx-danger">*:</span></label>
-                                <input class="form-check-label" name="sendSms" type="checkbox">
+                                <input class="form-check-label" name="sendSms" value="on" type="checkbox">
                             </div>
                         </div><!-- col-4 -->
                         <div class="col-lg-3">

@@ -73,25 +73,28 @@ class PaymentController extends Controller
        ]);
        $studentNumber = $student->phone_number;
        $phoneNumber   = ltrim($studentNumber, $studentNumber[0]);
-       //$textSend = "$student->name is Pay $request->payment For $request->course_name session $request->course_session";
+       $textSend = "$student->name is Pay $request->payment For $request->course_name session $request->course_session";
         //Sending Email To Nour
       //  app('App\Http\Controllers\MailController')->sendMail($student->name , $course->name , $request->payment, $request->course_session);
         //Sending SMS To Student
+        
         if($request->sendSms == "on")
         {
+            
             $client = new \GuzzleHttp\Client(['base_uri' => 'http://sms.email-soft.com:8000/']);
             $response = $client->request('GET', "?Phonenumber=962'.$phoneNumber.
               &Text=$textSend.&User=harmonex&Password=harmonex");
+             
               $response2 = $client->request('GET', "?Phonenumber=962786666630'.
               &Text=$textSend.&User=harmonex&Password=harmonex");
-
             if($response->getStatusCode() == 200)
             {
-                session()->flash("message","Payment Added Successful to $course->name session $course->session Student name $student->name Email Sending And Sms Sending");
+                session()->flash("message","Payment Added Successful to $course->name session $course->session Student name $student->name  Sms Sending");
             }else{
-                session()->flash("message","Payment Added Successful to $course->name session $course->id Student name $student->name Email Sending Sms Not Sending");
+                session()->flash("message","Payment Added Successful to $course->name session $course->id Student name $student->name  Sms Not Sending");
             }
-        }else{
+        }
+        else{
             session()->flash("message","Payment Added Successful  to $course->name session $course->id Student name $student->name Email Without SMS ");
         }
         $DataInvoice =array();

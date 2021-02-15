@@ -99,10 +99,10 @@
                      echo "هاردوير ,";
                  }
                  if($arrCourse[$i] == "Software"){
-                    echo "السوفتوير ,";
+                    echo "سوفت وير ,";
                 }
                 if($arrCourse[$i] == "Glass"){
-                    echo "الزجاج ,";
+                    echo "اعاده تدوير الزجاج ,";
                 }
              }
             ?>
