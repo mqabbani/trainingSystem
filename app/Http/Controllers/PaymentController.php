@@ -80,13 +80,15 @@ class PaymentController extends Controller
         
         if($request->sendSms == "on")
         {
-            
+            //$phoneArray = array();
+
             $client = new \GuzzleHttp\Client(['base_uri' => 'http://sms.email-soft.com:8000/']);
             $response = $client->request('GET', "?Phonenumber=962'.$phoneNumber.
               &Text=$textSend.&User=harmonex&Password=harmonex");
              
-              $response2 = $client->request('GET', "?Phonenumber=962786666630'.
-              &Text=$textSend.&User=harmonex&Password=harmonex");
+
+            //  $response2 = $client->request('GET', "?Phonenumber=962786666630'.
+             // &Text=$textSend.&User=harmonex&Password=harmonex");
             if($response->getStatusCode() == 200)
             {
                 session()->flash("message","Payment Added Successful to $course->name session $course->session Student name $student->name  Sms Sending");
