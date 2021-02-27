@@ -81,14 +81,21 @@ class PaymentController extends Controller
         if($request->sendSms == "on")
         {
             //$phoneArray = array();
+            //old Code Working
+            //$client = new \GuzzleHttp\Client(['base_uri' => 'http://sms.email-soft.com:8000/']);
+            //new 
+            $client = new \GuzzleHttp\Client([
+                'base_uri' => 'http://sms.email-soft.com:8000/',
+                'connect_timeout' => false,
+                'timeout'         => 30.0, // set higher if timeout still happens
+            ]);
 
-            $client = new \GuzzleHttp\Client(['base_uri' => 'http://sms.email-soft.com:8000/']);
             $response = $client->request('GET', "?Phonenumber=962'.$phoneNumber.
               &Text=$textSend.&User=harmonex&Password=harmonex");
              
 
-            //  $response2 = $client->request('GET', "?Phonenumber=962786666630'.
-             // &Text=$textSend.&User=harmonex&Password=harmonex");
+              $response2 = $client->request('GET', "?Phonenumber=962786666630'.
+              &Text=$textSend.&User=harmonex&Password=harmonex");
             if($response->getStatusCode() == 200)
             {
                 session()->flash("message","Payment Added Successful to $course->name session $course->session Student name $student->name  Sms Sending");
@@ -191,6 +198,20 @@ class PaymentController extends Controller
        // return view('admin.students.index',compact('students' ));
        return redirect()->action('StudentController@show',['id'=>$stdId]);
 
+    }
+    public function oldPrintInvoic($paymentId,$stdId,$courseName,$courseSession){
+        $payment = Payment::find($paymentId);
+        $course  = Course::whereName($courseName)->whereSession($courseSession)->first();
+        $student = Student::find($stdId);
+        $DataInvoice =array();
+        $DataInvoice[0] = $payment->payment;
+        $DataInvoice[1] = $payment->payment_method;
+        $DataInvoice[2] = $payment->id;
+        $DataInvoice[3] = $payment->received_by;
+        $DataInvoice[4] = $payment->sum_of;
+        $DataInvoice[5] = $payment->serial;
+        $DataInvoice[6] = $payment->created_at;
+        return view('admin.payments.old_payment',compact('DataInvoice','student','course'));
     }
 
 }

@@ -42,7 +42,7 @@
                 </div>
                 <div class="col-xs-6 col-sm-6 col-md-6">
                     <p class="text-right">
-                        <em style="font-size: 12px;">Date : {{\Illuminate\Support\Carbon::now()}} </em>
+                        <em style="font-size: 12px;">Date : {{$DataInvoice[6]}} </em>
                     </p>
                 </div>
             </div>
@@ -105,7 +105,7 @@
                 </div>
                 <div class="col-xs-6 col-sm-6 col-md-6">
                     <p class="text-right">
-                        <em style="font-size: 12px;">Date : {{\Illuminate\Support\Carbon::now()}} </em>
+                        <em style="font-size: 12px;">Date : {{$DataInvoice[6]}} </em>
                     </p>
                 </div>
             </div>

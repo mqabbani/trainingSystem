@@ -41,6 +41,7 @@
                     <th style="font-size: 12px;">Serial</th>
                     <th style="font-size: 12px;">Edit</th>
                     <th style="font-size: 12px;">Delete</th>
+                    <th style="font-size: 12px;">Print Invoice</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -52,6 +53,7 @@
                         <td style="font-size: 12px;">{{$value->serial}}</td>
                         <td style="font-size: 12px;"><a href="{{url('payment/'.$value->id.'/student/'.$value->student_id.'/course/'.$value->course_id)}}" class="btn btn-primary">Edit</a> </td>
                         <td style="font-size: 12px;"><a href="{{url('delete/payment/'.$value->id)}}" class="btn btn-danger">Delete</a> </td>
+                        <td style="font-size: 12px;"><a href="{{url('print/old/payment/'.$value->id.'/'.$student->id.'/'.$course->name.'/'.$course->session)}}" class="btn btn-warning">Print</a> </td>
                     </tr>
                 @endforeach
                 </tbody>

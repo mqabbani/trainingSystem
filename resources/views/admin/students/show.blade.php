@@ -18,7 +18,9 @@
                     <li class="list-group-item" style="font-size: 14px;">Phone Number : {{$stdData->phone_number_second}}</li>
                 </ul>
                 <div class="card-body">
-                    <a href="{{url('/student/'.$stdData->id.'/edit')}}" class="card-link">Edit Student Info</a>
+                    <a class="btn btn-success" href="{{url('/student/'.$stdData->id.'/edit')}}" class="card-link">Edit Student Information</a>
+                    <a class="btn btn-danger" href="{{url('/register/student/course')}}" class="card-link">Register On Course New Course</a>
+
                 </div>
             </div>
         </div> <!-- Col-lg4 !-->
@@ -43,6 +45,7 @@
                     <th scope="col" style="font-size: 12px;">Edit Price</th>
                     <th scope="col" style="font-size: 12px;">Add Mark</th>
                     <th scope="col" style="font-size: 12px;">Contract</th>
+                    
                 </tr>
                 </thead>
                 <tbody>
@@ -59,10 +62,10 @@
                                <td style="font-size: 12px;">{{$student[$i]->days}}</td>
                                <td style="font-size: 12px;">{{$price[$i]}}</td>
                                <td style="font-size: 12px;">{{$amountPayment[$i]}}</td>
-                               <td><a href="{{url('student/'.$stdData->id.'/payment/'.$student[$i]->id.'/details')}}" style="font-size: 12px;" class="btn btn-success">Show Payment</a> </td>
-                               <td><a href="{{url('/add/'.$stdData->id.'/'.$student[$i]->id.'/payment')}}" style="font-size: 12px;" class="btn btn-danger">Add Payment</a> </td>
-                               <td><a href="{{url('/edit/'.$stdData->id.'/'.$student[$i]->id.'/course/price')}}" style="font-size: 12px;" class="btn btn-warning">Edit Price</a> </td>
-                               <td><a href="{{url('/add/'.$stdData->id.'/'.$student[$i]->id.'/mark')}}" style="font-size: 12px;" class="btn btn-primary">Add Mark</a> </td>
+                               <td><a href="{{url('student/'.$stdData->id.'/payment/'.$student[$i]->id.'/details')}}" style="font-size: 12px;" class="btn btn-success">Show </a> </td>
+                               <td><a href="{{url('/add/'.$stdData->id.'/'.$student[$i]->id.'/payment')}}" style="font-size: 12px;" class="btn btn-danger">Add </a> </td>
+                               <td><a href="{{url('/edit/'.$stdData->id.'/'.$student[$i]->id.'/course/price')}}" style="font-size: 12px;" class="btn btn-warning">Edit </a> </td>
+                               <td><a href="{{url('/add/'.$stdData->id.'/'.$student[$i]->id.'/mark')}}" style="font-size: 12px;" class="btn btn-primary">Add </a> </td>
                                <td><a href="{{url('print/'.$stdData->id.'/contract')}}" style="font-size: 12px;" class="btn btn-info">Contract</a> </td>
 
                            </tr>
