@@ -78,7 +78,7 @@ Route::group(['middleware'=>'auth'],function (){
     Route::get('payment/{id}/student/{std_id}/course/{course_id}','PaymentController@edit')->name('edit/payment}');
     Route::post('update/payment/{id}','PaymentController@update')->name('update/payment}');
     Route::get('delete/payment/{id}','PaymentController@destroy')->name('destroy/payment');
-    Route::get('print/old/payment/{paymentId}/{stdId}/{courseName}/{courseSession}','PaymentController@oldPrintInvoic')->name('print/old');
+    Route::get('print/old/payment/{paymentId}/{stdId}/{courseName}/{courseSession}','PaymentController@oldprintIn')->name('print/old');
     //Questions
     Route::get('/add/new/question','ExamController@create')->name('/add/new/question');
     Route::post('/add/new/question','ExamController@store')->name('/add/new/question');

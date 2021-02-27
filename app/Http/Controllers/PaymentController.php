@@ -199,7 +199,7 @@ class PaymentController extends Controller
        return redirect()->action('StudentController@show',['id'=>$stdId]);
 
     }
-    public function oldPrintInvoic($paymentId,$stdId,$courseName,$courseSession){
+    public function oldprintIn($paymentId,$stdId,$courseName,$courseSession){
         $payment = Payment::find($paymentId);
         $course  = Course::whereName($courseName)->whereSession($courseSession)->first();
         $student = Student::find($stdId);
