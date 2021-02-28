@@ -103,9 +103,7 @@ class PaymentController extends Controller
                 session()->flash("message","Payment Added Successful to $course->name session $course->id Student name $student->name  Sms Not Sending");
             }
         }
-        else{
-            session()->flash("message","Payment Added Successful  to $course->name session $course->id Student name $student->name Email Without SMS ");
-        }
+        
         $DataInvoice =array();
         $DataInvoice[0] = $request->payment;
         $DataInvoice[1] = $request->payment_method;
