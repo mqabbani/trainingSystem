@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Contract;
 use App\Course;
 use App\Student;
+use App\Payment;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Session;
@@ -107,7 +108,7 @@ class CourseStudentController extends Controller
                // dd(collect($certificateData));
                 for($i=0;$i<sizeof($priceData);$i++){
                     $student->course()->attach($array[$i],
-                        ['price'=>$priceData[$i],'certificate'=>$certificateData[$i]]);
+                        ['price'=>$priceData[$i],'certificate'=>$certificateData[$i],'created_at'=>\Carbon\Carbon::now()->toDateString()]);
                 }
             }
         }
@@ -168,9 +169,19 @@ class CourseStudentController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy($studentId,$courseId)
     {
-        //
+        $data    = DB::table('course_student')->whereStudentId($studentId)->whereCourseId($courseId)->first();
+        $payment = Payment::whereCourseId($data->course_id)->whereStudentId($data->student_id)->get();
+       
+        if(count($payment) == 0){
+            DB::table('course_student')->whereStudentId($studentId)->whereCourseId($courseId)->delete();
+            Session::flash('message', 'Student Deleted From this Course!');
+        } else{
+            Session::flash('message', 'Student Not Deleted From this Course this student have Payment!');
+        }
+        return Redirect()->back();
+        
     }
 
     public function change($stdid , $courseid){

@@ -174,6 +174,7 @@ class StudentController extends Controller
             'name'=>'required',
             'name_ar'=>'required',
             'phone_number'=>'required',
+            'living'=>'required'
 
         ]);
         $student = Student::find($id);

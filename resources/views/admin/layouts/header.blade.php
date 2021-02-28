@@ -136,12 +136,14 @@
                 </div>
             </div>-->
             
-            <a class="nav-link"  href="{{url('/register/student/course')}}">
-                    <i class="fa fa-graduation-cap"></i>
-                    <span>Register on Course</span></a>
+           
+
+                    <a class="nav-link"  href="{{url('/search/invoice/serial')}}">
+                    <i class="fa fa-search"></i>
+                    <span>Search Invoice Serial</span></a>
 
                     <a class="nav-link"  href="{{url('/payment/details')}}">
-                    <i class="fa fa-graduation-cap"></i>
+                    <i class="fa fa-info"></i>
                     <span>Payment Details</span></a>
                 <!-- Divider -->
                 <hr class="sidebar-divider">
@@ -169,10 +171,10 @@
                     <i class="fa fa-graduation-cap"></i>
                     <span>Student Marks</span></a>
 
-                    <a class="nav-link"  href="{{url('/search/invoice/serial')}}">
+                   
+                    <a class="nav-link"  href="{{url('/register/student/course')}}">
                     <i class="fa fa-graduation-cap"></i>
-                    <span>Search Invoice Serial</span></a>
-
+                    <span>Register on Course</span></a>
                  
                 <!-- Divider -->
                 <hr class="sidebar-divider">

@@ -108,4 +108,7 @@ Route::group(['middleware'=>'auth'],function (){
 
     Route::get('/donwload/{courseId}','CourseController@excel')->name('/donwload/{courseId}');
     Route::get("print/{studentId}/contract","CourseStudentController@printAnotherContract")->name('print/{studentId}/contract');
+
+    //delete Student From Course
+    Route::get('delete/{studentId}/student/course/{courseId}','CourseStudentController@destroy');
 });

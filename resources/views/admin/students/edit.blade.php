@@ -56,6 +56,12 @@
                                 <input class="form-control" type="text" value="{{$student->phone_number_second}}" name="phone_number_second" required >
                             </div>
                         </div><!-- col-4 -->
+                        <div class="col-lg-4">
+                            <div class="form-group mg-b-10-force">
+                                <label class="form-control-label">Address: <span class="tx-danger">*</span></label>
+                                <input class="form-control" type="text" value="{{$student->living}}" name="living" required >
+                            </div>
+                        </div><!-- col-4 -->
                     </div><!-- row -->
 
                     <div class="form-layout-footer">
